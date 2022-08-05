@@ -1,11 +1,17 @@
-
+import { AppBar, Container, Toolbar, Typography } from "@material-ui/core"
 
 
 const Header = () => {
   return(
-    <div>
-      Header
-    </div>
+    <AppBar color='transparent' position='static' >
+      <Container>
+        <Toolbar>
+          <Typography>
+            BlockState
+          </Typography>
+        </Toolbar>
+      </Container>
+    </AppBar>
   )
 }
 
