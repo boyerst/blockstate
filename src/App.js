@@ -32,9 +32,9 @@ function App() {
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <Paper style={{ height: '100vh' }}>
-          <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)}/>
           <div >
             <Header />
+               <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)}/>
             <Route path='/' component={Home} />
             <Route path='/coins/:id' component={Coin} />
           </div>
