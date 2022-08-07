@@ -29,6 +29,7 @@ const Header = (props) => {
           <Typography 
             className={classes.title}
             onClick={() => history.push("/")}
+            variant="h6"
           >
             BlockState
           </Typography>
