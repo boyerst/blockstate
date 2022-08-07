@@ -1,5 +1,5 @@
 import { BrowserRouter, Route } from "react-router-dom"
-import { makeStyles, createTheme, ThemeProvider, Switch, Paper } from "@material-ui/core"
+import { makeStyles, createTheme, ThemeProvider, Paper } from "@material-ui/core"
 import { useState } from 'react';
 import Header from "./components/Header"
 import Home from "./pages/Home"
@@ -13,18 +13,25 @@ import Coin from "./pages/Coin"
 // }))
 
 
+
+
 function App() {
 
   // const classes = useStyles()
 
   const [darkMode, setDarkMode] = useState(false)
 
+
+
   const theme = createTheme({
     palette: {
       type: darkMode ? 'dark' : 'light',
     },
   });
-
+  
+  const handleDarkMode = () => {
+    setDarkMode(!darkMode)
+  }
 
 
 
@@ -33,8 +40,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Paper style={{ height: '100vh' }}>
           <div >
-            <Header />
-               <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)}/>
+            <Header handleDarkMode={handleDarkMode}/>
             <Route path='/' component={Home} />
             <Route path='/coins/:id' component={Coin} />
           </div>

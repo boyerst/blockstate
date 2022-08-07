@@ -1,10 +1,11 @@
-import { makeStyles, AppBar, Container, Toolbar, Typography, Select, MenuItem } from "@material-ui/core"
+import { makeStyles, AppBar, Container, Toolbar, Typography, Select, MenuItem, Switch } from "@material-ui/core"
+import { useHistory } from "react-router-dom";
 
 
 const useStyles = makeStyles(() => ({
   title: {
     flex: 1, 
-    color: "blue",
+    color: "#0582CA",
     fontFamily: "Open Sans",
     fontWeight: "bold",
     cursor: "pointer"
@@ -15,15 +16,20 @@ const useStyles = makeStyles(() => ({
 
 
 
-const Header = () => {
+const Header = (props) => {
 
   const classes = useStyles()
+
+  const history = useHistory()
 
   return(
     <AppBar color='transparent' position='static' >
       <Container>
         <Toolbar>
-          <Typography className={classes.title}>
+          <Typography 
+            className={classes.title}
+            onClick={() => history.push("/")}
+          >
             BlockState
           </Typography>
           <Select 
@@ -34,9 +40,10 @@ const Header = () => {
               marginLeft: 15
             }}
             >
-            <MenuItem>USD</MenuItem>
-            <MenuItem>BTC</MenuItem>
+            <MenuItem value={"USD"}>USD</MenuItem>
+            <MenuItem value={"BTC"}>BTC</MenuItem>
           </Select>
+          <Switch checked={props.darkMode} onChange={() => props.handleDarkMode()}/>
         </Toolbar>
       </Container>
     </AppBar>
