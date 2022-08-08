@@ -1,4 +1,4 @@
-import { createContext } from 'react'
+import { createContext, useContext } from 'react'
 
 
 const Currency = createContext()
@@ -13,3 +13,7 @@ const CurrencyContext = ({children}) => {
 
 
 export default CurrencyContext
+
+export const CurrencyState = () => {
+  return useContext(Currency)    
+}
