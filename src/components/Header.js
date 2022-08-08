@@ -44,6 +44,7 @@ const Header = (props) => {
               marginLeft: 15
             }}
             value={currency}
+            onChange={(e) => setCurrency(e.target.value)}
             >
             <MenuItem value={"USD"}>USD</MenuItem>
             <MenuItem value={"BTC"}>BTC</MenuItem>
