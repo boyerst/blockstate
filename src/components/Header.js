@@ -1,5 +1,6 @@
 import { makeStyles, AppBar, Container, Toolbar, Typography, Select, MenuItem, Switch } from "@material-ui/core"
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom"
+import { CurrencyState } from "../CurrencyContext"
 
 
 const useStyles = makeStyles(() => ({
@@ -22,6 +23,8 @@ const Header = (props) => {
 
   const history = useHistory()
 
+  const { currency, setCurrency } = CurrencyState()
+
   return(
     <AppBar color='transparent' position='static' >
       <Container>
@@ -40,6 +43,7 @@ const Header = (props) => {
               height: 40, 
               marginLeft: 15
             }}
+            value={currency}
             >
             <MenuItem value={"USD"}>USD</MenuItem>
             <MenuItem value={"BTC"}>BTC</MenuItem>
