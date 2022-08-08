@@ -15,7 +15,7 @@ const CurrencyContext = ({children}) => {
 
 
   return(
-    <Currency.Provider>
+    <Currency.Provider value={{currency, symbol, setCurrency}}>
       {children}
     </Currency.Provider>
   )
