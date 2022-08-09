@@ -3,7 +3,13 @@ import { makeStyles, Container } from "@material-ui/core"
 
 
 const useStyles = makeStyles(() => ({
-    
+  bannerContent: {
+    height: 400, 
+    display: "flex",
+    flexDirection: "column",
+    paddingTop: 25, 
+    justifyContent: "space-around",
+  }
 }))
 
 
@@ -13,7 +19,7 @@ const Banner = () => {
 
   return (
     <div>
-      <Container>
+      <Container className={classes.bannerContent}>
         <div>
           Banner
           
