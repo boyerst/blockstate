@@ -1,3 +1,4 @@
+import "../App.css"
 import { makeStyles, AppBar, Container, Toolbar, Typography, Select, MenuItem, Switch } from "@material-ui/core"
 import { useHistory } from "react-router-dom"
 import { CurrencyState } from "../CurrencyContext"

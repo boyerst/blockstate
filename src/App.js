@@ -1,6 +1,7 @@
+import "./App.css"
 import { BrowserRouter, Route } from "react-router-dom"
 import { makeStyles, createTheme, ThemeProvider, Paper } from "@material-ui/core"
-import { useState } from 'react';
+import { useState } from "react"
 import Header from "./components/Header"
 import Home from "./pages/Home"
 import Coin from "./pages/Coin"
