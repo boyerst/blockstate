@@ -1,5 +1,5 @@
 import "../../App.css"
-import { makeStyles, Container } from "@material-ui/core"
+import { makeStyles, Container, Typography } from "@material-ui/core"
 
 
 const useStyles = makeStyles(() => ({
@@ -21,7 +21,16 @@ const Banner = () => {
     <div>
       <Container className={classes.bannerContent}>
         <div>
-          Banner
+          <Typography
+            variant="h2"
+            style={{
+              fontWeight: "bold",
+              marginBottom: 15,
+              fontFamily: "Open Sans"
+            }}
+          >
+            BlockState
+          </Typography>
           
         </div>
       </Container>
