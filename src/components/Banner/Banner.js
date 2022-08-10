@@ -31,6 +31,15 @@ const Banner = () => {
           >
             BlockState
           </Typography>
+          <Typography
+            variant="subtitle2"
+            style={{
+              color: "",
+              fontFamily: "Open Sans"
+            }}
+          >
+            The State of The Blockchain
+          </Typography>
           
         </div>
       </Container>
