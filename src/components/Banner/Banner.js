@@ -8,7 +8,14 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     flexDirection: "column",
     paddingTop: 25, 
-    justifyContent: "space-around",
+    justifyContent: "space-around"
+  },
+  titleType: {
+    display: "flex",
+    height: "40%",
+    flexDirection: "column",
+    justifyContent: "center", 
+    textAlign: "center"
   }
 }))
 
@@ -20,7 +27,7 @@ const Banner = () => {
   return (
     <div>
       <Container className={classes.bannerContent}>
-        <div>
+        <div className={classes.titleType}>
           <Typography
             variant="h2"
             style={{
@@ -34,7 +41,7 @@ const Banner = () => {
           <Typography
             variant="subtitle2"
             style={{
-              color: "",
+              // color: "",
               fontFamily: "Open Sans"
             }}
           >
