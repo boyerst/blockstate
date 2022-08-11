@@ -1,4 +1,5 @@
 import "../../App.css"
+import Carousel from "./Carousel"
 import { makeStyles, Container, Typography } from "@material-ui/core"
 
 
@@ -47,6 +48,7 @@ const Banner = () => {
           >
             The State of The Blockchain
           </Typography>
+          <Carousel />
           
         </div>
       </Container>
