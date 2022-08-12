@@ -1,4 +1,6 @@
 import { makeStyles } from "@material-ui/core"
+import axios from "axios"
+
 
 const useStyles = makeStyles(() => ({
   carousel: {
