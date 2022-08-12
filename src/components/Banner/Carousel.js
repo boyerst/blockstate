@@ -1,5 +1,6 @@
 import { makeStyles } from "@material-ui/core"
 import axios from "axios"
+import { CurrencyState } from "../../CurrencyContext"
 
 
 const useStyles = makeStyles(() => ({
@@ -13,6 +14,8 @@ const useStyles = makeStyles(() => ({
 const Carousel = () => {
 
   const classes = useStyles()
+
+  const { currency, setCurrency } = CurrencyState()
 
   return (
     <div className={classes.carousel}>
