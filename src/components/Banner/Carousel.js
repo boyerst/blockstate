@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core"
 import axios from "axios"
 import { CurrencyState } from "../../CurrencyContext"
 import { TrendingCoins } from "../../config/api"
+import AliceCarousel from "react-alice-carousel"
 
 
 
@@ -37,6 +38,7 @@ const Carousel = () => {
   return (
     <div className={classes.carousel}>
       Carousel
+      <AliceCarousel />
     </div>
 
   )    
