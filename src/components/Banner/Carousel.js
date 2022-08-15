@@ -42,6 +42,16 @@ const Carousel = () => {
   })
 
 
+  const responsive = {
+    0: {
+      items: 2, 
+    },
+    512: {
+      items: 4, 
+    }
+  };
+
+
   return (
     <div className={classes.carousel}>
       Carousel
