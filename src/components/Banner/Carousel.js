@@ -38,7 +38,16 @@ const Carousel = () => {
   return (
     <div className={classes.carousel}>
       Carousel
-      <AliceCarousel />
+      <AliceCarousel 
+        mouseTracking
+        infinite
+        autoPlayInterval={1000}
+        animationDuration={1500}
+        disableDotsControls
+        responsive={responsive}
+        autoplay
+        items={items}
+      />
     </div>
 
   )    
