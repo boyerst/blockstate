@@ -35,6 +35,13 @@ const Carousel = () => {
 
   console.log(trending)
 
+  const items = trending.map((coin) => {
+    return (
+
+    )
+  })
+
+
   return (
     <div className={classes.carousel}>
       Carousel
