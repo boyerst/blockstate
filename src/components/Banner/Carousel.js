@@ -4,6 +4,7 @@ import axios from "axios"
 import { CurrencyState } from "../../CurrencyContext"
 import { TrendingCoins } from "../../config/api"
 import AliceCarousel from "react-alice-carousel"
+import { Link } from "react-router-dom"
 
 
 
@@ -15,13 +16,16 @@ const useStyles = makeStyles(() => ({
   }
 }))
 
+
+
 const Carousel = () => {
 
   const [trending, setTrending] = useState([])
+  
+  const { currency, symbol } = CurrencyState()
 
   const classes = useStyles()
 
-  const { currency, setCurrency } = CurrencyState()
 
   const fetchTrendingCoins = async () => {
     const { data } = await axios.get(TrendingCoins(currency))
@@ -36,10 +40,18 @@ const Carousel = () => {
   console.log(trending)
 
   const items = trending.map((coin) => {
-    return (
 
+    return (
+      <Link
+        to={`/coins/${coin.id}`}
+        className={classes.carouselItem}
+      >
+    
+
+      </Link>
     )
   })
+
 
 
   const responsive = {
@@ -49,7 +61,7 @@ const Carousel = () => {
     512: {
       items: 4, 
     }
-  };
+  }
 
 
   return (

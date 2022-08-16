@@ -3,6 +3,7 @@ import Carousel from "./Carousel"
 import { makeStyles, Container, Typography } from "@material-ui/core"
 
 
+
 const useStyles = makeStyles(() => ({
   bannerContent: {
     height: 400, 
