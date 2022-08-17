@@ -60,9 +60,10 @@ const Carousel = () => {
           height="80"
           style={{marginBottom: 10}}
         />
-        <span>
-          <span> {coin?.symbol}
-            &nbsp;
+        <span> {coin?.symbol}
+          &nbsp;
+          <span> 
+            {profit && "+"}{coin?.price_change_percentage_24h}
           </span>
         </span>
       </Link>
