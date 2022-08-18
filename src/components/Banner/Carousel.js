@@ -18,8 +18,8 @@ const useStyles = makeStyles(() => ({
   carouselItem: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
-
+    alignItems: "center",
+    textTransform: "uppercase"
   }
 }))
 
