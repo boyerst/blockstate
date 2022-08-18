@@ -66,6 +66,9 @@ const Carousel = () => {
             {profit && "+"}{coin?.price_change_percentage_24h?.toFixed(2)}%
           </span>
         </span>
+        <span>
+          {coin?.current_price}
+        </span>
       </Link>
     )
   })
@@ -91,6 +94,7 @@ const Carousel = () => {
         autoPlayInterval={1000}
         animationDuration={1500}
         disableDotsControls
+        disableButtonsControls
         responsive={responsive}
         autoplay
         items={items}
