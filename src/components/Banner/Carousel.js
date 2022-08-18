@@ -63,7 +63,12 @@ const Carousel = () => {
         />
         <span> {coin?.symbol}
           &nbsp;
-          <span> 
+          <span
+            style={{
+              color: profit > 0 ? "rgb(14, 203, 129)" : "red",
+              fontWeight: 700
+            }}
+          > 
             {profit && "+"}{coin?.price_change_percentage_24h?.toFixed(2)}%
           </span>
         </span>
@@ -92,13 +97,12 @@ const Carousel = () => {
 
   return (
     <div className={classes.carousel}>
-      Carousel
       <AliceCarousel 
         mouseTracking
         infinite
         autoPlayInterval={1000}
         animationDuration={1500}
-        disableDotsControls
+        // disableDotsControls
         disableButtonsControls
         responsive={responsive}
         autoplay

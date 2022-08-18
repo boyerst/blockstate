@@ -34,7 +34,7 @@ const Banner = () => {
             variant="h2"
             style={{
               fontWeight: "bold",
-              marginBottom: 15,
+              marginBottom: 20,
               fontFamily: "Open Sans"
             }}
           >
@@ -44,6 +44,7 @@ const Banner = () => {
             variant="subtitle2"
             style={{
               // color: "",
+              marginBottom: 20,
               fontFamily: "Open Sans"
             }}
           >
