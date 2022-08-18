@@ -68,7 +68,7 @@ const Carousel = () => {
           </span>
         </span>
         <span>
-          {numberWithCommas(coin?.current_price)}
+          {numberWithCommas(coin?.current_price.toFixed(2))}
         </span>
       </Link>
     )
