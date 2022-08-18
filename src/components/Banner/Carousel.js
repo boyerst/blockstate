@@ -67,7 +67,7 @@ const Carousel = () => {
             {profit && "+"}{coin?.price_change_percentage_24h?.toFixed(2)}%
           </span>
         </span>
-        <span>
+        <span style={{fontSize: 22, fontWeight: 500}}>
           {
             currency === "USD" ? <>{symbol} {numberWithCommas(coin?.current_price.toFixed(2))}</>
             : coin.id === "bitcoin" && currency === "BTC" ? <>{symbol} {coin?.current_price.toFixed(2)}</>
