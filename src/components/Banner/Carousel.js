@@ -68,7 +68,11 @@ const Carousel = () => {
           </span>
         </span>
         <span>
-          {numberWithCommas(coin?.current_price.toFixed(2))}
+          {
+            currency === "USD" ? <>{symbol} {numberWithCommas(coin?.current_price.toFixed(2))}</>
+            : coin.id === "bitcoin" && currency === "BTC" ? <>{symbol} {coin?.current_price.toFixed(2)}</>
+            : <>{symbol} {coin?.current_price.toFixed(9)}</>
+          }
         </span>
       </Link>
     )
