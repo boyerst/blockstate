@@ -5,6 +5,7 @@ import { CurrencyState } from "../../CurrencyContext"
 import { TrendingCoins } from "../../config/api"
 import AliceCarousel from "react-alice-carousel"
 import { Link } from "react-router-dom"
+import { numberWithCommas } from "../../utils/utils"
 
 
 
@@ -67,7 +68,7 @@ const Carousel = () => {
           </span>
         </span>
         <span>
-          {coin?.current_price}
+          {numberWithCommas(coin?.current_price)}
         </span>
       </Link>
     )
