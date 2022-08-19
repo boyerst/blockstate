@@ -44,7 +44,7 @@ const Carousel = () => {
   }, [currency])
 
 
-  console.log(trending)
+  console.log("TrendingCoins: ", trending)
 
   const items = trending.map((coin) => {
 
