@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import axios from "axios"
 import { AllCoinsMarketData } from "../config/api"
 import { CurrencyState } from "../CurrencyContext"
@@ -14,6 +14,10 @@ const CoinsTable = () => {
     const { data } = await axios.get(AllCoinsMarketData(currency))   
     setCoins(data)
   }
+
+  useEffect(() => {
+    fetchAllCoinsMarketData()    
+  })
 
   console.log("AllCoinsMarketData: ", coins)
 
