@@ -6,7 +6,9 @@ import {
   TableHead,
   TableRow,
   TableCell, 
-  TableBody
+  TableBody,
+  Typography, 
+  TextField
 } from "@material-ui/core"
 import axios from "axios"
 import { AllCoinsMarketData } from "../config/api"
@@ -32,7 +34,16 @@ const CoinsTable = () => {
 
 
   return (
-    <Container>
+    <Container style={{ textAlign: "center" }}>
+      <Typography
+        variant="h5"
+        style={{ margin: 18, fontFamily: "Open Sans" }}
+      >
+        Cryptocurrencies by Market Cap
+      </Typography>
+      <TextField>
+        
+      </TextField>
       <TableContainer>
         <Table>
           <TableHead>
