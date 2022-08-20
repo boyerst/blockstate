@@ -26,7 +26,7 @@ const CoinsTable = () => {
 
   useEffect(() => {
     fetchAllCoinsMarketData()    
-  })
+  }, [currency])
 
   console.log("AllCoinsMarketData: ", coins)
 
