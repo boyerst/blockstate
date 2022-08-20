@@ -1,4 +1,13 @@
 import { useState, useEffect } from "react"
+import {
+  Container, 
+  TableContainer, 
+  Table, 
+  TableHead,
+  TableRow,
+  TableCell, 
+  TableBody
+} from "@material-ui/core"
 import axios from "axios"
 import { AllCoinsMarketData } from "../config/api"
 import { CurrencyState } from "../CurrencyContext"
@@ -23,9 +32,22 @@ const CoinsTable = () => {
 
 
   return (
-    <div>
-      CoinsTable
-    </div>
+    <Container>
+      <TableContainer>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>
+                
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+        
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Container>
   )
 }
 
