@@ -41,9 +41,10 @@ const CoinsTable = () => {
       >
         Cryptocurrencies by Market Cap
       </Typography>
-      <TextField>
-        
-      </TextField>
+      <TextField
+        label="Search for coins..."
+      />
+ 
       <TableContainer>
         <Table>
           <TableHead>
