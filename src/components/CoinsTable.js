@@ -43,6 +43,8 @@ const CoinsTable = () => {
       </Typography>
       <TextField
         label="Search for coins..."
+        variant="outlined"
+        style={{ marginBottom: 20, width: "100%" }}
       />
  
       <TableContainer>
