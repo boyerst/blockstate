@@ -54,14 +54,19 @@ const CoinsTable = () => {
       <TableContainer>
         {
           loading ? (
-            <LinearProgress />
+            <LinearProgress style={{ backgroundColor: "#0582CA" }}/>
           ) : (
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>
-                  
-                </TableCell>
+                {["Coin", "Price", "24H Change", "Market Cap"].map((head) => (
+                  <TableCell
+                    key={head}
+                  >
+                    {head}
+                  </TableCell>
+                ))}
+                
               </TableRow>
             </TableHead>
             <TableBody>
