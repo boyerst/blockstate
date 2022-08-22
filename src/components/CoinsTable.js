@@ -39,10 +39,11 @@ const CoinsTable = () => {
   console.log("AllCoinsMarketData: ", coins)
 
 
-  const handleSearch = (coin) => {
+  const handleSearch = () => {
     return coins.filter(
-      coin.name.toLowerCase().includes(search) ||
-      coin.symbol.toLowerCase().includes(search)
+      (coin) =>
+        coin.name.toLowerCase().includes(search) ||
+        coin.symbol.toLowerCase().includes(search)
     )
   }
 
@@ -86,7 +87,7 @@ const CoinsTable = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-          
+
             </TableBody>
           </Table>
         )}
