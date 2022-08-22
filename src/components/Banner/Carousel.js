@@ -101,7 +101,7 @@ const Carousel = () => {
         mouseTracking
         infinite
         autoPlay
-        autoPlayInterval={1000}
+        autoPlayInterval={3000}
         animationDuration={1500}
         disableDotsControls
         disableButtonsControls

@@ -20,6 +20,7 @@ const CoinsTable = () => {
   
   const [coins, setCoins] = useState([])
   const [loading, setLoading] = useState(false)
+  const [search, setSearch] = useState("")
 
   const { currency } = CurrencyState()
 
@@ -34,7 +35,16 @@ const CoinsTable = () => {
     fetchAllCoinsMarketData()    
   }, [currency])
 
+
   console.log("AllCoinsMarketData: ", coins)
+
+
+  const handleSearch = (coin) => {
+    return coins.filter(
+      coin.name.toLowerCase().includes(search) ||
+      coin.symbol.toLowerCase().includes(search)
+    )
+  }
 
 
   return (
@@ -49,6 +59,7 @@ const CoinsTable = () => {
         label="Search for coins..."
         variant="outlined"
         style={{ marginBottom: 20, width: "100%" }}
+        onChange={(e) => setSearch(e.target.value)}
       />
  
       <TableContainer>
