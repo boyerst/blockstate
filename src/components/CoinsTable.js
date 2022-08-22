@@ -61,12 +61,17 @@ const CoinsTable = () => {
               <TableRow>
                 {["Coin", "Price", "24H Change", "Market Cap"].map((head) => (
                   <TableCell
+                    style={{
+                      fontWeight: "700",
+                      fontFamily: "Open Sans"
+                    }}
                     key={head}
+              
                   >
                     {head}
                   </TableCell>
                 ))}
-                
+
               </TableRow>
             </TableHead>
             <TableBody>
