@@ -128,6 +128,16 @@ const CoinsTable = () => {
                         height="50"
                         style={{ marginBottom: 6 }}
                       />
+                      <div
+                        style={{ display: "flex", flexDirection: "column" }}
+                      >
+                        <span>
+                          {row.symbol}
+                        </span>
+                        <span>
+                          {row.name}
+                        </span>
+                      </div>
                     </TableCell>
                   </TableRow>
                 )    
