@@ -16,6 +16,7 @@ import axios from "axios"
 import { useHistory } from "react-router-dom"
 import { AllCoinsMarketData } from "../config/api"
 import { CurrencyState } from "../CurrencyContext"
+import { numberWithCommas } from "../utils/utils"
 
 
 
@@ -40,7 +41,7 @@ const CoinsTable = () => {
   const [search, setSearch] = useState("")
 
   const history = useHistory()
-  const { currency } = CurrencyState()
+  const { currency, symbol } = CurrencyState()
   const classes = useStyles()
 
   const fetchAllCoinsMarketData = async () => {
@@ -148,10 +149,12 @@ const CoinsTable = () => {
                         </span>
                       </div>
                     </TableCell>
-                    <TableCell>
-                      {row.current_price}
+                    <TableCell align="right">
+                      {symbol}{" "}
+                      {numberWithCommas(row.current_price.toFixed(2))}
+                      
                     </TableCell>
-                    <TableCell>
+                    <TableCell align="right">
                       {row.price_change_percentage_24h}
                     </TableCell>
                   </TableRow>
