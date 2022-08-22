@@ -87,7 +87,31 @@ const CoinsTable = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-
+            {
+              handleSearch().map((row) => {
+                return (
+                  <TableRow
+                    key={row.name}
+                  >
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      styles={{
+                        display: "flex",
+                        gap: 15
+                      }}
+                    >
+                      <img 
+                        src={row?.image}
+                        alt={row.name}
+                        height="50"
+                      />
+                    </TableCell>
+                  </TableRow>
+                )    
+              })
+            }
+          
             </TableBody>
           </Table>
         )}
