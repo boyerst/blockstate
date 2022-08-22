@@ -12,6 +12,7 @@ import {
   LinearProgress
 } from "@material-ui/core"
 import axios from "axios"
+import { useHistory } from "react-router-dom"
 import { AllCoinsMarketData } from "../config/api"
 import { CurrencyState } from "../CurrencyContext"
 
@@ -22,6 +23,7 @@ const CoinsTable = () => {
   const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState("")
 
+  const history = useHistory()
   const { currency } = CurrencyState()
 
   const fetchAllCoinsMarketData = async () => {
@@ -92,6 +94,7 @@ const CoinsTable = () => {
                 return (
                   <TableRow
                     key={row.name}
+                    onClick={() => history.push(`/coins/${row.id}`)}
                   >
                     <TableCell
                       component="th"
@@ -105,6 +108,7 @@ const CoinsTable = () => {
                         src={row?.image}
                         alt={row.name}
                         height="50"
+                        style={{ marginBottom: 6 }}
                       />
                     </TableCell>
                   </TableRow>
