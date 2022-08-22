@@ -8,7 +8,8 @@ import {
   TableCell, 
   TableBody,
   Typography, 
-  TextField
+  TextField,
+  LinearProgress
 } from "@material-ui/core"
 import axios from "axios"
 import { AllCoinsMarketData } from "../config/api"
@@ -51,18 +52,23 @@ const CoinsTable = () => {
       />
  
       <TableContainer>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>
-                
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-        
-          </TableBody>
-        </Table>
+        {
+          loading ? (
+            <LinearProgress />
+          ) : (
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>
+                  
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+          
+            </TableBody>
+          </Table>
+        )}
       </TableContainer>
     </Container>
   )
