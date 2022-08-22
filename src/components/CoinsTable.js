@@ -131,13 +131,28 @@ const CoinsTable = () => {
                       <div
                         style={{ display: "flex", flexDirection: "column" }}
                       >
-                        <span>
+                        <span
+                          style={{
+                            textTransform: "uppercase",
+                            fontSize: 22
+                          }}
+                        >
                           {row.symbol}
                         </span>
-                        <span>
+                        <span
+                          style={{
+                            color: "darkgrey"
+                          }}
+                        >
                           {row.name}
                         </span>
                       </div>
+                    </TableCell>
+                    <TableCell>
+                      {row.current_price}
+                    </TableCell>
+                    <TableCell>
+                      {row.price_change_percentage_24h}
                     </TableCell>
                   </TableRow>
                 )    
