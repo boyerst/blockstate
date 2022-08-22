@@ -9,12 +9,28 @@ import {
   TableBody,
   Typography, 
   TextField,
-  LinearProgress
+  LinearProgress,
+  makeStyles
 } from "@material-ui/core"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
 import { AllCoinsMarketData } from "../config/api"
 import { CurrencyState } from "../CurrencyContext"
+
+
+
+
+const useStyles = makeStyles(() => ({
+  row: {
+    fontFamily: "Open Sans",
+    cursor: "pointer",
+    "&:hover": {
+      backgroundColor: "red"
+    }
+  }
+}))
+
+
 
 
 const CoinsTable = () => {
@@ -25,6 +41,7 @@ const CoinsTable = () => {
 
   const history = useHistory()
   const { currency } = CurrencyState()
+  const classes = useStyles()
 
   const fetchAllCoinsMarketData = async () => {
     setLoading(true)
@@ -95,6 +112,7 @@ const CoinsTable = () => {
                   <TableRow
                     key={row.name}
                     onClick={() => history.push(`/coins/${row.id}`)}
+                    className={classes.row}
                   >
                     <TableCell
                       component="th"
