@@ -109,6 +109,7 @@ const CoinsTable = () => {
             <TableBody>
             {
               handleSearch().map((row) => {
+                const profit = row.price_change_percentage_24h > 0
                 return (
                   <TableRow
                     key={row.name}
@@ -152,9 +153,14 @@ const CoinsTable = () => {
                     <TableCell align="right">
                       {symbol}{" "}
                       {numberWithCommas(row.current_price.toFixed(2))}
-                      
                     </TableCell>
-                    <TableCell align="right">
+                    <TableCell 
+                      align="right"
+                      style={{
+                        color: profit > 0 ? "rgb(14, 203, 129)"  : "red",
+                        fontWeight: 600
+                      }}
+                    >
                       {row.price_change_percentage_24h}
                     </TableCell>
                   </TableRow>
