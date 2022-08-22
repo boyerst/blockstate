@@ -29,10 +29,10 @@ const Carousel = () => {
 
   const [trending, setTrending] = useState([])
   
-  const { currency, symbol } = CurrencyState()
 
   const classes = useStyles()
 
+  const { currency, symbol } = CurrencyState()
 
   const fetchTrendingCoins = async () => {
     const { data } = await axios.get(TrendingCoins(currency))
@@ -100,12 +100,12 @@ const Carousel = () => {
       <AliceCarousel 
         mouseTracking
         infinite
+        autoplay
         autoPlayInterval={1000}
         animationDuration={1500}
-        // disableDotsControls
+        disableDotsControls
         disableButtonsControls
         responsive={responsive}
-        autoplay
         items={items}
       />
     </div>
