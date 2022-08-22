@@ -18,12 +18,15 @@ import { CurrencyState } from "../CurrencyContext"
 const CoinsTable = () => {
   
   const [coins, setCoins] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const { currency } = CurrencyState()
 
   const fetchAllCoinsMarketData = async () => {
+    setLoading(true)
     const { data } = await axios.get(AllCoinsMarketData(currency))   
     setCoins(data)
+    setLoading(false)
   }
 
   useEffect(() => {
