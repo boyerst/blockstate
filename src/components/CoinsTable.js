@@ -119,7 +119,7 @@ const CoinsTable = () => {
                     <TableCell
                       component="th"
                       scope="row"
-                      styles={{
+                      style={{
                         display: "flex",
                         gap: 15
                       }}
@@ -167,7 +167,6 @@ const CoinsTable = () => {
                     <TableCell align="right">
                       {symbol}{" "}
                       {numberWithCommas(row.market_cap.toString())}
-                      
                     </TableCell>
                   </TableRow>
                 )    
