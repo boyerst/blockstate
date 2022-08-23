@@ -161,7 +161,9 @@ const CoinsTable = () => {
                         fontWeight: 600
                       }}
                     >
+                      {profit && "+"}
                       {row.price_change_percentage_24h}
+                      
                     </TableCell>
                   </TableRow>
                 )    
