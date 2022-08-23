@@ -164,8 +164,10 @@ const CoinsTable = () => {
                       {profit && "+"}
                       {row.price_change_percentage_24h}
                     </TableCell>
-                    <TableCell>
-                      {row.market_cap}
+                    <TableCell align="right">
+                      {symbol}{" "}
+                      {numberWithCommas(row.market_cap.toString())}
+                      
                     </TableCell>
                   </TableRow>
                 )    
