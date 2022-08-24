@@ -12,6 +12,7 @@ import {
   LinearProgress,
   makeStyles
 } from "@material-ui/core"
+import Pagination from "@material-ui/lab/Pagination"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
 import { AllCoinsMarketData } from "../config/api"
@@ -180,6 +181,7 @@ const CoinsTable = () => {
           </Table>
         )}
       </TableContainer>
+      <Pagination />
     </Container>
   )
 }
