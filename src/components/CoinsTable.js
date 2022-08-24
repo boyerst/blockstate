@@ -184,7 +184,8 @@ const CoinsTable = () => {
       <Pagination 
         count={(handleSearch()?.length/10).toFixed(0)}
         onChange={(_, value) => {
-          setPage(value)    
+          setPage(value)  
+          window.scroll(0, 100)  
         }}
       />
     </Container>
