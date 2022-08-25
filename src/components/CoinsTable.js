@@ -187,6 +187,12 @@ const CoinsTable = () => {
           setPage(value)  
           window.scroll(0, 100)  
         }}
+        style={{
+          padding: 30 ,         
+          width: "100%",
+          display: "flex",
+          justifyContent: "center"
+        }}
       />
     </Container>
   )
