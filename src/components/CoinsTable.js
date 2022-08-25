@@ -29,6 +29,11 @@ const useStyles = makeStyles(() => ({
     "&:hover": {
       backgroundColor: "red"
     }
+  },
+  pagination: {
+    "& .MuiPaginationItem-root": {
+      color: "red"
+    }
   }
 }))
 
@@ -193,6 +198,7 @@ const CoinsTable = () => {
           display: "flex",
           justifyContent: "center"
         }}
+        classes={{ ul: classes.pagination }}
       />
     </Container>
   )
