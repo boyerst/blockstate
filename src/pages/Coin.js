@@ -1,9 +1,15 @@
 import "../App.css"
+import { makeStyles } from "@material-ui/core"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import { CurrencyState } from "../CurrencyContext"
 import { CoinMarketData } from "../config/api"
+import CoinChart from "../components/CoinChart"
 import axios from "axios"
+
+
+
+const useStyles = makeStyles(() => ({}))
 
 
 const Coin = () => {
@@ -23,9 +29,15 @@ const Coin = () => {
     fetchCoinMarketData()
   }, [])
 
+  const classes = useStyles()
+
   return(
-    <div>
-      {coin.id}
+    <div className={classes.container}>
+   
+      <div className={classes.sidebar}>
+        {/*sidebar*/}
+      </div>
+      <CoinChart />
     </div>       
   ) 
 }
