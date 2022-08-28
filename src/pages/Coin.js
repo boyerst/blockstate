@@ -21,7 +21,12 @@ const useStyles = makeStyles((theme) => ({
     width: "30%",
     [theme.breakpoints.down("md")]: {
       width: "100%"
-    }
+    },
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginTop: 25, 
+    borderRight: "2px solid black"
   }
 }))
 
@@ -49,7 +54,7 @@ const Coin = () => {
     <div className={classes.container}>
    
       <div className={classes.sidebar}>
-        {/*sidebar*/}
+        Sidebar
       </div>
       <CoinChart />
     </div>       
