@@ -9,7 +9,15 @@ import axios from "axios"
 
 
 
-const useStyles = makeStyles(() => ({}))
+const useStyles = makeStyles((theme) => ({
+  container: {
+    display: "flex",
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+      alignItems: "center"
+    }
+  }
+}))
 
 
 const Coin = () => {
