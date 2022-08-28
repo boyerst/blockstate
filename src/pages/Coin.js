@@ -16,6 +16,12 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "column",
       alignItems: "center"
     }
+  },
+  sidebar: {
+    width: "30%",
+    [theme.breakpoints.down("md")]: {
+      width: "100%"
+    }
   }
 }))
 
