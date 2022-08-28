@@ -42,7 +42,7 @@ function App() {
         <Paper style={{ minHeight: '100vh' }}>
           <div >
             <Header handleDarkMode={handleDarkMode}/>
-            <Route path='/' component={Home} />
+            <Route path='/' component={Home} exact/>
             <Route path='/coins/:id' component={Coin} />
           </div>
         </Paper>
