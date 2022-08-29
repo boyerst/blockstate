@@ -27,6 +27,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     marginTop: 25, 
     borderRight: "2px solid black"
+  },
+  heading: {
+    fontWeight: "bold",
+    marginBottom: 20,
+    fontFamily: "Open Sans"
   }
 }))
 
@@ -61,7 +66,7 @@ const Coin = () => {
           height="200"
           style={{ marginBottom: 20 }}
         />
-        <Typography>
+        <Typography variant="h3" className={classes.heading}>
           {coin?.name}
         </Typography>
       </div>
