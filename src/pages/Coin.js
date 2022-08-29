@@ -57,6 +57,9 @@ const Coin = () => {
         Sidebar
         <img 
           src={coin?.image.large}
+          alt={coin?.name}
+          height="200"
+          style={{ marginBottom: 20 }}
         />
       </div>
       <CoinChart />
