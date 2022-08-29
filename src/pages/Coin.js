@@ -55,6 +55,9 @@ const Coin = () => {
    
       <div className={classes.sidebar}>
         Sidebar
+        <img 
+          src={coin?.image.large}
+        />
       </div>
       <CoinChart />
     </div>       
