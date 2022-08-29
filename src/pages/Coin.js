@@ -1,5 +1,5 @@
 import "../App.css"
-import { makeStyles } from "@material-ui/core"
+import { makeStyles, Typography } from "@material-ui/core"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import { CurrencyState } from "../CurrencyContext"
@@ -61,6 +61,9 @@ const Coin = () => {
           height="200"
           style={{ marginBottom: 20 }}
         />
+        <Typography>
+          {coin?.name}
+        </Typography>
       </div>
       <CoinChart />
     </div>       
