@@ -59,7 +59,6 @@ const Coin = () => {
     <div className={classes.container}>
    
       <div className={classes.sidebar}>
-        Sidebar
         <img 
           src={coin?.image.large}
           alt={coin?.name}
@@ -68,6 +67,9 @@ const Coin = () => {
         />
         <Typography variant="h3" className={classes.heading}>
           {coin?.name}
+        </Typography>
+        <Typography variant="subtitle1">
+          {coin?.description.en}
         </Typography>
       </div>
       <CoinChart />
