@@ -69,7 +69,7 @@ const Coin = () => {
           {coin?.name}
         </Typography>
         <Typography variant="subtitle1">
-          {coin?.description.en}
+          {coin?.description.en.split(". ")[0]}.
         </Typography>
       </div>
       <CoinChart />
