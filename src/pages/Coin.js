@@ -6,6 +6,8 @@ import { CurrencyState } from "../CurrencyContext"
 import { CoinMarketData } from "../config/api"
 import CoinChart from "../components/CoinChart"
 import axios from "axios"
+import ReactHtmlParser from 'react-html-parser'
+
 
 
 
@@ -68,8 +70,8 @@ const Coin = () => {
         <Typography variant="h3" className={classes.heading}>
           {coin?.name}
         </Typography>
-        <Typography variant="subtitle1">
-          {coin?.description.en.split(". ")[0]}.
+        <Typography variant="subtitle1" className={classes.description}>
+          {ReactHtmlParser(coin?.description.en.split(". ")[0])}.
         </Typography>
       </div>
       <CoinChart />
