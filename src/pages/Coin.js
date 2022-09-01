@@ -82,20 +82,35 @@ const Coin = () => {
           {ReactHtmlParser(coin?.description.en.split(". ")[0])}.
         </Typography>
         <div>
-          <Typography variant="h5" className={classes.heading}>
-            Rank: 
-          </Typography>
-          <Typography variant="h5" className={classes.heading}>
-            Current Price: 
-          </Typography>
-          <Typography variant="h5" className={classes.heading}>
-            Market Cap: 
-          </Typography>
+          <span>
+            <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
+              Rank: 
+            </Typography>
+            <Typography>
+              {coin?.market_cap_rank}
+            </Typography>
+          </span>
+          <span>
+            <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
+              Current Price: 
+            </Typography>
+            <Typography>
+              {coin?.market_data.current_price.usd}
+            </Typography>
+          </span>
+          <span>
+            <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
+              Market Cap: 
+            </Typography>
+          </span>
         </div>
       </div>
       <CoinChart />
     </div>       
   ) 
 }
+
+
+
 
 export default Coin
