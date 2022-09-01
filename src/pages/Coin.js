@@ -114,6 +114,22 @@ const Coin = () => {
               {coin?.market_data.circulating_supply} / { coin?.market_data.max_supply || coin?.market_data.total_supply }
             </Typography>
           </span>
+          <span>
+            <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
+              ATH:
+            </Typography>
+            <Typography>
+              $ {coin?.market_data.ath.usd} on { coin?.market_data.ath_date.usd }
+            </Typography>
+          </span>
+          <span>
+            <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
+              ATL:
+            </Typography>
+            <Typography>
+              $ {coin?.market_data.atl.usd} on { coin?.market_data.atl_date.usd }
+            </Typography>
+          </span>
         </div>
       </div>
       <CoinChart />
