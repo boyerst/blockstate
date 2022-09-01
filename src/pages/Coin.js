@@ -38,7 +38,10 @@ const useStyles = makeStyles((theme) => ({
   description: {
     width: "100%",
     fontFamily: "Open Sans",
-    padding: 25
+    padding: 25,
+    paddingBottom: 15,
+    paddingTop: 0,
+    textAlign: "justify"
   }
 }))
 
@@ -78,6 +81,17 @@ const Coin = () => {
         <Typography variant="subtitle1" className={classes.description}>
           {ReactHtmlParser(coin?.description.en.split(". ")[0])}.
         </Typography>
+        <div>
+          <Typography variant="h5" className={classes.heading}>
+            Rank: 
+          </Typography>
+          <Typography variant="h5" className={classes.heading}>
+            Current Price: 
+          </Typography>
+          <Typography variant="h5" className={classes.heading}>
+            Market Cap: 
+          </Typography>
+        </div>
       </div>
       <CoinChart />
     </div>       
