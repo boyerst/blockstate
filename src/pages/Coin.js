@@ -34,6 +34,11 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     marginBottom: 20,
     fontFamily: "Open Sans"
+  },
+  description: {
+    width: "100%",
+    fontFamily: "Open Sans",
+    padding: 25
   }
 }))
 
