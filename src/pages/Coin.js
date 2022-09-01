@@ -102,6 +102,9 @@ const Coin = () => {
             <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
               Market Cap: 
             </Typography>
+            <Typography>
+              {coin?.market_data.market_cap.usd}
+            </Typography>
           </span>
         </div>
       </div>
