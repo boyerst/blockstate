@@ -106,6 +106,14 @@ const Coin = () => {
               {coin?.market_data.market_cap.usd}
             </Typography>
           </span>
+          <span>
+            <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
+              Circulating / { coin?.market_data.max_supply ? "Max Supply" : "Total Supply"}:
+            </Typography>
+            <Typography>
+              {coin?.market_data.circulating_supply} / { coin?.market_data.max_supply || coin?.market_data.total_supply }
+            </Typography>
+          </span>
         </div>
       </div>
       <CoinChart />
