@@ -123,7 +123,7 @@ const Coin = () => {
               ATH:
             </Typography>
             <Typography>
-              {symbol}{" "}{coin?.market_data.ath[currency.toLowerCase()]} on {coin?.market_data.ath_date[currency.toLowerCase()]}
+              {symbol}{" "}{numberWithCommas(coin?.market_data.ath[currency.toLowerCase()])} on {coin?.market_data.ath_date[currency.toLowerCase()]}
             </Typography>
           </span>
           <span>
