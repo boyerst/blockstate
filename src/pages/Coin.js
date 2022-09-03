@@ -67,7 +67,7 @@ const Coin = () => {
 
   const classes = useStyles()
 
-  if (!coin) return <LinearProgress />
+  if (!coin) return <LinearProgress style={{ backgroundColor: "#0582CA" }}/>
 
   return(
     <div className={classes.container}>
