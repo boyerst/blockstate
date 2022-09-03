@@ -7,7 +7,7 @@ import { CoinMarketData } from "../config/api"
 import CoinChart from "../components/CoinChart"
 import axios from "axios"
 import ReactHtmlParser from "react-html-parser"
-import { numberWithCommas } from "../utils/utils"
+import { numberWithCommas, formatDate } from "../utils/utils"
 
 
 
@@ -131,7 +131,7 @@ const Coin = () => {
               {currency === "USD" && coin?.market_data.ath[currency.toLowerCase()] > 1 ?
                 numberWithCommas(coin?.market_data.ath[currency.toLowerCase()]) 
                 : coin?.market_data.ath[currency.toLowerCase()]
-              } on {coin?.market_data.ath_date[currency.toLowerCase()]}
+              } on {formatDate(coin?.market_data.ath_date[currency.toLowerCase()])}
             </Typography>
           </span>
           <span>
@@ -143,8 +143,9 @@ const Coin = () => {
               {currency === "USD" && coin?.market_data.atl[currency.toLowerCase()] > 1 ?
                 numberWithCommas(coin?.market_data.atl[currency.toLowerCase()]) 
                 : coin?.market_data.atl[currency.toLowerCase()]
-              } on {coin?.market_data.atl_date[currency.toLowerCase()]}
+              } on {formatDate(coin?.market_data.atl_date[currency.toLowerCase()])}
             </Typography>
+          
           </span>
         </div>
       </div>
