@@ -123,7 +123,7 @@ const Coin = () => {
               ATH:
             </Typography>
             <Typography>
-              {symbol}{" "}{coin?.market_data.ath.usd} on {coin?.market_data.ath_date.usd}
+              {symbol}{" "}{coin?.market_data.ath[currency.toLowerCase()]} on {coin?.market_data.ath_date[currency.toLowerCase()]}
             </Typography>
           </span>
           <span>
@@ -131,7 +131,7 @@ const Coin = () => {
               ATL:
             </Typography>
             <Typography>
-              {symbol}{" "}{coin?.market_data.atl.usd} on { coin?.market_data.atl_date.usd }
+              {symbol}{" "}{coin?.market_data.atl[currency.toLowerCase()]} on { coin?.market_data.atl_date[currency.toLowerCase()] }
             </Typography>
           </span>
         </div>
