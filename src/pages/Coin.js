@@ -99,7 +99,7 @@ const Coin = () => {
               Current Price: 
             </Typography>
             <Typography>
-              {symbol}{" "}{coin?.market_data.current_price[currency.toLowerCase()]}
+              {symbol}{" "}{numberWithCommas(coin?.market_data.current_price[currency.toLowerCase()])}
             </Typography>
           </span>
           <span>
@@ -107,7 +107,7 @@ const Coin = () => {
               Market Cap: 
             </Typography>
             <Typography>
-              {symbol}{" "}{coin?.market_data.market_cap.usd}
+              {symbol}{" "}{numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()])}
             </Typography>
           </span>
           <span>
