@@ -1,5 +1,5 @@
 import "../App.css"
-import { makeStyles, Typography } from "@material-ui/core"
+import { makeStyles, Typography, LinearProgress } from "@material-ui/core"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import { CurrencyState } from "../CurrencyContext"
@@ -66,6 +66,8 @@ const Coin = () => {
   }, [])
 
   const classes = useStyles()
+
+  if (!coin) return <LinearProgress />
 
   return(
     <div className={classes.container}>
