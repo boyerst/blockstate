@@ -86,7 +86,7 @@ const Coin = () => {
           {ReactHtmlParser(coin?.description.en.split(". ")[0])}.
         </Typography>
         <div>
-          <span>
+          <span style ={{ display: "flex" }}>
             <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
               Rank: 
             </Typography>
@@ -94,7 +94,7 @@ const Coin = () => {
               {coin?.market_cap_rank}
             </Typography>
           </span>
-          <span>
+          <span style ={{ display: "flex" }}>
             <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
               Current Price: 
             </Typography>
@@ -106,7 +106,7 @@ const Coin = () => {
               } 
             </Typography>
           </span>
-          <span>
+          <span style ={{ display: "flex" }}>
             <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
               Market Cap: 
             </Typography>
@@ -114,7 +114,7 @@ const Coin = () => {
               {symbol}{" "}{numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()])}
             </Typography>
           </span>
-          <span>
+          <span style ={{ display: "flex" }}>
             <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
               Circulating / { coin?.market_data.max_supply ? "Max Supply" : "Total Supply"}:
             </Typography>
@@ -122,7 +122,7 @@ const Coin = () => {
               {numberWithCommas(coin?.market_data.circulating_supply.toFixed(2))} / { numberWithCommas(coin?.market_data.max_supply || coin?.market_data.total_supply.toFixed(2)) }
             </Typography>
           </span>
-          <span>
+          <span style ={{ display: "flex" }}>
             <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
               ATH:
             </Typography>
@@ -134,7 +134,7 @@ const Coin = () => {
               } on {formatDate(coin?.market_data.ath_date[currency.toLowerCase()])}
             </Typography>
           </span>
-          <span>
+          <span style ={{ display: "flex" }}>
             <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
               ATL:
             </Typography>
