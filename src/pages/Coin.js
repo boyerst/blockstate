@@ -6,7 +6,8 @@ import { CurrencyState } from "../CurrencyContext"
 import { CoinMarketData } from "../config/api"
 import CoinChart from "../components/CoinChart"
 import axios from "axios"
-import ReactHtmlParser from 'react-html-parser'
+import ReactHtmlParser from "react-html-parser"
+import { numberWithCommas } from "../utils/utils"
 
 
 
@@ -96,7 +97,7 @@ const Coin = () => {
               Current Price: 
             </Typography>
             <Typography>
-              {symbol}{" "}{coin?.market_data.current_price.usd}
+              {symbol}{" "}{coin?.market_data.current_price[currency.toLowerCase()]}
             </Typography>
           </span>
           <span>
