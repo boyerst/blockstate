@@ -11,6 +11,7 @@ import ReactHtmlParser from 'react-html-parser'
 
 
 
+
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
@@ -95,7 +96,7 @@ const Coin = () => {
               Current Price: 
             </Typography>
             <Typography>
-              {coin?.market_data.current_price.usd}
+              {symbol}{" "}{coin?.market_data.current_price.usd}
             </Typography>
           </span>
           <span>
@@ -103,7 +104,7 @@ const Coin = () => {
               Market Cap: 
             </Typography>
             <Typography>
-              {coin?.market_data.market_cap.usd}
+              {symbol}{" "}{coin?.market_data.market_cap.usd}
             </Typography>
           </span>
           <span>
@@ -119,7 +120,7 @@ const Coin = () => {
               ATH:
             </Typography>
             <Typography>
-              $ {coin?.market_data.ath.usd} on { coin?.market_data.ath_date.usd }
+              {symbol}{" "}{coin?.market_data.ath.usd} on {coin?.market_data.ath_date.usd}
             </Typography>
           </span>
           <span>
@@ -127,7 +128,7 @@ const Coin = () => {
               ATL:
             </Typography>
             <Typography>
-              $ {coin?.market_data.atl.usd} on { coin?.market_data.atl_date.usd }
+              {symbol}{" "}{coin?.market_data.atl.usd} on { coin?.market_data.atl_date.usd }
             </Typography>
           </span>
         </div>
