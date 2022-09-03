@@ -99,7 +99,11 @@ const Coin = () => {
               Current Price: 
             </Typography>
             <Typography>
-              {symbol}{" "}{numberWithCommas(coin?.market_data.current_price[currency.toLowerCase()])}
+              {symbol}{" "}
+              {currency === "USD" && coin?.market_data.current_price[currency.toLowerCase()] > 1 ?
+                numberWithCommas(coin?.market_data.current_price[currency.toLowerCase()]) 
+                : coin?.market_data.current_price[currency.toLowerCase()]
+              } 
             </Typography>
           </span>
           <span>
@@ -124,7 +128,7 @@ const Coin = () => {
             </Typography>
             <Typography>
               {symbol}{" "}
-              {currency === "USD" && coin?.market_data.ath > 1 ?
+              {currency === "USD" && coin?.market_data.ath[currency.toLowerCase()] > 1 ?
                 numberWithCommas(coin?.market_data.ath[currency.toLowerCase()]) 
                 : coin?.market_data.ath[currency.toLowerCase()]
               } on {coin?.market_data.ath_date[currency.toLowerCase()]}
@@ -136,7 +140,7 @@ const Coin = () => {
             </Typography>
             <Typography>
               {symbol}{" "}
-              {currency === "USD" && coin?.market_data.atl > 1 ?
+              {currency === "USD" && coin?.market_data.atl[currency.toLowerCase()] > 1 ?
                 numberWithCommas(coin?.market_data.atl[currency.toLowerCase()]) 
                 : coin?.market_data.atl[currency.toLowerCase()]
               } on {coin?.market_data.atl_date[currency.toLowerCase()]}
