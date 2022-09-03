@@ -115,7 +115,7 @@ const Coin = () => {
               Circulating / { coin?.market_data.max_supply ? "Max Supply" : "Total Supply"}:
             </Typography>
             <Typography>
-              {coin?.market_data.circulating_supply} / { coin?.market_data.max_supply || coin?.market_data.total_supply }
+              {numberWithCommas(coin?.market_data.circulating_supply.toFixed(2))} / { numberWithCommas(coin?.market_data.max_supply || coin?.market_data.total_supply.toFixed(2)) }
             </Typography>
           </span>
           <span>
