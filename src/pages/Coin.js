@@ -104,20 +104,20 @@ const Coin = () => {
         </Typography>
         <div className={classes.marketData}>
           <span style ={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading}>
+            <Typography variant="h6" className={classes.heading}>
               Rank: 
             </Typography>
             &nbsp; &nbsp;
-            <Typography variant="h5" style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
               {coin?.market_cap_rank}
             </Typography>
           </span>
           <span style ={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading}>
+            <Typography variant="h6" className={classes.heading}>
               Current Price: 
             </Typography>
             &nbsp; &nbsp;
-            <Typography variant="h5" style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
               {symbol}{" "}
               {currency === "USD" && coin?.market_data.current_price[currency.toLowerCase()] > 1 ?
                 numberWithCommas(coin?.market_data.current_price[currency.toLowerCase()]) 
@@ -126,29 +126,29 @@ const Coin = () => {
             </Typography>
           </span>
           <span style ={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading}>
+            <Typography variant="h6" className={classes.heading}>
               Market Cap: 
             </Typography>
             &nbsp; &nbsp;
-            <Typography variant="h5" style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
               {symbol}{" "}{numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()])}
             </Typography>
           </span>
           <span style ={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading}>
+            <Typography variant="h6" className={classes.heading}>
               Circulating / { coin?.market_data.max_supply ? "Max Supply" : "Total Supply"}:
             </Typography>
             &nbsp; &nbsp;
-            <Typography variant="h5" style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
               {numberWithCommas(coin?.market_data.circulating_supply.toFixed(2))} / { numberWithCommas(coin?.market_data.max_supply || coin?.market_data.total_supply.toFixed(2)) }
             </Typography>
           </span>
           <span style ={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading}>
+            <Typography variant="h6" className={classes.heading}>
               ATH:
             </Typography>
             &nbsp; &nbsp;
-            <Typography variant="h5" style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
               {symbol}{" "}
               {currency === "USD" && coin?.market_data.ath[currency.toLowerCase()] > 1 ?
                 numberWithCommas(coin?.market_data.ath[currency.toLowerCase()]) 
@@ -157,11 +157,11 @@ const Coin = () => {
             </Typography>
           </span>
           <span style ={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading}>
+            <Typography variant="h6" className={classes.heading}>
               ATL:
             </Typography>
             &nbsp; &nbsp;
-            <Typography variant="h5" style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
               {symbol}{" "}
               {currency === "USD" && coin?.market_data.atl[currency.toLowerCase()] > 1 ?
                 numberWithCommas(coin?.market_data.atl[currency.toLowerCase()]) 
