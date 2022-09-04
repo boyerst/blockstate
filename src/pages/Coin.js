@@ -104,7 +104,7 @@ const Coin = () => {
         </Typography>
         <div className={classes.marketData}>
           <span style ={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h5" className={classes.heading}>
               Rank: 
             </Typography>
             <Typography>
@@ -112,7 +112,7 @@ const Coin = () => {
             </Typography>
           </span>
           <span style ={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h5" className={classes.heading}>
               Current Price: 
             </Typography>
             <Typography>
@@ -124,7 +124,7 @@ const Coin = () => {
             </Typography>
           </span>
           <span style ={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h5" className={classes.heading}>
               Market Cap: 
             </Typography>
             <Typography>
@@ -132,7 +132,7 @@ const Coin = () => {
             </Typography>
           </span>
           <span style ={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h5" className={classes.heading}>
               Circulating / { coin?.market_data.max_supply ? "Max Supply" : "Total Supply"}:
             </Typography>
             <Typography>
@@ -140,7 +140,7 @@ const Coin = () => {
             </Typography>
           </span>
           <span style ={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h5" className={classes.heading}>
               ATH:
             </Typography>
             <Typography>
@@ -152,7 +152,7 @@ const Coin = () => {
             </Typography>
           </span>
           <span style ={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h5" className={classes.heading}>
               ATL:
             </Typography>
             <Typography>
