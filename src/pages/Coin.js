@@ -47,7 +47,9 @@ const useStyles = makeStyles((theme) => ({
   },
   marketData: {
     alignSelf: "start",
-    padding: 25
+    padding: 25,
+    paddingTop: 10,
+    width: "100%"
   }
 }))
 
