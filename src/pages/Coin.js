@@ -114,6 +114,15 @@ const Coin = () => {
           </span>
           <span style ={{ display: "flex" }}>
             <Typography variant="h6" className={classes.heading}>
+              Market Cap: 
+            </Typography>
+            &nbsp; &nbsp;
+            <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
+              {symbol}{" "}{numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()])}
+            </Typography>
+          </span>
+          <span style ={{ display: "flex" }}>
+            <Typography variant="h6" className={classes.heading}>
               Current Price: 
             </Typography>
             &nbsp; &nbsp;
@@ -127,15 +136,6 @@ const Coin = () => {
           </span>
           <span style ={{ display: "flex" }}>
             <Typography variant="h6" className={classes.heading}>
-              Market Cap: 
-            </Typography>
-            &nbsp; &nbsp;
-            <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
-              {symbol}{" "}{numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()])}
-            </Typography>
-          </span>
-          <span style ={{ display: "flex" }}>
-            <Typography variant="h6" className={classes.heading}>
               Circulating Supply:
             </Typography>
             &nbsp; &nbsp;
@@ -145,11 +145,11 @@ const Coin = () => {
           </span>
           <span style ={{ display: "flex" }}>
             <Typography variant="h6" className={classes.heading}>
-              { coin?.market_data.max_supply ? "Max Supply" : "Total Supply"}:
+              {coin?.market_data.max_supply ? "Max Supply" : "Total Supply"}:
             </Typography>
             &nbsp; &nbsp;
             <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
-              { numberWithCommas(coin?.market_data.max_supply || coin?.market_data.total_supply.toFixed(2)) }
+              {numberWithCommas(coin?.market_data.max_supply || coin?.market_data.total_supply.toFixed(2))}
             </Typography>
           </span>
           <span style ={{ display: "flex" }}>
