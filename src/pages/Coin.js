@@ -107,7 +107,7 @@ const Coin = () => {
             <Typography variant="h5" className={classes.heading}>
               Rank: 
             </Typography>
-            <Typography>
+            <Typography variant="h5" style={{ fontFamily: "Open Sans" }}>
               {coin?.market_cap_rank}
             </Typography>
           </span>
@@ -115,7 +115,7 @@ const Coin = () => {
             <Typography variant="h5" className={classes.heading}>
               Current Price: 
             </Typography>
-            <Typography>
+            <Typography variant="h5" style={{ fontFamily: "Open Sans" }}>
               {symbol}{" "}
               {currency === "USD" && coin?.market_data.current_price[currency.toLowerCase()] > 1 ?
                 numberWithCommas(coin?.market_data.current_price[currency.toLowerCase()]) 
@@ -127,7 +127,7 @@ const Coin = () => {
             <Typography variant="h5" className={classes.heading}>
               Market Cap: 
             </Typography>
-            <Typography>
+            <Typography variant="h5" style={{ fontFamily: "Open Sans" }}>
               {symbol}{" "}{numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()])}
             </Typography>
           </span>
@@ -135,7 +135,7 @@ const Coin = () => {
             <Typography variant="h5" className={classes.heading}>
               Circulating / { coin?.market_data.max_supply ? "Max Supply" : "Total Supply"}:
             </Typography>
-            <Typography>
+            <Typography variant="h5" style={{ fontFamily: "Open Sans" }}>
               {numberWithCommas(coin?.market_data.circulating_supply.toFixed(2))} / { numberWithCommas(coin?.market_data.max_supply || coin?.market_data.total_supply.toFixed(2)) }
             </Typography>
           </span>
@@ -143,7 +143,7 @@ const Coin = () => {
             <Typography variant="h5" className={classes.heading}>
               ATH:
             </Typography>
-            <Typography>
+            <Typography variant="h5" style={{ fontFamily: "Open Sans" }}>
               {symbol}{" "}
               {currency === "USD" && coin?.market_data.ath[currency.toLowerCase()] > 1 ?
                 numberWithCommas(coin?.market_data.ath[currency.toLowerCase()]) 
@@ -155,7 +155,7 @@ const Coin = () => {
             <Typography variant="h5" className={classes.heading}>
               ATL:
             </Typography>
-            <Typography>
+            <Typography variant="h5" style={{ fontFamily: "Open Sans" }}>
               {symbol}{" "}
               {currency === "USD" && coin?.market_data.atl[currency.toLowerCase()] > 1 ?
                 numberWithCommas(coin?.market_data.atl[currency.toLowerCase()]) 
