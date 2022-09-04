@@ -44,6 +44,10 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: 15,
     paddingTop: 0,
     textAlign: "justify"
+  },
+  marketData: {
+    alignSelf: "start",
+    padding: 25
   }
 }))
 
@@ -85,7 +89,7 @@ const Coin = () => {
         <Typography variant="subtitle1" className={classes.description}>
           {ReactHtmlParser(coin?.description.en.split(". ")[0])}.
         </Typography>
-        <div>
+        <div className={classes.marketData}>
           <span style ={{ display: "flex" }}>
             <Typography variant="h5" className={classes.heading} style={{ fontFamily: "Open Sans" }}>
               Rank: 
