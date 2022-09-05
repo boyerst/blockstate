@@ -181,7 +181,7 @@ const Coin = () => {
           </span>
         </div>
       </div>
-      <CoinChart />
+      <CoinChart coin={coin} />
     </div>       
   ) 
 }
