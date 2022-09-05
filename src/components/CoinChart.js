@@ -18,7 +18,7 @@ const CoinChart = (coin) => {
 
   useEffect(() => {
     fetchCoinHistoricData()    
-  }, [])
+  }, [currency, days])
 
   console.log("CoinHistoricData: ", CoinHistoricData)
   console.log("historicalData: ", historicalData)
