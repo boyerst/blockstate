@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { CurrencyState } from "../CurrencyContext"
+import { CoinHistoricData } from "../config/api"
+import axios from "axios"
 
 
 const CoinChart = () => {
@@ -9,11 +11,20 @@ const CoinChart = () => {
 
   const { currency, symbol } = CurrencyState()
 
+  const fetchCoinHistoricData = async () => {
+    const { data } = await axios.get(CoinHistoricData(coin.id, days, currency))
+    setHistoricalData(data.prices)    
+  }
+
+  console.log("CoinHistoricData: ", CoinHistoricData)
+
+
   return (
     <div>
       CoinChart
     </div>
   )
 }
+
 
 export default CoinChart
