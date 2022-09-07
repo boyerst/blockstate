@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { CurrencyState } from "../CurrencyContext"
-import { makeStyles } from "@material-ui/core"
+import { makeStyles, CircularProgress } from "@material-ui/core"
 import { CoinHistoricData } from "../config/api"
 import axios from "axios"
 import { chartDays } from "../config/chartData";
@@ -42,7 +42,6 @@ const CoinChart = (coin) => {
       console.error(err.response.headers); // ***
     } finally {
       setHistoricalData(data.prices)    
-
     }
   }
 
@@ -58,7 +57,14 @@ const CoinChart = (coin) => {
 
   return (
     <div className={classes.container}>
-      CoinChart
+      {
+        !historicalData ? (
+          <CircularProgress />
+        ) : (
+          <>
+          </>
+        )
+      }
     </div>
   )
 }
