@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const CoinChart = (coin) => {
+const CoinChart = ( {coin} ) => {
 
   const [historicalData, setHistoricalData] = useState()
   const [days, setDays] = useState(1)
@@ -33,16 +33,8 @@ const CoinChart = (coin) => {
   const { currency } = CurrencyState()
 
   const fetchCoinHistoricData = async () => {
-    try {
-      const { data } = await axios.get(CoinHistoricData(coin.id, days, currency))
-    } catch (err) {
-      console.error("Error response:");
-      console.error(err.response.data);    // ***
-      console.error(err.response.status);  // ***
-      console.error(err.response.headers); // ***
-    } finally {
-      setHistoricalData(data.prices)    
-    }
+    const { data } = await axios.get(CoinHistoricData(coin.id, days, currency))
+    setHistoricalData(data.prices)    
   }
 
   useEffect(() => {
