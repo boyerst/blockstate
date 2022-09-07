@@ -33,8 +33,17 @@ const CoinChart = (coin) => {
   const { currency } = CurrencyState()
 
   const fetchCoinHistoricData = async () => {
-    const { data } = await axios.get(CoinHistoricData(coin.id, days, currency))
-    setHistoricalData(data.prices)    
+    try {
+      const { data } = await axios.get(CoinHistoricData(coin.id, days, currency))
+    } catch (err) {
+      console.error("Error response:");
+      console.error(err.response.data);    // ***
+      console.error(err.response.status);  // ***
+      console.error(err.response.headers); // ***
+    } finally {
+      setHistoricalData(data.prices)    
+
+    }
   }
 
   useEffect(() => {
