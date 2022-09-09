@@ -5,8 +5,8 @@ import { CoinHistoricData } from "../config/api"
 import axios from "axios"
 import { chartDays } from "../config/chartData"
 import { Line } from "react-chartjs-2"
-import { Chart as ChartJS, CategoryScale } from 'chart.js'
-ChartJS.register(CategoryScale)
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js'
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
 
 const useStyles = makeStyles((theme) => ({
@@ -70,7 +70,13 @@ const CoinChart = ( {coin} ) => {
                     : `${date.getHours()}:${date.getMinutes()} AM`
                   return days === 1 ? time : date.toLocaleString()
                 }),
-                
+                datasets: [
+                  {
+                    data: historicalData.map((coin) => coin[1]),
+                    label: `Price ( Past ${days} Days ) in ${currency}`,
+                    borderColor: "#0582CA",
+                  },
+                ],
               }}
                   
             />
