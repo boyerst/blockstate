@@ -3,7 +3,10 @@ import { CurrencyState } from "../CurrencyContext"
 import { makeStyles, CircularProgress } from "@material-ui/core"
 import { CoinHistoricData } from "../config/api"
 import axios from "axios"
-import { chartDays } from "../config/chartData";
+import { chartDays } from "../config/chartData"
+import { Line } from "react-chartjs-2"
+import { Chart as ChartJS, CategoryScale } from 'chart.js'
+ChartJS.register(CategoryScale)
 
 
 const useStyles = makeStyles((theme) => ({
@@ -58,6 +61,19 @@ const CoinChart = ( {coin} ) => {
           />
         ) : (
           <>
+            <Line 
+              data={{
+                labels: historicalData.map((coin) => {  
+                  let date = new Date(coin[0])
+                  let time = date.getHours() > 12
+                    ? `${date.getHours() - 12}:${date.getMinutes()} PM`
+                    : `${date.getHours()}:${date.getMinutes()} AM`
+                  return days === 1 ? time : date.toLocaleString()
+                }),
+                
+              }}
+                  
+            />
           </>
         )
       }
