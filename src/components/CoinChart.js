@@ -75,8 +75,15 @@ const CoinChart = ( {coin} ) => {
                     data: historicalData.map((coin) => coin[1]),
                     label: `Price ( Past ${days} Days ) in ${currency}`,
                     borderColor: "#0582CA",
-                  },
-                ],
+                  }
+                ]
+              }}
+              options={{
+                elements: {
+                  point: {
+                    radius: 1
+                  }
+                }
               }}
                   
             />
