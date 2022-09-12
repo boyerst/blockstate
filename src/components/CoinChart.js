@@ -85,8 +85,19 @@ const CoinChart = ( {coin} ) => {
                   }
                 }
               }}
-                  
             />
+            <div
+              style={{
+                display: "flex",
+                marginTop: 20,
+                justifyContent: "space-around",
+                width: "100%"
+              }}
+            >
+              {chartDays.map((day) => (
+                <button>{day.label}</button>    
+              ))}
+            </div>  
           </>
         )
       }
