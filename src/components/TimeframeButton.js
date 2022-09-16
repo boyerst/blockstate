@@ -7,4 +7,4 @@ const TimeframeButton = ({children}) => {
   )
 }
 
-export default Timeframeutton
+export default TimeframeButton
