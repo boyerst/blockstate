@@ -1,9 +1,17 @@
+import { makeStyles } from "@material-ui/core"
+
+
+const useStyles = makeStyles(() => ({
+      
+}))
+
 const TimeframeButton = ({children}) => {
 
+
   return(
-    <div>
+    <span>
       {children}
-    </div>
+    </span>
   )
 }
 
