@@ -96,9 +96,9 @@ const CoinChart = ( {coin} ) => {
               }}
             >
               {chartDays.map((day) => (
-                <button
+                <TimeframeButton
                   key={day.value}
-                >{day.label}</button>    
+                >{day.label}</TimeframeButton>    
               ))}
             </div>  
           </>
