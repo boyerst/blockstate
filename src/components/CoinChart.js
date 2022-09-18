@@ -98,7 +98,10 @@ const CoinChart = ( {coin} ) => {
               {chartDays.map((day) => (
                 <TimeframeButton
                   key={day.value}
-                >{day.label}</TimeframeButton>    
+                  onClick={() => {setDays(day.value)}}
+                >
+                  {day.label}  
+                </TimeframeButton>    
               ))}
             </div>  
           </>

@@ -5,11 +5,11 @@ const useStyles = makeStyles(() => ({
       
 }))
 
-const TimeframeButton = ({children}) => {
+const TimeframeButton = ({children, onClick}) => {
 
 
   return(
-    <span>
+    <span onClick={onClick}>
       {children}
     </span>
   )
