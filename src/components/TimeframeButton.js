@@ -5,7 +5,7 @@ const useStyles = makeStyles(() => ({
       
 }))
 
-const TimeframeButton = ({children, onClick}) => {
+const TimeframeButton = ({children, onClick, selected}) => {
 
 
   return(
