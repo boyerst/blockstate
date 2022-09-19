@@ -29,6 +29,7 @@ const useStyles = makeStyles({
     padding: 10,
     paddingLeft: 20,
     paddingRight: 20,
+    textAlign: "center",
     fontFamily: "Open Sans",
     cursor: "pointer",
     // backgroundColor: selected ? "#0582CA" : "",
