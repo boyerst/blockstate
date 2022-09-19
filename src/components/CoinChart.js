@@ -84,6 +84,18 @@ const CoinChart = ( {coin} ) => {
                   point: {
                     radius: 1
                   }
+                },
+                scales: {
+                  y: {
+                    grid: {
+                      display: false
+                    }
+                  },
+                  x: {
+                    grid: {
+                      display: false
+                    }                    
+                  }
                 }
               }}
             />

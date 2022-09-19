@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    marginTop: 25, 
+    marginTop: 85, 
     borderRight: "2px solid black"
   },
   heading: {
