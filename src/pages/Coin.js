@@ -140,7 +140,7 @@ const Coin = () => {
             </Typography>
             &nbsp; &nbsp;
             <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
-              {numberWithCommas(coin?.market_data.circulating_supply.toFixed(2))}
+              {numberWithCommas(coin?.market_data.circulating_supply)}
             </Typography>
           </span>
           <span style ={{ display: "flex" }}>
@@ -149,7 +149,7 @@ const Coin = () => {
             </Typography>
             &nbsp; &nbsp;
             <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
-              {numberWithCommas(coin?.market_data.max_supply || coin?.market_data.total_supply.toFixed(2))}
+              {numberWithCommas(coin?.market_data.max_supply || coin?.market_data.total_supply)}
             </Typography>
           </span>
           <span style ={{ display: "flex" }}>
