@@ -33,8 +33,9 @@ const CoinChart = ( {coin} ) => {
 
   const [historicalData, setHistoricalData] = useState()
   const [days, setDays] = useState(1)
-
   const { currency } = CurrencyState()
+
+
 
   const fetchCoinHistoricData = async () => {
     const { data } = await axios.get(CoinHistoricData(coin.id, days, currency))
@@ -110,8 +111,11 @@ const CoinChart = ( {coin} ) => {
               {chartDays.map((day) => (
                 <TimeframeButton
                   key={day.value}
-                  onClick={() => setDays(day.value)}
-                  selected={day.value === days}
+                  onClick={() => {setDays(days.value);
+                    // console.log("🔥🔥🔥🔥🔥🔥day.value: ", day.value)
+                    // console.log("☎️☎️☎️☎️☎️☎️ days: ",  days)
+                  }}
+                  // selected={day.value === days}
                 >
                   {day.label}  
                 </TimeframeButton>    
