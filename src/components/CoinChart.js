@@ -27,6 +27,30 @@ const useStyles = makeStyles((theme) => ({
       paddingTop: 0,
     },
   },
+  selectButton: {
+    border: "1px solid #0582CA",
+    borderRadius: 5,
+    padding: 10,
+    paddingLeft: 20,
+    paddingRight: 20,
+    textAlign: "center",
+    fontFamily: "Open Sans",
+    fontWeight: 500,
+    cursor: "pointer",
+    "&:hover": {
+      backgroundColor: "#0582CA",
+      color: "black",
+    },
+    width: "22%",
+    margin: 5
+  },
+  selected: {
+    "&&": {
+      backgroundColor: "#0582CA",
+      color: "black",
+      fontWeight: 700
+    }
+  }
 }))
 
 
@@ -119,13 +143,12 @@ const CoinChart = ( {coin} ) => {
                 <ToggleButton
                   key={day.value}
                   onClick={() => {setDays(day.value);
-                    console.log("🔥🔥🔥🔥🔥🔥day.value: ", day.value)
-                    console.log("day: ", day)
-                    console.log("☎️☎️☎️☎️☎️☎️ days: ", days)
-                    printDays()
                     setSelected(!selected)
                   }}
                   selected={day.value === days}
+                  value=""
+                  className={classes.selectButton}
+                  classes={{ selected: classes.selected }}
                 >
                   {day.label}  
                 </ToggleButton>    
