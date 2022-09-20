@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { CurrencyState } from "../CurrencyContext"
 import { makeStyles, CircularProgress } from "@material-ui/core"
+import { ToggleButton } from "@material-ui/lab"
 import { CoinHistoricData } from "../config/api"
 import axios from "axios"
 import { chartDays } from "../config/chartData"
@@ -32,8 +33,10 @@ const useStyles = makeStyles((theme) => ({
 const CoinChart = ( {coin} ) => {
 
   const [historicalData, setHistoricalData] = useState()
-  const [days, setDays] = useState(1)
+  const [days = 1, setDays] = useState()
   const { currency } = CurrencyState()
+  const [selected, setSelected] = useState(false)
+
 
 
 
@@ -46,11 +49,15 @@ const CoinChart = ( {coin} ) => {
     fetchCoinHistoricData()    
   }, [currency, days])
 
+
   console.log("CoinHistoricData: ", CoinHistoricData)
   console.log("historicalData: ", historicalData)
 
   const classes = useStyles()
 
+  const printDays = async () => {
+    console.log(days)
+  }
 
   return (
     <div className={classes.container}>
@@ -109,16 +116,19 @@ const CoinChart = ( {coin} ) => {
               }}
             >
               {chartDays.map((day) => (
-                <TimeframeButton
+                <ToggleButton
                   key={day.value}
-                  onClick={() => {setDays(days.value);
-                    // console.log("🔥🔥🔥🔥🔥🔥day.value: ", day.value)
-                    // console.log("☎️☎️☎️☎️☎️☎️ days: ",  days)
+                  onClick={() => {setDays(day.value);
+                    console.log("🔥🔥🔥🔥🔥🔥day.value: ", day.value)
+                    console.log("day: ", day)
+                    console.log("☎️☎️☎️☎️☎️☎️ days: ", days)
+                    printDays()
+                    setSelected(!selected)
                   }}
-                  // selected={day.value === days}
+                  selected={day.value === days}
                 >
                   {day.label}  
-                </TimeframeButton>    
+                </ToggleButton>    
               ))}
             </div>  
           </>
