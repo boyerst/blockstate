@@ -28,7 +28,7 @@ const Header = (props) => {
 
   return(
     <AppBar color='transparent' position='static' >
-      <Container>
+      <Container maxWidth="xl">
         <Toolbar>
           <Typography 
             className={classes.title}
@@ -37,20 +37,25 @@ const Header = (props) => {
           >
             BlockState
           </Typography>
-          <Select 
-            variant="outlined"
-            style={{
-              width: 100,
-              height: 40, 
-              marginLeft: 15
-            }}
-            value={currency}
-            onChange={(e) => setCurrency(e.target.value)}
-            >
-            <MenuItem value={"USD"}>USD</MenuItem>
-            <MenuItem value={"BTC"}>BTC</MenuItem>
-          </Select>
-          <Switch checked={props.darkMode} onChange={() => props.handleDarkMode()}/>
+          <div style={{marginTop: 20}}>
+            <Select 
+              variant="outlined"
+              style={{
+                width: 100,
+                height: 40, 
+                marginLeft: 5
+              }}
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value)}
+              >
+              <MenuItem value={"USD"}>USD</MenuItem>
+              <MenuItem value={"BTC"}>BTC</MenuItem>
+            </Select>
+            <Switch 
+              checked={props.darkMode} 
+              onChange={() => props.handleDarkMode()}
+            />
+          </div>
         </Toolbar>
       </Container>
     </AppBar>
