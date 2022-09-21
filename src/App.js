@@ -1,5 +1,6 @@
 import "./App.css"
 import { BrowserRouter, Route } from "react-router-dom"
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { makeStyles, createTheme, ThemeProvider, Paper } from "@material-ui/core"
 import { useState } from "react"
 import Header from "./components/Header"
@@ -21,12 +22,12 @@ function App() {
   // const classes = useStyles()
 
   const [darkMode, setDarkMode] = useState(false)
-
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
 
 
   const theme = createTheme({
     palette: {
-      type: darkMode ? 'dark' : 'light',
+      type: prefersDarkMode ? 'dark' : 'light',
     },
   });
   
