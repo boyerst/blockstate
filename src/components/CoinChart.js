@@ -84,7 +84,7 @@ const CoinChart = ( {coin} ) => {
         !historicalData ? (
           <CircularProgress
             style={{ color: "#0582CA" }}
-            size={350}
+            size={150}
             thickness={1}
           />
         ) : (
