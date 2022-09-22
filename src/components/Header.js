@@ -37,25 +37,23 @@ const Header = (props) => {
           >
             BlockState
           </Typography>
-          <div style={{marginTop: 20}}>
-            <Select 
-              variant="outlined"
-              style={{
-                width: 100,
-                height: 40, 
-                marginLeft: 5
-              }}
-              value={currency}
-              onChange={(e) => setCurrency(e.target.value)}
-              >
-              <MenuItem value={"USD"}>USD</MenuItem>
-              <MenuItem value={"BTC"}>BTC</MenuItem>
-            </Select>
-            <Switch 
-              checked={props.darkMode} 
-              onChange={() => props.handleDarkMode()}
-            />
-          </div>
+          <Select 
+            variant="outlined"
+            style={{
+              width: 100,
+              height: 40, 
+              marginLeft: 5
+            }}
+            value={currency}
+            onChange={(e) => setCurrency(e.target.value)}
+            >
+            <MenuItem value={"USD"}>USD</MenuItem>
+            <MenuItem value={"BTC"}>BTC</MenuItem>
+          </Select>
+          <Switch 
+            checked={props.darkMode} 
+            onChange={() => props.handleDarkMode()}
+          />
         </Toolbar>
       </Container>
     </AppBar>
