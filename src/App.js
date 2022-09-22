@@ -8,6 +8,7 @@ import Coin from "./pages/Coin"
 
 
 
+
 function App() {
 
   const [darkMode, setDarkMode] = useState(true)

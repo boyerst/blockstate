@@ -74,6 +74,8 @@ const CoinChart = ( {coin} ) => {
 
   console.log("CoinHistoricData: ", CoinHistoricData)
   console.log("historicalData: ", historicalData)
+  const env = process.env.ESLINT_NO_DEV_ERRORS
+  console.log("🟢🟢🟢🟢🟢🟢🟢🟢ENV: ", env)
 
   const classes = useStyles()
 
