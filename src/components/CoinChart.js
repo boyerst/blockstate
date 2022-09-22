@@ -74,8 +74,8 @@ const CoinChart = ( {coin} ) => {
 
   console.log("CoinHistoricData: ", CoinHistoricData)
   console.log("historicalData: ", historicalData)
-  const env = process.env.ESLINT_NO_DEV_ERRORS
-  console.log("🟢🟢🟢🟢🟢🟢🟢🟢ENV: ", env)
+
+
 
   const classes = useStyles()
 
@@ -143,7 +143,7 @@ const CoinChart = ( {coin} ) => {
                     setSelected(!selected)
                   }}
                   selected={day.value === days}
-                  value=""
+                  value="toggle"
                   className={classes.selectButton}
                   classes={{ selected: classes.selected }}
                 >
