@@ -11,7 +11,7 @@ const CurrencyContext = ({children}) => {
   useEffect(() => {
     if (currency === "USD") setSymbol("$")
     else if (currency === "BTC") setSymbol("₿")
-  })
+  }, [currency])
 
 
   return(
