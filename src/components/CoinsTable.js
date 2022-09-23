@@ -30,6 +30,9 @@ const useStyles = makeStyles(() => ({
       backgroundColor: "red"
     }
   },
+  data: {
+    fontSize: "16px"
+  },
   pagination: {
     "& .MuiPaginationItem-root": {
       color: "red"
@@ -63,7 +66,7 @@ const CoinsTable = () => {
   }, [currency])
 
 
-  console.log("AllCoinsMarketData: ", coins)
+  // console.log("AllCoinsMarketData: ", coins)
 
 
   const handleSearch = () => {
@@ -159,21 +162,28 @@ const CoinsTable = () => {
                           </span>
                         </div>
                       </TableCell>
-                      <TableCell align="right">
+                      <TableCell 
+                        className={classes.data}
+                        align="right"
+                      >
                         {symbol}{" "}
                         {numberWithCommas(row.current_price.toFixed(2))}
                       </TableCell>
                       <TableCell 
+                        className={classes.data}
                         align="right"
                         style={{
                           color: profit > 0 ? "rgb(14, 203, 129)"  : "red",
-                          fontWeight: 600
+                          fontWeight: 400,
                         }}
                       >
                         {profit && "+"}
-                        {row.price_change_percentage_24h}
+                        {row.price_change_percentage_24h.toFixed(2)}%
                       </TableCell>
-                      <TableCell align="right">
+                      <TableCell 
+                        className={classes.data}
+                        align="right"
+                      >
                         {symbol}{" "}
                         {numberWithCommas(row.market_cap.toString())}
                       </TableCell>

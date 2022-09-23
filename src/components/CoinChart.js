@@ -72,8 +72,8 @@ const CoinChart = ( {coin} ) => {
   }, [currency, days])
 
 
-  console.log("CoinHistoricData: ", CoinHistoricData)
-  console.log("historicalData: ", historicalData)
+  // console.log("CoinHistoricData: ", CoinHistoricData)
+  // console.log("historicalData: ", historicalData)
 
 
 
