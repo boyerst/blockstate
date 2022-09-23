@@ -27,7 +27,7 @@ const useStyles = makeStyles(() => ({
     fontFamily: "Open Sans",
     cursor: "pointer",
     "&:hover": {
-      backgroundColor: "red"
+      backgroundColor: "#0582CA"
     }
   },
   data: {
@@ -35,7 +35,7 @@ const useStyles = makeStyles(() => ({
   },
   pagination: {
     "& .MuiPaginationItem-root": {
-      color: "red"
+      color: "#0582CA"
     }
   }
 }))
@@ -129,18 +129,19 @@ const CoinsTable = () => {
                       className={classes.row}
                     >
                       <TableCell
-                        component="th"
+                        // component="th"
                         scope="row"
                         style={{
                           display: "flex",
-                          gap: 15
+                          gap: 15,
+                          flex: 10
                         }}
                       >
                         <img 
                           src={row?.image}
                           alt={row.name}
                           height="50"
-                          style={{ marginBottom: 6 }}
+                          style={{ marginBottom: 10 }}
                         />
                         <div
                           style={{ display: "flex", flexDirection: "column" }}

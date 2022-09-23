@@ -10,7 +10,7 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     flexDirection: "column",
     paddingTop: 25,
-    paddingBottom: 40, 
+    paddingBottom: 140, 
     justifyContent: "space-around"
   },
   titleType: {
