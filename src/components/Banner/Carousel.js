@@ -13,7 +13,8 @@ const useStyles = makeStyles(() => ({
   carousel: {
     height: "50%",
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
+    paddingTop: 20
   },
   carouselItem: {
     display: "flex",

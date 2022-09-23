@@ -9,7 +9,8 @@ const useStyles = makeStyles(() => ({
     height: 400, 
     display: "flex",
     flexDirection: "column",
-    paddingTop: 25, 
+    paddingTop: 25,
+    paddingBottom: 40, 
     justifyContent: "space-around"
   },
   titleType: {
