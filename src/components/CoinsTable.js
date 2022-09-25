@@ -101,11 +101,12 @@ const CoinsTable = () => {
           <Table>
             <TableHead>
               <TableRow>
-                {["Coin", "Price", "24H Change", "Market Cap"].map((head) => (
+                {["Coin", "Price", "24h %", "Market Cap"].map((head) => (
                   <TableCell
                     style={{
                       fontWeight: "700",
-                      fontFamily: "Open Sans"
+                      fontFamily: "Open Sans",
+                      fontSize: 16
                     }}
                     key={head}
                     align={head === "Coin" ? "left" : "right"}
