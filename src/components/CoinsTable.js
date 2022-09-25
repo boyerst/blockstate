@@ -204,7 +204,8 @@ const CoinsTable = () => {
           window.scroll(0, 100)  
         }}
         style={{
-          padding: 30 ,         
+          paddingTop: 40,
+          paddingBottom: 180,         
           width: "100%",
           display: "flex",
           justifyContent: "center"
