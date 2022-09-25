@@ -31,7 +31,7 @@ const Banner = () => {
     <div>
       <Container className={classes.bannerContent}>
         <div className={classes.titleType}>
-          <Typography
+{/*          <Typography
             variant="h2"
             style={{
               fontWeight: "bold",
@@ -40,9 +40,9 @@ const Banner = () => {
             }}
           >
             BlockState
-          </Typography>
-          <Typography
-            variant="subtitle2"
+          </Typography>*/}
+{/*          <Typography
+            variant="h5"
             style={{
               // color: "",
               marginBottom: 20,
@@ -50,7 +50,7 @@ const Banner = () => {
             }}
           >
             The State of The Blockchain
-          </Typography>
+          </Typography>*/}
           <Carousel />
           
         </div>

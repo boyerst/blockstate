@@ -27,15 +27,20 @@ const Header = (props) => {
   const { currency, setCurrency } = CurrencyState()
 
   return(
-    <AppBar color='transparent' position='static' >
+    <AppBar color="transparent" position="static" >
       <Container maxWidth="xl">
         <Toolbar>
           <Typography 
             className={classes.title}
             onClick={() => history.push("/")}
-            variant="h6"
+            variant="h4"
           >
             BlockState
+{/*            <Typography
+              variant="subtitle2"
+            >
+              The State of The Blockchain
+            </Typography>*/}
           </Typography>
           <Select 
             variant="outlined"
