@@ -133,38 +133,41 @@ const CoinsTable = () => {
                       className={classes.row}
                     >
                       <TableCell
-                        // component="th"
+                        component="th"
                         scope="row"
-                        style={{
-                          display: "flex",
-                          gap: 15,
-                          flex: 10
-                        }}
                       >
-                        <img 
-                          src={row?.image}
-                          alt={row.name}
-                          height="50"
-                          style={{ marginBottom: 10 }}
-                        />
                         <div
-                          style={{ display: "flex", flexDirection: "column" }}
+                          style={{
+                            display: "flex", 
+                            gap: 15, 
+                            flex: 10
+                          }}
                         >
-                          <span
-                            style={{
-                              textTransform: "uppercase",
-                              fontSize: 22
-                            }}
+                          <img 
+                            src={row?.image}
+                            alt={row.name}
+                            height="50"
+                            style={{ marginBottom: 10 }}
+                          />
+                          <div
+                            style={{ display: "flex", flexDirection: "column" }}
                           >
-                            {row.symbol}
-                          </span>
-                          <span
-                            style={{
-                              color: "darkgrey"
-                            }}
-                          >
-                            {row.name}
-                          </span>
+                            <span
+                              style={{
+                                textTransform: "uppercase",
+                                fontSize: 22
+                              }}
+                            >
+                              {row.symbol}
+                            </span>
+                            <span
+                              style={{
+                                color: "darkgrey"
+                              }}
+                            >
+                              {row.name}
+                            </span>
+                          </div>
                         </div>
                       </TableCell>
                       <TableCell 
