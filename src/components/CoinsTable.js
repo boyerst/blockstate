@@ -27,7 +27,7 @@ const useStyles = makeStyles(() => ({
     fontFamily: "Open Sans",
     cursor: "pointer",
     "&:hover": {
-      backgroundColor: "#0582CA"
+      backgroundColor: "#0582CA2B"
     }
   },
   data: {
