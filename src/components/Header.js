@@ -11,6 +11,9 @@ const useStyles = makeStyles(() => ({
     fontFamily: "Open Sans",
     fontWeight: "bold",
     cursor: "pointer"
+  },
+  select: {
+    color: "red"
   }
   
 }))

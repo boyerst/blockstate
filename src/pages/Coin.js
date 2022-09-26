@@ -177,7 +177,6 @@ const Coin = () => {
                 : coin?.market_data.atl[currency.toLowerCase()]
               } on {formatDate(coin?.market_data.atl_date[currency.toLowerCase()])}
             </Typography>
-          
           </span>
         </div>
       </div>

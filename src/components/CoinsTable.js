@@ -175,7 +175,9 @@ const CoinsTable = () => {
                         align="right"
                       >
                         {symbol}{" "}
-                        {numberWithCommas(row.current_price.toFixed(2))}
+                        {currency === "USD" ? numberWithCommas(row.current_price.toFixed(2))
+                          : row.id === "bitcoin" ? row.current_price.toFixed(0) 
+                          : row.current_price.toFixed(8)}
                       </TableCell>
                       <TableCell 
                         className={classes.data}
