@@ -108,7 +108,7 @@ const Coin = () => {
               Rank: 
             </Typography>
             &nbsp; &nbsp;
-            <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h6">
               {coin?.market_cap_rank}
             </Typography>
           </span>
@@ -117,7 +117,7 @@ const Coin = () => {
               Market Cap: 
             </Typography>
             &nbsp; &nbsp;
-            <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h6">
               {symbol}{" "}{numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()])}
             </Typography>
           </span>
@@ -139,7 +139,7 @@ const Coin = () => {
               Circulating Supply:
             </Typography>
             &nbsp; &nbsp;
-            <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h6">
               {numberWithCommas(coin?.market_data.circulating_supply)}
             </Typography>
           </span>
@@ -148,7 +148,7 @@ const Coin = () => {
               {coin?.market_data.max_supply ? "Max Supply" : "Total Supply"}:
             </Typography>
             &nbsp; &nbsp;
-            <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h6">
               {numberWithCommas(coin?.market_data.max_supply || coin?.market_data.total_supply)}
             </Typography>
           </span>
@@ -157,7 +157,7 @@ const Coin = () => {
               ATH:
             </Typography>
             &nbsp; &nbsp;
-            <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h6">
               {symbol}{" "}
               {currency === "USD" && coin?.market_data.ath[currency.toLowerCase()] > 1 ?
                 numberWithCommas(coin?.market_data.ath[currency.toLowerCase()]) 
@@ -170,7 +170,7 @@ const Coin = () => {
               ATL:
             </Typography>
             &nbsp; &nbsp;
-            <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
+            <Typography variant="h6">
               {symbol}{" "}
               {currency === "USD" && coin?.market_data.atl[currency.toLowerCase()] > 1 ?
                 numberWithCommas(coin?.market_data.atl[currency.toLowerCase()]) 
