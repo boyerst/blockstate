@@ -66,7 +66,7 @@ const CoinsTable = () => {
   }, [currency])
 
 
-  // console.log("AllCoinsMarketData: ", coins)
+  console.log("AllCoinsMarketData: ", coins)
 
 
   const handleSearch = () => {
