@@ -92,7 +92,7 @@ const Coin = () => {
   return(
     <div className={classes.container}>
    
-      <div className={classes.sidebar} border={1}>
+      <div className={classes.sidebar}>
         <img 
           src={coin?.image.large}
           alt={coin?.name}
@@ -105,84 +105,84 @@ const Coin = () => {
         <Typography variant="subtitle1" className={classes.description}>
           {ReactHtmlParser(coin?.description.en.split(". ")[0])}.
         </Typography>
-        <Box border={1} borderRadius="3%">
-        <div className={classes.marketData}>
-          <span style ={{ display: "flex" }}>
-            <Typography variant="h6" className={classes.heading}>
-              Rank: 
-            </Typography>
-            &nbsp; &nbsp;
-            <Typography variant="h6">
-              {coin?.market_cap_rank}
-            </Typography>
-          </span>
-          <span style ={{ display: "flex" }}>
-            <Typography variant="h6" className={classes.heading}>
-              Market Cap: 
-            </Typography>
-            &nbsp; &nbsp;
-            <Typography variant="h6">
-              {symbol}{" "}{numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()])}
-            </Typography>
-          </span>
-          <span style ={{ display: "flex" }}>
-            <Typography variant="h6" className={classes.heading}>
-              Current Price: 
-            </Typography>
-            &nbsp; &nbsp;
-            <Typography variant="h6" style={{ fontFamily: "Open Sans" }}>
-              {symbol}{" "}
-              {currency === "USD" && coin?.market_data.current_price[currency.toLowerCase()] > 1 ?
-                numberWithCommas(coin?.market_data.current_price[currency.toLowerCase()]) 
-                : coin?.market_data.current_price[currency.toLowerCase()]
-              } 
-            </Typography>
-          </span>
-          <span style ={{ display: "flex" }}>
-            <Typography variant="h6" className={classes.heading}>
-              Circulating Supply:
-            </Typography>
-            &nbsp; &nbsp;
-            <Typography variant="h6">
-              {numberWithCommas(coin?.market_data.circulating_supply)}
-            </Typography>
-          </span>
-          <span style ={{ display: "flex" }}>
-            <Typography variant="h6" className={classes.heading}>
-              {coin?.market_data.max_supply ? "Max Supply" : "Total Supply"}:
-            </Typography>
-            &nbsp; &nbsp;
-            <Typography variant="h6">
-              {numberWithCommas(coin?.market_data.max_supply || coin?.market_data.total_supply)}
-            </Typography>
-          </span>
-          <span style ={{ display: "flex" }}>
-            <Typography variant="h6" className={classes.heading}>
-              ATH:
-            </Typography>
-            &nbsp; &nbsp;
-            <Typography variant="h6">
-              {symbol}{" "}
-              {currency === "USD" && coin?.market_data.ath[currency.toLowerCase()] > 1 ?
-                numberWithCommas(coin?.market_data.ath[currency.toLowerCase()]) 
-                : coin?.market_data.ath[currency.toLowerCase()]
-              } on {formatDate(coin?.market_data.ath_date[currency.toLowerCase()])}
-            </Typography>
-          </span>
-          <span style ={{ display: "flex" }}>
-            <Typography variant="h6" className={classes.heading}>
-              ATL:
-            </Typography>
-            &nbsp; &nbsp;
-            <Typography variant="h6">
-              {symbol}{" "}
-              {currency === "USD" && coin?.market_data.atl[currency.toLowerCase()] > 1 ?
-                numberWithCommas(coin?.market_data.atl[currency.toLowerCase()]) 
-                : coin?.market_data.atl[currency.toLowerCase()]
-              } on {formatDate(coin?.market_data.atl_date[currency.toLowerCase()])}
-            </Typography>
-          </span>
-        </div>
+        <Box border={1} borderRadius="3%" borderColor="grey.400" style={{ display: "flex" }}>
+          <div className={classes.marketData}>
+            <span style={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography variant="h6" className={classes.heading}>
+                Rank: 
+              </Typography>
+              &nbsp; &nbsp;
+              <Typography variant="h6">
+                {coin?.market_cap_rank}
+              </Typography>
+            </span>
+            <span style={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography variant="h6" className={classes.heading}>
+                Market Cap: 
+              </Typography>
+              &nbsp; &nbsp;
+              <Typography variant="h6">
+                {symbol}{" "}{numberWithCommas(coin?.market_data.market_cap[currency.toLowerCase()])}
+              </Typography>
+            </span>
+            <span style={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography variant="h6" className={classes.heading}>
+                Current Price: 
+              </Typography>
+              &nbsp; &nbsp;
+              <Typography variant="h6" style={{ fontFamily: "Open Sans", justifyContent: "space-between" }}>
+                {symbol}{" "}
+                {currency === "USD" && coin?.market_data.current_price[currency.toLowerCase()] > 1 ?
+                  numberWithCommas(coin?.market_data.current_price[currency.toLowerCase()]) 
+                  : coin?.market_data.current_price[currency.toLowerCase()]
+                } 
+              </Typography>
+            </span>
+            <span style={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography variant="h6" className={classes.heading}>
+                Circulating Supply:
+              </Typography>
+              &nbsp; &nbsp;
+              <Typography variant="h6">
+                {numberWithCommas(coin?.market_data.circulating_supply)}
+              </Typography>
+            </span>
+            <span style={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography variant="h6" className={classes.heading}>
+                {coin?.market_data.max_supply ? "Max Supply" : "Total Supply"}:
+              </Typography>
+              &nbsp; &nbsp;
+              <Typography variant="h6">
+                {numberWithCommas(coin?.market_data.max_supply || coin?.market_data.total_supply)}
+              </Typography>
+            </span>
+            <span style={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography variant="h6" className={classes.heading}>
+                ATH:
+              </Typography>
+              &nbsp; &nbsp;
+              <Typography variant="h6">
+                {symbol}{" "}
+                {currency === "USD" && coin?.market_data.ath[currency.toLowerCase()] > 1 ?
+                  numberWithCommas(coin?.market_data.ath[currency.toLowerCase()]) 
+                  : coin?.market_data.ath[currency.toLowerCase()]
+                } on {formatDate(coin?.market_data.ath_date[currency.toLowerCase()])}
+              </Typography>
+            </span>
+            <span style={{ display: "flex", justifyContent: "space-between"}}>
+              <Typography variant="h6" className={classes.heading}>
+                ATL:
+              </Typography>
+              &nbsp; &nbsp;
+              <Typography variant="h6">
+                {symbol}{" "}
+                {currency === "USD" && coin?.market_data.atl[currency.toLowerCase()] > 1 ?
+                  numberWithCommas(coin?.market_data.atl[currency.toLowerCase()]) 
+                  : coin?.market_data.atl[currency.toLowerCase()]
+                } on {formatDate(coin?.market_data.atl_date[currency.toLowerCase()])}
+              </Typography>
+            </span>
+          </div>
         </Box>
       </div>
       <CoinChart coin={coin}/>
