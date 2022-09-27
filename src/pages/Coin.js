@@ -1,5 +1,5 @@
 import "../App.css"
-import { makeStyles, Typography, LinearProgress } from "@material-ui/core"
+import { makeStyles, Typography, LinearProgress, Box } from "@material-ui/core"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import { CurrencyState } from "../CurrencyContext"
@@ -29,8 +29,10 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    marginTop: 85, 
-    borderRight: "2px solid black"
+    marginTop: 140, 
+    paddingRight: 15,
+    paddingLeft: 15
+    // borderRight: "2px solid black"
   },
   heading: {
     fontWeight: "bold",
@@ -40,15 +42,16 @@ const useStyles = makeStyles((theme) => ({
   description: {
     width: "100%",
     fontFamily: "Open Sans",
-    padding: 25,
-    paddingBottom: 15,
-    paddingTop: 0,
+    padding: 55,
+    // paddingBottom: 45,
+    paddingTop: 15,
     textAlign: "justify"
   },
   marketData: {
     // alignSelf: "start",
-    padding: 25,
-    paddingTop: 10,
+    margin: 95,
+    marginTop: 40,
+    marginBottom: 40,
     width: "100%",
     [theme.breakpoints.down("md")]: {
       display: "flex",
@@ -89,7 +92,7 @@ const Coin = () => {
   return(
     <div className={classes.container}>
    
-      <div className={classes.sidebar}>
+      <div className={classes.sidebar} border={1}>
         <img 
           src={coin?.image.large}
           alt={coin?.name}
@@ -102,6 +105,7 @@ const Coin = () => {
         <Typography variant="subtitle1" className={classes.description}>
           {ReactHtmlParser(coin?.description.en.split(". ")[0])}.
         </Typography>
+        <Box border={1} borderRadius="3%">
         <div className={classes.marketData}>
           <span style ={{ display: "flex" }}>
             <Typography variant="h6" className={classes.heading}>
@@ -179,6 +183,7 @@ const Coin = () => {
             </Typography>
           </span>
         </div>
+        </Box>
       </div>
       <CoinChart coin={coin}/>
     </div>       

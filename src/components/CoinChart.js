@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 25,
+    marginTop: 130,
     padding: 40,
     [theme.breakpoints.down("md")]: {
       width: "100%",
