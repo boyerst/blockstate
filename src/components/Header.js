@@ -30,7 +30,7 @@ const Header = (props) => {
   const { currency, setCurrency } = CurrencyState()
 
   return(
-    <AppBar color="transparent" position="static" >
+    <AppBar color="transparent" position="static" elevation={20} >
       <Container maxWidth="xl">
         <Toolbar>
           <Typography 
