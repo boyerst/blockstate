@@ -48,14 +48,13 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "justify"
   },
   marketData: {
-    // alignSelf: "start",
-    margin: 95,
-    marginTop: 40,
-    marginBottom: 40,
-    width: "100%",
+    alignItems: "center",
+    padding: 20,
+    width: "90%",
     [theme.breakpoints.down("md")]: {
       display: "flex",
       justifyContent: "space-around",
+      marginBottom: 40
     },
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
@@ -91,7 +90,6 @@ const Coin = () => {
 
   return(
     <div className={classes.container}>
-   
       <div className={classes.sidebar}>
         <img 
           src={coin?.image.large}
@@ -105,8 +103,8 @@ const Coin = () => {
         <Typography variant="subtitle1" className={classes.description}>
           {ReactHtmlParser(coin?.description.en.split(". ")[0])}.
         </Typography>
-        <Box border={1} borderRadius="3%" borderColor="grey.400" style={{ display: "flex" }}>
-          <div className={classes.marketData}>
+        <Box className={classes.marketData} border={1} borderRadius="3%" borderColor="grey.400">
+          <div>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h6" className={classes.heading}>
                 Rank: 
