@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "justify"
   },
   marketData: {
-    alignSelf: "start",
+    // alignSelf: "start",
     padding: 25,
     paddingTop: 10,
     width: "100%",
