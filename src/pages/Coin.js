@@ -107,7 +107,7 @@ const Coin = () => {
           <div>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h6" className={classes.heading}>
-                Rank: 
+                Rank
               </Typography>
               &nbsp; &nbsp;
               <Typography variant="h6">
@@ -116,7 +116,7 @@ const Coin = () => {
             </span>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h6" className={classes.heading}>
-                Market Cap: 
+                Market Cap
               </Typography>
               &nbsp; &nbsp;
               <Typography variant="h6">
@@ -125,7 +125,7 @@ const Coin = () => {
             </span>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h6" className={classes.heading}>
-                Current Price: 
+                Current Price
               </Typography>
               &nbsp; &nbsp;
               <Typography variant="h6" style={{ fontFamily: "Open Sans", justifyContent: "space-between" }}>
@@ -138,7 +138,7 @@ const Coin = () => {
             </span>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h6" className={classes.heading}>
-                Circulating Supply:
+                Circulating Supply
               </Typography>
               &nbsp; &nbsp;
               <Typography variant="h6">
@@ -147,7 +147,7 @@ const Coin = () => {
             </span>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h6" className={classes.heading}>
-                {coin?.market_data.max_supply ? "Max Supply" : "Total Supply"}:
+                {coin?.market_data.max_supply ? "Max Supply" : "Total Supply"}
               </Typography>
               &nbsp; &nbsp;
               <Typography variant="h6">
@@ -156,7 +156,7 @@ const Coin = () => {
             </span>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h6" className={classes.heading}>
-                ATH:
+                ATH
               </Typography>
               &nbsp; &nbsp;
               <Typography variant="h6">
@@ -169,7 +169,7 @@ const Coin = () => {
             </span>
             <span style={{ display: "flex", justifyContent: "space-between"}}>
               <Typography variant="h6" className={classes.heading}>
-                ATL:
+                ATL
               </Typography>
               &nbsp; &nbsp;
               <Typography variant="h6">
