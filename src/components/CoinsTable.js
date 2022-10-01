@@ -10,9 +10,11 @@ import {
   Typography, 
   TextField,
   LinearProgress,
-  makeStyles
+  makeStyles,
+  Grid
 } from "@material-ui/core"
 import Pagination from "@material-ui/lab/Pagination"
+import SearchIcon from '@material-ui/icons/Search'
 import axios from "axios"
 import { useHistory } from "react-router-dom"
 import { AllCoinsMarketData } from "../config/api"
@@ -79,23 +81,37 @@ const CoinsTable = () => {
 
 
   return (
-    <Container style={{ textAlign: "center" }}>
-      <Typography
-        variant="h5"
-        style={{ 
-            margin: 18, 
-            fontFamily: "Open Sans"
-          }}
-      >
-        Today's Cryptocurrencies by Market Cap
-      </Typography>
-      <TextField
-        label="Search for coins..."
-        variant="outlined"
-        style={{ marginBottom: 20, width: "100%" }}
-        onChange={(e) => setSearch(e.target.value)}
-      />
- 
+   
+    <Container >
+      <div style={{ width: "100%", margin: 30 }}>
+        <Grid container spacing={1} alignItems="flex-end" >
+          <Grid item>
+            <Typography
+              variant="h5"
+              style={{ 
+                paddingLeft: 100,
+                fontFamily: "Open Sans"
+              }}
+            >
+            Today's Cryptocurrencies by Market Cap
+            </Typography>
+          </Grid>
+          <Grid 
+            item 
+            xs={6} 
+            container 
+            justify="flex-end" 
+            alignItems="center"
+          >
+            <SearchIcon style={{marginTop: 15, marginRight: 5}}/>
+            <TextField 
+              id="input-with-icon-grid" 
+              label="Search..."
+              onChange={(e) => setSearch(e.target.value)}/>
+          </Grid>
+        
+        </Grid>
+      </div>
       <TableContainer>
         {
           loading ? (
