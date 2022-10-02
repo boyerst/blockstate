@@ -90,7 +90,8 @@ const CoinsTable = () => {
               variant="h5"
               style={{ 
                 paddingLeft: 100,
-                fontFamily: "Open Sans"
+                fontFamily: "Open Sans",
+                fontWeight: 700,
               }}
             >
             Today's Cryptocurrencies by Market Cap
@@ -123,7 +124,7 @@ const CoinsTable = () => {
                 {["Coin", "Price", "24h %", "Market Cap"].map((head) => (
                   <TableCell
                     style={{
-                      fontWeight: "700",
+                      fontWeight: 700,
                       fontFamily: "Open Sans",
                       fontSize: 16
                     }}
