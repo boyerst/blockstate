@@ -68,7 +68,7 @@ const CoinsTable = () => {
   }, [currency])
 
 
-  console.log("AllCoinsMarketData: ", coins)
+  console.log("AllCoinsMarketData: ", currency, coins)
 
 
   const handleSearch = () => {
@@ -121,7 +121,7 @@ const CoinsTable = () => {
           <Table>
             <TableHead>
               <TableRow>
-                {["Coin", "Price", "24h %", "Market Cap"].map((head) => (
+                {["Coin", "Price", "24h %", "Volume (24h)", "Market Cap"].map((head) => (
                   <TableCell
                     style={{
                       fontWeight: 700,
@@ -206,6 +206,13 @@ const CoinsTable = () => {
                       >
                         {profit && "+"}
                         {row.price_change_percentage_24h.toFixed(2)}%
+                      </TableCell>
+                      <TableCell
+                        className={classes.data}
+                        align="right"
+                      >
+                        {symbol}{" "}
+                        {numberWithCommas(row.total_volume.toString())}
                       </TableCell>
                       <TableCell 
                         className={classes.data}

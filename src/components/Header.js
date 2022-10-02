@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => ({
     flex: 1, 
     color: "#0582CA",
     fontFamily: "Open Sans",
-    fontWeight: "bold",
+    fontWeight: 600,
     cursor: "pointer"
   },
   select: {

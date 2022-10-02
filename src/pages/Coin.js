@@ -107,7 +107,7 @@ const Coin = () => {
           <div>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h6" className={classes.heading}>
-                Rank
+                Market Cap Rank
               </Typography>
               &nbsp; &nbsp;
               <Typography variant="h6">
