@@ -86,6 +86,9 @@ const Coin = () => {
 
   const classes = useStyles()
 
+  const profit = coin?.market_data.price_change_percentage_24h_in_currency[currency.toLowerCase()] > 0
+  console.log(profit)
+
   if (!coin) return <LinearProgress style={{ backgroundColor: "#0582CA" }}/>
 
   return(
@@ -141,7 +144,14 @@ const Coin = () => {
                 24h Price Change
               </Typography>
               &nbsp; &nbsp;
-              <Typography variant="h6" style={{ fontFamily: "Open Sans", justifyContent: "space-between" }}>
+              <Typography 
+                variant="h6" 
+                style={{ 
+                  fontFamily: "Open Sans", 
+                  justifyContent: "space-between", 
+                  color: profit === true ? "rgb(14, 203, 129)"  : "red"
+                }}
+              >
                 {coin?.market_data.price_change_percentage_24h_in_currency[currency.toLowerCase()]} %
             
               </Typography>
@@ -153,7 +163,7 @@ const Coin = () => {
               &nbsp; &nbsp;
               <Typography variant="h6" style={{ fontFamily: "Open Sans", justifyContent: "space-between" }}>
                 {symbol}{" "}
-                {coin?.market_data.total_volume[currency.toLowerCase()]}
+                {numberWithCommas(coin?.market_data.total_volume[currency.toLowerCase()])}
               </Typography>
             </span>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
