@@ -138,6 +138,26 @@ const Coin = () => {
             </span>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h6" className={classes.heading}>
+                24h Price Change
+              </Typography>
+              &nbsp; &nbsp;
+              <Typography variant="h6" style={{ fontFamily: "Open Sans", justifyContent: "space-between" }}>
+                {coin?.market_data.price_change_percentage_24h_in_currency[currency.toLowerCase()]} %
+            
+              </Typography>
+            </span>
+            <span style={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography variant="h6" className={classes.heading}>
+                24h Trading Volume
+              </Typography>
+              &nbsp; &nbsp;
+              <Typography variant="h6" style={{ fontFamily: "Open Sans", justifyContent: "space-between" }}>
+                {symbol}{" "}
+                {coin?.market_data.total_volume[currency.toLowerCase()]}
+              </Typography>
+            </span>
+            <span style={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography variant="h6" className={classes.heading}>
                 Circulating Supply
               </Typography>
               &nbsp; &nbsp;
