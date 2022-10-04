@@ -121,7 +121,7 @@ const CoinsTable = () => {
           <Table>
             <TableHead>
               <TableRow>
-                {["Coin", "Price", "24h %", "Volume (24h)", "Market Cap"].map((head) => (
+                {["Coin", "Price", "24h %", "24h Volume", "Market Cap"].map((head) => (
                   <TableCell
                     style={{
                       fontWeight: 700,
