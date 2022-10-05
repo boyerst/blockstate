@@ -87,7 +87,7 @@ const Coin = () => {
   const classes = useStyles()
 
   const profit = coin?.market_data.price_change_percentage_24h_in_currency[currency.toLowerCase()] > 0
-  console.log(profit)
+
 
   if (!coin) return <LinearProgress style={{ backgroundColor: "#0582CA" }}/>
 
@@ -152,8 +152,7 @@ const Coin = () => {
                   color: profit === true ? "rgb(14, 203, 129)"  : "red"
                 }}
               >
-                {coin?.market_data.price_change_percentage_24h_in_currency[currency.toLowerCase()]} %
-            
+                {coin?.market_data.price_change_percentage_24h_in_currency[currency.toLowerCase()].toFixed(2)} %
               </Typography>
             </span>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
@@ -172,7 +171,7 @@ const Coin = () => {
               </Typography>
               &nbsp; &nbsp;
               <Typography variant="h6">
-                {numberWithCommas(coin?.market_data.circulating_supply)}
+                {numberWithCommas(coin?.market_data.circulating_supply.toFixed(0))}
               </Typography>
             </span>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
@@ -181,7 +180,7 @@ const Coin = () => {
               </Typography>
               &nbsp; &nbsp;
               <Typography variant="h6">
-                {numberWithCommas(coin?.market_data.max_supply || coin?.market_data.total_supply)}
+                {numberWithCommas(coin?.market_data.max_supply || coin?.market_data.total_supply.toFixed(0))}
               </Typography>
             </span>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
