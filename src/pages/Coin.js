@@ -157,6 +157,22 @@ const Coin = () => {
             </span>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h6" className={classes.heading}>
+                7d Price Change
+              </Typography>
+              &nbsp; &nbsp;
+              <Typography 
+                variant="h6" 
+                style={{ 
+                  fontFamily: "Open Sans", 
+                  justifyContent: "space-between", 
+                  color: profit === true ? "rgb(14, 203, 129)"  : "red"
+                }}
+              >
+                {coin?.market_data.price_change_percentage_7d_in_currency[currency.toLowerCase()].toFixed(2)} %
+              </Typography>
+            </span>
+            <span style={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography variant="h6" className={classes.heading}>
                 24h Trading Volume
               </Typography>
               &nbsp; &nbsp;
