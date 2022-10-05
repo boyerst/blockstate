@@ -201,6 +201,16 @@ const Coin = () => {
             </span>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h6" className={classes.heading}>
+                Fully Diluted Valuation
+              </Typography>
+              &nbsp; &nbsp;
+              <Typography variant="h6">
+                {symbol}{" "}
+                {numberWithCommas(coin?.market_data.fully_diluted_valuation[currency.toLowerCase()].toFixed(0))}
+              </Typography>
+            </span>
+            <span style={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography variant="h6" className={classes.heading}>
                 ATH
               </Typography>
               &nbsp; &nbsp;
