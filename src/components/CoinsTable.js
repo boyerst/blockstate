@@ -14,6 +14,7 @@ import {
   Grid
 } from "@material-ui/core"
 import Pagination from "@material-ui/lab/Pagination"
+import Skeleton from "@material-ui/lab/Skeleton"
 import SearchIcon from '@material-ui/icons/Search'
 import axios from "axios"
 import { useHistory } from "react-router-dom"
@@ -55,6 +56,7 @@ const CoinsTable = () => {
   const history = useHistory()
   const { currency, symbol } = CurrencyState()
   const classes = useStyles()
+  const skelements = Array(30).fill('h2')
 
   const fetchAllCoinsMarketData = async () => {
     setLoading(true)
@@ -69,6 +71,7 @@ const CoinsTable = () => {
 
 
   console.log("AllCoinsMarketData: ", currency, coins)
+
 
 
   const handleSearch = () => {
@@ -116,7 +119,10 @@ const CoinsTable = () => {
       <TableContainer>
         {
           loading ? (
-            <LinearProgress style={{ backgroundColor: "#0582CA" }}/>
+            skelements.map((skelement) => (
+            <Typography component="div" key={skelement} variant={skelement}>
+              <Skeleton />
+            </Typography>))
           ) : (
           <Table>
             <TableHead>
@@ -138,7 +144,7 @@ const CoinsTable = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-            {
+            { 
               handleSearch()
                 .slice((page - 1) * 30, (page - 1) * 30 + 30)
                 .map((row) => {
