@@ -64,8 +64,8 @@ const CoinsTable = () => {
   const fetchAllCoinsMarketData = async () => {
     setLoading(true)
     const { data } = await axios.get(AllCoinsMarketData(currency))   
-    // setCoins(data)
-    // setLoading(false)
+    setCoins(data)
+    setLoading(false)
   }
 
   useEffect(() => {
@@ -89,7 +89,7 @@ const CoinsTable = () => {
   return (
    
     <Container >
-      <div style={{ width: "100%", margin: 30 }}>
+      <div style={{ width: "100%", margin: 30, marginBottom: 70 }}>
         <Grid container spacing={1} alignItems="flex-end" >
           <Grid item>
             <Typography

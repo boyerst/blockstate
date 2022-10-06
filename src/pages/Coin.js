@@ -76,7 +76,7 @@ const Coin = () => {
 
   const fetchCoinMarketData =  async () => {
     const { data } = await axios.get(CoinMarketData(id))
-    // setCoin(data)    
+    setCoin(data)    
   }
 
   console.log("CoinMarketData: ", coin)
@@ -199,16 +199,20 @@ const Coin = () => {
                 {numberWithCommas(coin?.market_data.max_supply || coin?.market_data.total_supply.toFixed(0))}
               </Typography>
             </span>
-            <span style={{ display: "flex", justifyContent: "space-between" }}>
-              <Typography variant="h6" className={classes.heading}>
-                Fully Diluted Valuation
-              </Typography>
-              &nbsp; &nbsp;
-              <Typography variant="h6">
-                {symbol}{" "}
-                {numberWithCommas(coin?.market_data.fully_diluted_valuation[currency.toLowerCase()].toFixed(0))}
-              </Typography>
-            </span>
+            { 
+              Object.keys(coin.market_data.fully_diluted_valuation).length === 0 
+              ? " "
+              : <span style={{ display: "flex", justifyContent: "space-between" }}>
+                  <Typography variant="h6" className={classes.heading}>
+                    Fully Diluted Valuation
+                  </Typography>
+                  &nbsp; &nbsp;
+                  <Typography variant="h6">
+                    {symbol}{" "}
+                    {numberWithCommas(coin?.market_data.fully_diluted_valuation[currency.toLowerCase()])}
+                  </Typography>
+                </span>
+            }
             <span style={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h6" className={classes.heading}>
                 ATH
