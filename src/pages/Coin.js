@@ -1,5 +1,6 @@
 import "../App.css"
-import { makeStyles, Typography, LinearProgress, Box } from "@material-ui/core"
+import { makeStyles, Typography, Box } from "@material-ui/core"
+import Skeleton from "@material-ui/lab/Skeleton"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from 'react'
 import { CurrencyState } from "../CurrencyContext"
@@ -75,7 +76,7 @@ const Coin = () => {
 
   const fetchCoinMarketData =  async () => {
     const { data } = await axios.get(CoinMarketData(id))
-    setCoin(data)    
+    // setCoin(data)    
   }
 
   console.log("CoinMarketData: ", coin)
@@ -88,8 +89,7 @@ const Coin = () => {
 
   const profit = coin?.market_data.price_change_percentage_24h_in_currency[currency.toLowerCase()] > 0
 
-
-  if (!coin) return <LinearProgress style={{ backgroundColor: "#0582CA" }}/>
+  if (!coin) return <Skeleton variant="circle" />
 
   return(
     <div className={classes.container}>
