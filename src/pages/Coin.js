@@ -196,7 +196,11 @@ const Coin = () => {
               </Typography>
               &nbsp; &nbsp;
               <Typography variant="h6">
-                {numberWithCommas(coin?.market_data.max_supply || coin?.market_data.total_supply.toFixed(0))}
+                {
+                  coin?.market_data.max_supply || coin?.market_data.total_supply === null 
+                  ? "∞"
+                  : numberWithCommas(coin?.market_data.max_supply || coin?.market_data.total_supply.toFixed(0))
+                }
               </Typography>
             </span>
             { 
