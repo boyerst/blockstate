@@ -9,7 +9,6 @@ import {
   TableBody,
   Typography, 
   TextField,
-  LinearProgress,
   makeStyles,
   Grid
 } from "@material-ui/core"
@@ -40,6 +39,10 @@ const useStyles = makeStyles(() => ({
     "& .MuiPaginationItem-root": {
       color: "#0582CA"
     }
+  },
+  skeleton: {
+    height: 90,
+    marginBottom: 6
   }
 }))
 
@@ -61,8 +64,8 @@ const CoinsTable = () => {
   const fetchAllCoinsMarketData = async () => {
     setLoading(true)
     const { data } = await axios.get(AllCoinsMarketData(currency))   
-    setCoins(data)
-    setLoading(false)
+    // setCoins(data)
+    // setLoading(false)
   }
 
   useEffect(() => {
@@ -104,7 +107,7 @@ const CoinsTable = () => {
             item 
             xs={6} 
             container 
-            justify="flex-end" 
+            justifyContent="flex-end" 
             alignItems="center"
           >
             <SearchIcon style={{marginTop: 15, marginRight: 5}}/>
@@ -121,7 +124,7 @@ const CoinsTable = () => {
           loading ? (
             skelements.map((skelement) => (
             <Typography component="div" key={skelement} variant={skelement}>
-              <Skeleton />
+              <Skeleton animation="wave" className={classes.skeleton}/>
             </Typography>))
           ) : (
           <Table>
