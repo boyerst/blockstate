@@ -104,7 +104,7 @@ const Coin = () => {
           {coin?.name}
         </Typography>
         <Typography variant="subtitle1" className={classes.description}>
-          {ReactHtmlParser(coin?.description.en.split(". ")[0])}.
+          {ReactHtmlParser(coin?.description.en.split(". ")[0])}
         </Typography>
         <Box className={classes.marketData} border={1} borderRadius="3%" borderColor="grey.400">
           <div>
@@ -198,7 +198,7 @@ const Coin = () => {
               <Typography variant="h6">
                 {
                   coin?.market_data.max_supply || coin?.market_data.total_supply === null 
-                  ? "∞"
+                  ? "ꝏ"
                   : numberWithCommas(coin?.market_data.max_supply || coin?.market_data.total_supply.toFixed(0))
                 }
               </Typography>

@@ -8,7 +8,7 @@ const useStyles = makeStyles(() => ({
   title: {
     flex: 1, 
     color: "#0582CA",
-    fontFamily: "Open Sans",
+    fontFamily: "Fredoka",
     fontWeight: 600,
     cursor: "pointer"
   },
