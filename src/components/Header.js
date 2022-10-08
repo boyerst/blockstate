@@ -16,9 +16,13 @@ const useStyles = makeStyles(() => ({
     margin: 10,
     paddingBottom: 15, 
     paddingLeft: 5,
-    maxHeight: 35
+    maxHeight: 35,
+    width: 100,
+    borderBottom: "1px solid #0582CA",
+    "&:hover": {
+      borderBottom: "2px solid #0582CA"
+    }
   }
-  
 }))
 
 
@@ -32,7 +36,6 @@ const Header = (props) => {
 
   const { currency, setCurrency } = CurrencyState()
 
-  console.log("CURRENCY: ", currency)
 
   return(
     <AppBar color="transparent" position="static" elevation={20} >
@@ -53,11 +56,6 @@ const Header = (props) => {
           <Select 
             className={classes.select}
             variant="filled"
-            style={{
-              width: 100,
-              height: 40, 
-              marginLeft: 5
-            }}
             value={currency}
             onChange={(e) => setCurrency(e.target.value)}
             >
