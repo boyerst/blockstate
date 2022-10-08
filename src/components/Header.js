@@ -13,7 +13,10 @@ const useStyles = makeStyles(() => ({
     cursor: "pointer"
   },
   select: {
-    color: "red"
+    margin: 10,
+    paddingBottom: 15, 
+    paddingLeft: 5,
+    maxHeight: 35
   }
   
 }))
@@ -28,6 +31,8 @@ const Header = (props) => {
   const history = useHistory()
 
   const { currency, setCurrency } = CurrencyState()
+
+  console.log("CURRENCY: ", currency)
 
   return(
     <AppBar color="transparent" position="static" elevation={20} >
@@ -46,7 +51,8 @@ const Header = (props) => {
             </Typography>*/}
           </Typography>
           <Select 
-            variant="outlined"
+            className={classes.select}
+            variant="filled"
             style={{
               width: 100,
               height: 40, 

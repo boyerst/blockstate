@@ -45,11 +45,11 @@ const useStyles = makeStyles(() => ({
     marginBottom: 6
   },
   search: {
-    '& label.Mui-focused': {
-      color: '#0582CA',
+    "& label.Mui-focused": {
+      color: "#0582CA",
     },
-     '& .MuiInput-underline:after': {
-      borderBottomColor: '#0582CA',
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "#0582CA",
     },
   }
 }))
