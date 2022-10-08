@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom"
 import { CurrencyState } from "../CurrencyContext"
 
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   title: {
     flex: 1, 
     color: "#0582CA",
@@ -22,13 +22,22 @@ const useStyles = makeStyles(() => ({
     "&:hover": {
       borderBottom: "2px solid #0582CA"
     }
+  },
+  switchBase: {
+    color: "#0582CA",
+    "&.Mui-checked": {
+      color: "#0582CA"
+    },
+    "&.Mui-checked + .MuiSwitch-track": {
+      backgroundColor: "#87888A",
+    }
   }
 }))
 
 
 
 
-const Header = (props) => {
+const Header = (props, disabled) => {
 
   const classes = useStyles()
 
@@ -63,6 +72,9 @@ const Header = (props) => {
             <MenuItem value={"BTC"}>BTC</MenuItem>
           </Select>
           <Switch 
+            classes={{
+              switchBase: classes.switchBase,
+            }}
             checked={props.darkMode} 
             onChange={() => props.handleDarkMode()}
           />
