@@ -43,6 +43,14 @@ const useStyles = makeStyles(() => ({
   skeleton: {
     height: 90,
     marginBottom: 6
+  },
+  search: {
+    '& label.Mui-focused': {
+      color: '#0582CA',
+    },
+     '& .MuiInput-underline:after': {
+      borderBottomColor: '#0582CA',
+    },
   }
 }))
 
@@ -111,10 +119,12 @@ const CoinsTable = () => {
             alignItems="center"
           >
             <SearchIcon style={{marginTop: 15, marginRight: 5}}/>
-            <TextField 
+            <TextField
+              className={classes.search}
               id="input-with-icon-grid" 
               label="Search..."
-              onChange={(e) => setSearch(e.target.value)}/>
+              onChange={(e) => setSearch(e.target.value)}
+            />
           </Grid>
         
         </Grid>
