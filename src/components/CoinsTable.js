@@ -60,6 +60,7 @@ const useStyles = makeStyles(() => ({
 const CoinsTable = () => {
   
   const [coins, setCoins] = useState([])
+  const [market, setMarket] = useState([])
   const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState("")
   const [page, setPage] = useState(1)
@@ -78,7 +79,10 @@ const CoinsTable = () => {
 
   const fetchGlobalData = async () => {
     const { data: {data} } = await axios.get(GlobalData())    
-    console.log("GlobalData: ", data)
+    setMarket(data)
+    // console.log("GlobalData: ", data)
+    // console.log(data.markets)
+    // console.log(data.total_volume.btc)
   }
 
   useEffect(() => {
@@ -88,7 +92,7 @@ const CoinsTable = () => {
 
 
   console.log("AllCoinsMarketData: ", currency, coins)
-
+  console.log("Market: ", market)
 
 
   const handleSearch = () => {
@@ -115,6 +119,16 @@ const CoinsTable = () => {
               }}
             >
             Today's Cryptocurrencies by Market Cap
+            </Typography>
+            <Typography
+              variant="h6"
+              style={{ 
+                paddingLeft: 100,
+                fontFamily: "Open Sans",
+                fontWeight: 700,
+              }}
+            >
+            {/*{market data}*/}
             </Typography>
           </Grid>
           <Grid 
