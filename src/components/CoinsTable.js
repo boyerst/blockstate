@@ -17,7 +17,7 @@ import Skeleton from "@material-ui/lab/Skeleton"
 import SearchIcon from '@material-ui/icons/Search'
 import axios from "axios"
 import { useHistory } from "react-router-dom"
-import { AllCoinsMarketData } from "../config/api"
+import { AllCoinsMarketData, GlobalData } from "../config/api"
 import { CurrencyState } from "../CurrencyContext"
 import { numberWithCommas } from "../utils/utils"
 
@@ -76,8 +76,14 @@ const CoinsTable = () => {
     setLoading(false)
   }
 
+  const fetchGlobalData = async () => {
+    const { data } = await axios.get(GlobalData())    
+    console.log("GlobalData: ", data)
+  }
+
   useEffect(() => {
     fetchAllCoinsMarketData()    
+    fetchGlobalData()
   }, [currency])
 
 
