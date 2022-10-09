@@ -128,7 +128,7 @@ const CoinsTable = () => {
                 fontWeight: 700,
               }}
             >
-            {/*{market data}*/}
+            {market.total_volume[currency.toLowerCase()]}
             </Typography>
           </Grid>
           <Grid 
