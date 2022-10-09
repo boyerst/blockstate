@@ -77,7 +77,7 @@ const CoinsTable = () => {
   }
 
   const fetchGlobalData = async () => {
-    const { data } = await axios.get(GlobalData())    
+    const { data: {data} } = await axios.get(GlobalData())    
     console.log("GlobalData: ", data)
   }
 
