@@ -78,17 +78,21 @@ const CoinsTable = () => {
   }
 
   const fetchGlobalData = async () => {
+    setLoading(true)
     const { data: {data} } = await axios.get(GlobalData())    
     setMarket(data)
     // console.log("GlobalData: ", data)
     // console.log(data.markets)
-    // console.log(data.total_volume.btc)
+    console.log(data.total_volume.btc)
+    setLoading(false)
   }
 
+
   useEffect(() => {
-    fetchAllCoinsMarketData()    
     fetchGlobalData()
+    fetchAllCoinsMarketData()    
   }, [currency])
+
 
 
   console.log("AllCoinsMarketData: ", currency, coins)
@@ -115,7 +119,7 @@ const CoinsTable = () => {
               style={{ 
                 paddingLeft: 100,
                 fontFamily: "Open Sans",
-                fontWeight: 700,
+                fontWeight: 700
               }}
             >
             Today's Cryptocurrencies by Market Cap
@@ -125,10 +129,16 @@ const CoinsTable = () => {
               style={{ 
                 paddingLeft: 100,
                 fontFamily: "Open Sans",
-                fontWeight: 700,
+                fontWeight: 700
               }}
             >
-            {market.total_volume[currency.toLowerCase()]}
+            {
+              loading ? (
+                <span>Loading</span> 
+              ) : (
+                market.total_market_cap[currency.toLowerCase()]
+              )
+            }
             </Typography>
           </Grid>
           <Grid 
