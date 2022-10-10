@@ -134,7 +134,7 @@ const CoinsTable = () => {
             >
             {
               loading ? (
-                <span>Loading</span> 
+                <Skeleton variant="rect" width={210} height={118} />
               ) : (
                 market.total_market_cap[currency.toLowerCase()]
               )
