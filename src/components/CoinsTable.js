@@ -135,9 +135,11 @@ const CoinsTable = () => {
             >
             {
               globalLoading ? (
-                <Skeleton variant="rect" width={210} height={50} />
+                <Skeleton variant="rect" width={500} height={30} />
               ) : (
                 <span>
+                  Today's Global Market Cap Is
+                  &nbsp;
                   {symbol}{" "}
                   {numberWithCommas(market.total_market_cap[currency.toLowerCase()].toFixed(0))}
                 </span>
