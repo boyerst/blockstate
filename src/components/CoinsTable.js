@@ -127,7 +127,7 @@ const CoinsTable = () => {
               variant="h7"
               style={{ 
                 fontFamily: "Open Sans",
-                fontWeight: 600
+                fontWeight: 500
               }}
             >
             {
@@ -139,8 +139,9 @@ const CoinsTable = () => {
                   &nbsp;
                   {symbol}{" "}
                   {numberWithCommas(market.total_market_cap[currency.toLowerCase()].toFixed(0))}  
+                  {market.total_market_cap > "999999999" ? " B" : " M"},
                   &nbsp;
-                  (24h change of
+                  a
                   &nbsp;
                     <span 
                       style={{
@@ -148,7 +149,11 @@ const CoinsTable = () => {
                     >
                       {market.market_cap_change_percentage_24h_usd.toFixed(2)} %
                     </span>
-                  )
+                  &nbsp;
+                  {marketCapProfit > 0 ? "increase" : "decrease"}
+                  &nbsp;
+                  in 24h
+                  
                 </span>
               )
             }
@@ -169,7 +174,6 @@ const CoinsTable = () => {
               onChange={(e) => setSearch(e.target.value)}
             />
           </Grid>
-        
         </Grid>
       </div>
       <TableContainer>
