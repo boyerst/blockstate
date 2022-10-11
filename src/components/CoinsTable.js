@@ -87,13 +87,10 @@ const CoinsTable = () => {
   }
 
 
-
   useEffect(() => {
     fetchAllCoinsMarketData()    
     fetchGlobalData()
   }, [currency])
-
-
 
 
   console.log("AllCoinsMarketData: ", currency, coins)
@@ -108,6 +105,7 @@ const CoinsTable = () => {
     )
   }
 
+  const marketCapProfit = market.market_cap_change_percentage_24h_usd > 0
 
   return (
    
@@ -142,7 +140,15 @@ const CoinsTable = () => {
                   {symbol}{" "}
                   {numberWithCommas(market.total_market_cap[currency.toLowerCase()].toFixed(0))}  
                   &nbsp;
-                  (24h change of {market.market_cap_change_percentage_24h_usd.toFixed(2)} %)
+                  (24h change of
+                  &nbsp;
+                    <span 
+                      style={{
+                        color: marketCapProfit > 0 ? "rgb(14, 203, 129)"  : "red"}}
+                    >
+                      {market.market_cap_change_percentage_24h_usd.toFixed(2)} %
+                    </span>
+                  )
                 </span>
               )
             }
