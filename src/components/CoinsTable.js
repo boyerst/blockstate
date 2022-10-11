@@ -135,25 +135,20 @@ const CoinsTable = () => {
                 <Skeleton variant="rect" width={400} height={30} />
               ) : (
                 <span>
-                  Today's Global Market Cap Is
-                  &nbsp;
-                  {symbol}{" "}
+                  Today's Global Market Cap Is {symbol}{" "}
                   {numberWithCommas(market.total_market_cap[currency.toLowerCase()].toFixed(0))}  
                   {market.total_market_cap > "999999999" ? " B" : " M"},
                   &nbsp;
                   a
-                  &nbsp;
                     <span 
                       style={{
-                        color: marketCapProfit > 0 ? "rgb(14, 203, 129)"  : "red"}}
+                        color: marketCapProfit > 0 ? "rgb(14, 203, 129)"  : "red",
+                        padding: 8
+                      }}
                     >
                       {market.market_cap_change_percentage_24h_usd.toFixed(2)} %
                     </span>
-                  &nbsp;
-                  {marketCapProfit > 0 ? "increase" : "decrease"}
-                  &nbsp;
-                  in 24h
-                  
+                  {marketCapProfit > 0 ? "increase" : "decrease"} in 24h
                 </span>
               )
             }
