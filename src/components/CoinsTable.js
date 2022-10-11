@@ -24,6 +24,7 @@ import { numberWithCommas } from "../utils/utils"
 
 
 
+
 const useStyles = makeStyles(() => ({
   row: {
     fontFamily: "Open Sans",
@@ -62,11 +63,12 @@ const CoinsTable = () => {
   const [coins, setCoins] = useState([])
   const [market, setMarket] = useState([])
   const [loading, setLoading] = useState(false)
+  const [globalLoading, setGlobalLoading] = useState(true)
   const [search, setSearch] = useState("")
   const [page, setPage] = useState(1)
 
-  const history = useHistory()
   const { currency, symbol } = CurrencyState()
+  const history = useHistory()
   const classes = useStyles()
   const skelements = Array(30).fill('h2')
 
@@ -78,20 +80,19 @@ const CoinsTable = () => {
   }
 
   const fetchGlobalData = async () => {
-    setLoading(true)
-    const { data: {data} } = await axios.get(GlobalData())    
+    setGlobalLoading(true)
+    const { data: { data } } = await axios.get(GlobalData())       
     setMarket(data)
-    // console.log("GlobalData: ", data)
-    // console.log(data.markets)
-    console.log(data.total_volume.btc)
-    setLoading(false)
+    setGlobalLoading(false)
   }
 
 
+
   useEffect(() => {
-    fetchGlobalData()
     fetchAllCoinsMarketData()    
+    fetchGlobalData()
   }, [currency])
+
 
 
 
@@ -133,10 +134,10 @@ const CoinsTable = () => {
               }}
             >
             {
-              loading ? (
-                <Skeleton variant="rect" width={210} height={118} />
+              globalLoading ? (
+                <Skeleton variant="rect" width={210} height={50} />
               ) : (
-                market.total_market_cap[currency.toLowerCase()]
+               <span>{market.total_market_cap[currency.toLowerCase()]}</span>
               )
             }
             </Typography>
