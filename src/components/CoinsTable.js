@@ -140,7 +140,9 @@ const CoinsTable = () => {
                   Today's Global Market Cap Is
                   &nbsp;
                   {symbol}{" "}
-                  {numberWithCommas(market.total_market_cap[currency.toLowerCase()].toFixed(0))}
+                  {numberWithCommas(market.total_market_cap[currency.toLowerCase()].toFixed(0))}  
+                  &nbsp;
+                  (24h change of {market.market_cap_change_percentage_24h_usd.toFixed(2)} %)
                 </span>
               )
             }
