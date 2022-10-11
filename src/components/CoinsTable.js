@@ -137,7 +137,10 @@ const CoinsTable = () => {
               globalLoading ? (
                 <Skeleton variant="rect" width={210} height={50} />
               ) : (
-               <span>{market.total_market_cap[currency.toLowerCase()]}</span>
+                <span>
+                  {symbol}{" "}
+                  {numberWithCommas(market.total_market_cap[currency.toLowerCase()].toFixed(0))}
+                </span>
               )
             }
             </Typography>
