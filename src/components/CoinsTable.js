@@ -113,29 +113,28 @@ const CoinsTable = () => {
    
     <Container >
       <div style={{ width: "100%", margin: 30, marginBottom: 70 }}>
-        <Grid container spacing={1} alignItems="flex-end" >
+        <Grid container alignItems="flex-end">
           <Grid item>
             <Typography
               variant="h5"
               style={{ 
-                paddingLeft: 100,
                 fontFamily: "Open Sans",
-                fontWeight: 700
+                fontWeight: 700,
+                marginBottom: 20
               }}
             >
             Today's Cryptocurrencies by Market Cap
             </Typography>
             <Typography
-              variant="h6"
+              variant="h7"
               style={{ 
-                paddingLeft: 100,
                 fontFamily: "Open Sans",
-                fontWeight: 700
+                fontWeight: 600
               }}
             >
             {
               globalLoading ? (
-                <Skeleton variant="rect" width={500} height={30} />
+                <Skeleton variant="rect" width={400} height={30} />
               ) : (
                 <span>
                   Today's Global Market Cap Is
