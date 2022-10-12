@@ -136,7 +136,7 @@ const CoinsTable = () => {
               ) : (
                 <span>
                   Today's Global Market Cap Is {symbol}{" "}
-                  {numberWithCommas(market.total_market_cap[currency.toLowerCase()].toFixed(0))}  
+                  {numberWithCommas(market.total_market_cap.usd.toFixed(0))}  
                   {market.total_market_cap > "999999999" ? " B" : " M"},
                   &nbsp;
                   a
@@ -148,7 +148,9 @@ const CoinsTable = () => {
                     >
                       {market.market_cap_change_percentage_24h_usd.toFixed(2)} %
                     </span>
-                  {marketCapProfit > 0 ? "increase" : "decrease"} in 24h
+                  {marketCapProfit > 0 ? "increase" : "decrease"} 
+                  &nbsp;
+                  in 24h
                 </span>
               )
             }
