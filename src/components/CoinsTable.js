@@ -124,7 +124,7 @@ const CoinsTable = () => {
             Today's Cryptocurrencies by Market Cap
             </Typography>
             <Typography
-              variant="h7"
+              variant="subtitle1"
               style={{ 
                 fontFamily: "Open Sans",
                 fontWeight: 500
