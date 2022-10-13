@@ -45,8 +45,6 @@ const Carousel = () => {
   }, [currency])
 
 
-  // console.log("TrendingCoins: ", trending)
-
   const items = trending.map((coin) => {
 
     let profit = coin?.price_change_percentage_24h >= 0
@@ -60,14 +58,14 @@ const Carousel = () => {
           src={coin?.image} 
           alt={coin.name}
           height="80"
-          style={{marginBottom: 10}}
+          style={{marginBottom: 23}}
         />
-        <span> {coin?.symbol}
+        <span style={{marginBottom: 10}}> 
+          {coin?.symbol}
           &nbsp;
           <span
             style={{
               color: profit > 0 ? "rgb(14, 203, 129)" : "red",
-              fontWeight: 700
             }}
           > 
             {profit && "+"}{coin?.price_change_percentage_24h?.toFixed(2)}%
