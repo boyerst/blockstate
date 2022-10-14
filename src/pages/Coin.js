@@ -49,7 +49,6 @@ const useStyles = makeStyles((theme) => ({
   },
   marketData: {
     alignItems: "center",
-    // borderColor: "grey",
     border: '1px solid grey',
     borderRadius: "3%",
     padding: 20,

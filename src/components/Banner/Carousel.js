@@ -30,7 +30,6 @@ const Carousel = () => {
 
   const [trending, setTrending] = useState([])
   
-
   const classes = useStyles()
 
   const { currency, symbol } = CurrencyState()
