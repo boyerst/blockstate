@@ -2,6 +2,7 @@ import "../App.css"
 import { makeStyles, AppBar, Container, Toolbar, Typography, Select, MenuItem, Switch } from "@material-ui/core"
 import { useHistory } from "react-router-dom"
 import { CurrencyState } from "../CurrencyContext"
+import Photo from '../logo.png'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -50,6 +51,7 @@ const Header = (props, disabled) => {
     <AppBar color="transparent" position="static" elevation={20} >
       <Container maxWidth="xl">
         <Toolbar>
+          <img src={Photo} height="60" width="80" alt="" style={{marginRight: -19}}/>
           <Typography 
             className={classes.title}
             onClick={() => history.push("/")}

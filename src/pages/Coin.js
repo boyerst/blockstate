@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    marginTop: 140, 
+    marginTop: 110, 
     paddingRight: 15,
     paddingLeft: 15
     // borderRight: "2px solid black"
