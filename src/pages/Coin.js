@@ -33,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 110, 
     paddingRight: 15,
     paddingLeft: 15
-    // borderRight: "2px solid black"
   },
   heading: {
     fontWeight: "bold",
@@ -50,6 +49,9 @@ const useStyles = makeStyles((theme) => ({
   },
   marketData: {
     alignItems: "center",
+    // borderColor: "grey",
+    border: '1px solid grey',
+    borderRadius: "3%",
     padding: 20,
     width: "90%",
     [theme.breakpoints.down("md")]: {
@@ -106,7 +108,7 @@ const Coin = () => {
         <Typography variant="subtitle1" className={classes.description}>
           {ReactHtmlParser(coin?.description.en.split(". ")[0])}
         </Typography>
-        <Box className={classes.marketData} border={1} borderRadius="3%" borderColor="grey.400">
+        <Box className={classes.marketData} >
           <div>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h6" className={classes.heading}>
