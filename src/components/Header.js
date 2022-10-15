@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom"
 import { CurrencyState } from "../CurrencyContext"
 import { GlobalMarketData } from "../config/api"
+import { numberWithCommas } from "../utils/utils"
 import axios from "axios"
 import Logo from '../logo.png'
 
@@ -81,8 +82,8 @@ const Header = (props, disabled) => {
               <Skeleton variant="rect" width={400} height={30} />
               ) : (
               <Grid container justifyContent="flex-start" spacing={7}>
-                <Grid item>Coins: {globalMarket.active_cryptocurrencies}</Grid>
-                <Grid item>24h Vol: {globalMarket.total_volume.usd}</Grid>
+                <Grid item>Coins: {numberWithCommas(globalMarket.active_cryptocurrencies)}</Grid>
+                <Grid item>24h Vol: {numberWithCommas(globalMarket.total_volume.usd)}</Grid>
               </Grid>
             )
           }
