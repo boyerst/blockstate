@@ -17,7 +17,7 @@ import Skeleton from "@material-ui/lab/Skeleton"
 import SearchIcon from '@material-ui/icons/Search'
 import axios from "axios"
 import { useHistory } from "react-router-dom"
-import { AllCoinsMarketData, GlobalData } from "../config/api"
+import { AllCoinsMarketData, GlobalMarketData } from "../config/api"
 import { CurrencyState } from "../CurrencyContext"
 import { numberWithCommas } from "../utils/utils"
 
@@ -61,7 +61,7 @@ const useStyles = makeStyles(() => ({
 const CoinsTable = () => {
   
   const [coins, setCoins] = useState([])
-  const [market, setMarket] = useState([])
+  const [globalMarket, setGlobalMarket] = useState([])
   const [loading, setLoading] = useState(false)
   const [globalLoading, setGlobalLoading] = useState(true)
   const [search, setSearch] = useState("")
@@ -81,8 +81,8 @@ const CoinsTable = () => {
 
   const fetchGlobalData = async () => {
     setGlobalLoading(true)
-    const { data: { data } } = await axios.get(GlobalData())       
-    setMarket(data)
+    const { data: { data } } = await axios.get(GlobalMarketData())       
+    setGlobalMarket(data)
     setGlobalLoading(false)
   }
 
@@ -94,7 +94,7 @@ const CoinsTable = () => {
 
 
   console.log("AllCoinsMarketData: ", currency, coins)
-  console.log("Market: ", market)
+  console.log("GlobalMarketData: ", globalMarket)
 
 
   const handleSearch = () => {
@@ -105,7 +105,7 @@ const CoinsTable = () => {
     )
   }
 
-  const marketCapProfit = market.market_cap_change_percentage_24h_usd > 0
+  const marketCapProfit = globalMarket.market_cap_change_percentage_24h_usd > 0
 
   return (
    
@@ -136,8 +136,8 @@ const CoinsTable = () => {
               ) : (
                 <span>
                   Today's Global Market Cap Is {symbol}{" "}
-                  {numberWithCommas(market.total_market_cap.usd.toFixed(0))}  
-                  {market.total_market_cap > "999999999" ? " B" : " M"},
+                  {numberWithCommas(globalMarket.total_market_cap.usd.toFixed(0))}  
+                  {globalMarket.total_market_cap > "999999999" ? " B" : " M"},
                   &nbsp;
                   a
                     <span 
@@ -146,7 +146,7 @@ const CoinsTable = () => {
                         padding: 8
                       }}
                     >
-                      {market.market_cap_change_percentage_24h_usd.toFixed(2)} %
+                      {globalMarket.market_cap_change_percentage_24h_usd.toFixed(2)} %
                     </span>
                   {marketCapProfit > 0 ? "increase" : "decrease"} 
                   &nbsp;
