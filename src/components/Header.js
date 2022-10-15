@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
     "&.Mui-checked + .MuiSwitch-track": {
       backgroundColor: "#87888A",
     }
+  },
+  globalBar: {
+    borderBottom: "1px solid grey",
   }
 }))
 
@@ -49,6 +52,12 @@ const Header = (props, disabled) => {
 
   return(
     <AppBar color="transparent" position="static" elevation={20} >
+      <Container maxWidth="xl">
+        <Toolbar variant="dense" className={classes.globalBar}>
+      
+          
+        </Toolbar>
+      </Container>
       <Container maxWidth="xl">
         <Toolbar>
           <img src={Logo} height="60" width="80" alt="" style={{marginRight: -19}}/>
