@@ -80,9 +80,9 @@ const Header = (props, disabled) => {
             globalLoading ? (
               <Skeleton variant="rect" width={400} height={30} />
               ) : (
-              <Grid container alignItems="flex-end">
-                <Typography>Coins: {globalMarket.active_cryptocurrencies}</Typography>
-                <Typography>24h Vol: {globalMarket.total_volume.usd}</Typography>
+              <Grid container justifyContent="flex-start" spacing={7}>
+                <Grid item>Coins: {globalMarket.active_cryptocurrencies}</Grid>
+                <Grid item>24h Vol: {globalMarket.total_volume.usd}</Grid>
               </Grid>
             )
           }
