@@ -1,5 +1,6 @@
 import "../App.css"
-import { makeStyles, AppBar, Container, Toolbar, Typography, Select, MenuItem, Switch } from "@material-ui/core"
+import { makeStyles, AppBar, Container, Toolbar, Typography, Select, MenuItem, Switch, Grid } from "@material-ui/core"
+import Skeleton from "@material-ui/lab/Skeleton"
 import { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom"
 import { CurrencyState } from "../CurrencyContext"
@@ -47,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
 const Header = (props, disabled) => {
 
   const [globalMarket, setGlobalMarket] = useState([])
+  const [globalLoading, setGlobalLoading] = useState(true)
 
   const classes = useStyles()
 
@@ -56,10 +58,10 @@ const Header = (props, disabled) => {
 
 
   const fetchGlobalData = async () => {
-    // setGlobalLoading(true)
+    setGlobalLoading(true)
     const { data: { data } } = await axios.get(GlobalMarketData())       
     setGlobalMarket(data)
-    // setGlobalLoading(false)
+    setGlobalLoading(false)
   }
 
   useEffect(() => {
@@ -74,8 +76,16 @@ const Header = (props, disabled) => {
     <AppBar color="transparent" position="static" elevation={20} >
       <Container maxWidth="xl" className={classes.globalBar}>
         <Toolbar variant="dense">
-          <Typography>Coins: {globalMarket.active_cryptocurrencies}</Typography>
-
+         {
+            globalLoading ? (
+              <Skeleton variant="rect" width={400} height={30} />
+              ) : (
+              <Grid container alignItems="flex-end">
+                <Typography>Coins: {globalMarket.active_cryptocurrencies}</Typography>
+                <Typography>24h Vol: {globalMarket.total_volume.usd}</Typography>
+              </Grid>
+            )
+          }
           
         </Toolbar>
       </Container>
