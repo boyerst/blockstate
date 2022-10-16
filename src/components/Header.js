@@ -39,7 +39,8 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   globalBar: {
-    borderBottom: "1px solid grey"
+    borderBottom: "1px solid grey",
+    fontSize: 14
   }
 }))
 
@@ -81,9 +82,15 @@ const Header = (props, disabled) => {
             globalLoading ? (
               <Skeleton variant="rect" width={400} height={20} />
               ) : (
-              <Grid container justifyContent="flex-start" spacing={7}>
+              <Grid container justifyContent="flex-start" spacing={5}>
                 <Grid item>Coins: {numberWithCommas(globalMarket.active_cryptocurrencies)}</Grid>
-                <Grid item>Market Cap: {numberWithCommas(globalMarket.total_market_cap.usd)}</Grid>
+                <Grid item>
+                    Market Cap: 
+                    {numberWithCommas(globalMarket.total_market_cap.usd)}
+                  <span style={{paddingLeft: 10}}>  
+                  {globalMarket.market_cap_change_percentage_24h_usd.toFixed(2)} %
+                  </span>
+                </Grid>
                 <Grid item>24h Vol: {numberWithCommas(globalMarket.total_volume.usd)}</Grid>
                 <Grid item>
                   Dominance: 
