@@ -79,15 +79,15 @@ const Header = (props, disabled) => {
         <Toolbar variant="dense">
          {
             globalLoading ? (
-              <Skeleton variant="rect" width={400} height={30} />
+              <Skeleton variant="rect" width={400} height={20} />
               ) : (
               <Grid container justifyContent="flex-start" spacing={7}>
                 <Grid item>Coins: {numberWithCommas(globalMarket.active_cryptocurrencies)}</Grid>
+                <Grid item>Market Cap: {numberWithCommas(globalMarket.total_market_cap.usd)}</Grid>
                 <Grid item>24h Vol: {numberWithCommas(globalMarket.total_volume.usd)}</Grid>
               </Grid>
             )
           }
-          
         </Toolbar>
       </Container>
       <Container maxWidth="xl">
