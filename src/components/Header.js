@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   globalBar: {
-    borderBottom: "1px solid grey",
+    borderBottom: "1px solid grey"
   }
 }))
 
@@ -85,6 +85,11 @@ const Header = (props, disabled) => {
                 <Grid item>Coins: {numberWithCommas(globalMarket.active_cryptocurrencies)}</Grid>
                 <Grid item>Market Cap: {numberWithCommas(globalMarket.total_market_cap.usd)}</Grid>
                 <Grid item>24h Vol: {numberWithCommas(globalMarket.total_volume.usd)}</Grid>
+                <Grid item>
+                  Dominance: 
+                  BTC: {globalMarket.market_cap_percentage.btc.toFixed(2)} %
+                  ETH: {globalMarket.market_cap_percentage.eth.toFixed(2)} %
+                </Grid>
               </Grid>
             )
           }
