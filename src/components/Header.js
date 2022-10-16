@@ -70,6 +70,7 @@ const Header = (props, disabled) => {
     fetchGlobalData()
   }, [])
 
+  const marketCapProfit = globalMarket.market_cap_change_percentage_24h_usd > 0
 
   console.log("GlobalMarket (Header): ", globalMarket)
 
@@ -85,9 +86,9 @@ const Header = (props, disabled) => {
               <Grid container justifyContent="flex-start" spacing={5}>
                 <Grid item>Coins: {numberWithCommas(globalMarket.active_cryptocurrencies)}</Grid>
                 <Grid item>
-                    Market Cap: 
-                    {numberWithCommas(globalMarket.total_market_cap.usd)}
-                  <span style={{paddingLeft: 10}}>  
+                  Market Cap: {numberWithCommas(globalMarket.total_market_cap.usd)}
+                  <span style={{paddingLeft: 10, color: marketCapProfit > 0 ? "rgb(14, 203, 129)"  : "red"}}>  
+                  {marketCapProfit ? "↑ " : "↓ "}
                   {globalMarket.market_cap_change_percentage_24h_usd.toFixed(2)} %
                   </span>
                 </Grid>

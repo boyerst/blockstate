@@ -146,6 +146,7 @@ const CoinsTable = () => {
                         padding: 8
                       }}
                     >
+                      {marketCapProfit ? "↑ " : "↓ "}
                       {globalMarket.market_cap_change_percentage_24h_usd.toFixed(2)} %
                     </span>
                   {marketCapProfit > 0 ? "increase" : "decrease"} 
