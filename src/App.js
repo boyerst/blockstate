@@ -1,7 +1,7 @@
 import "./App.css"
 import { BrowserRouter, Route } from "react-router-dom"
 import { createTheme, ThemeProvider, Paper } from "@material-ui/core"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Header from "./components/Header"
 import Home from "./pages/Home"
 import Coin from "./pages/Coin"
@@ -28,6 +28,7 @@ function App() {
     console.log("darkMode: ", darkMode)
     console.log("theme: ", theme)
   }
+
 
 
 

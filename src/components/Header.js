@@ -41,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
   globalBar: {
     borderBottom: "1px solid grey",
     fontSize: 14
+  },
+  metric: {
+    fontWeight: 700
   }
 }))
 
@@ -66,6 +69,7 @@ const Header = (props, disabled) => {
     setGlobalLoading(false)
   }
 
+
   useEffect(() => {
     fetchGlobalData()
   }, [])
@@ -73,7 +77,7 @@ const Header = (props, disabled) => {
   const marketCapProfit = globalMarket.market_cap_change_percentage_24h_usd > 0
 
   console.log("GlobalMarket (Header): ", globalMarket)
-
+  console.log("HEADER darkMode: ", props.darkMode)
 
   return(
     <AppBar color="transparent" position="static" elevation={20} >
@@ -84,19 +88,33 @@ const Header = (props, disabled) => {
               <Skeleton variant="rect" width={400} height={20} />
               ) : (
               <Grid container justifyContent="flex-start" spacing={5}>
-                <Grid item>Coins: {numberWithCommas(globalMarket.active_cryptocurrencies)}</Grid>
                 <Grid item>
-                  Market Cap: {numberWithCommas(globalMarket.total_market_cap.usd)}
+                  <span className={classes.metric}>
+                    Coins: &nbsp;
+                  </span>
+                    {numberWithCommas(globalMarket.active_cryptocurrencies)}
+                </Grid>
+                <Grid item>
+                  <span className={classes.metric}>
+                    Market Cap: &nbsp;
+                  </span>
+                    ${numberWithCommas(globalMarket.total_market_cap.usd)}
                   <span style={{paddingLeft: 10, color: marketCapProfit > 0 ? "rgb(14, 203, 129)"  : "red"}}>  
                   {marketCapProfit ? "↑ " : "↓ "}
                   {globalMarket.market_cap_change_percentage_24h_usd.toFixed(2)} %
                   </span>
                 </Grid>
-                <Grid item>24h Vol: {numberWithCommas(globalMarket.total_volume.usd)}</Grid>
                 <Grid item>
-                  Dominance: 
-                  BTC: {globalMarket.market_cap_percentage.btc.toFixed(2)} %
-                  ETH: {globalMarket.market_cap_percentage.eth.toFixed(2)} %
+                  <span className={classes.metric}>
+                    24h Vol: &nbsp;
+                  </span>
+                    ${numberWithCommas(globalMarket.total_volume.usd)}</Grid>
+                <Grid item>
+                  <span className={classes.metric}>
+                    Dominance: &nbsp;
+                  </span>
+                    (BTC) {globalMarket.market_cap_percentage.btc.toFixed(2)} %
+                    (ETH) {globalMarket.market_cap_percentage.eth.toFixed(2)} %
                 </Grid>
               </Grid>
             )
