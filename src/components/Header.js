@@ -1,5 +1,5 @@
 import "../App.css"
-import { makeStyles, AppBar, Container, Toolbar, Typography, Select, MenuItem, Switch, Grid } from "@material-ui/core"
+import { makeStyles, AppBar, Container, Toolbar, Typography, Select, MenuItem, Switch, Grid, ListItemIcon } from "@material-ui/core"
 import Skeleton from "@material-ui/lab/Skeleton"
 import { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom"
@@ -8,6 +8,7 @@ import { GlobalMarketData } from "../config/api"
 import { numberWithCommas } from "../utils/utils"
 import axios from "axios"
 import Logo from '../logo.png'
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -24,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: 5,
     maxHeight: 35,
     width: 100,
+    borderRadius: "10%",
     borderBottom: "1px solid #0582CA",
     "&:hover": {
       borderBottom: "2px solid #0582CA"
@@ -77,7 +79,7 @@ const Header = (props, disabled) => {
   const marketCapProfit = globalMarket.market_cap_change_percentage_24h_usd > 0
 
   console.log("GlobalMarket (Header): ", globalMarket)
-  console.log("HEADER darkMode: ", props.darkMode)
+
 
   return(
     <AppBar color="transparent" position="static" elevation={20} >
@@ -139,6 +141,7 @@ const Header = (props, disabled) => {
           <Select 
             className={classes.select}
             variant="filled"
+            borderRadius="80%"
             value={currency}
             onChange={(e) => setCurrency(e.target.value)}
             >

@@ -35,7 +35,7 @@ function App() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
-        <Paper style={{ minHeight: '100vh' }}>
+        <Paper style={{ minHeight: '110vh' }}>
           <div >
             <Header handleDarkMode={handleDarkMode}/>
             <Route path='/' component={Home} exact/>
