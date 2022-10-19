@@ -246,6 +246,17 @@ const Coin = () => {
                 } on {formatDate(coin?.market_data.atl_date[currency.toLowerCase()])}
               </Typography>
             </span>
+            <span style={{ display: "flex", justifyContent: "space-between"}}>
+              <Typography variant="h6" className={classes.heading}>
+                Sentiment
+              </Typography>
+              &nbsp; &nbsp;
+              <Typography variant="h6">
+                
+                {coin?.sentiment_votes_up_percentage} % {coin?.sentiment_votes_down_percentage} %
+                  
+              </Typography>
+            </span>
           </div>
         </Box>
       </div>
