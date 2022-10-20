@@ -76,7 +76,7 @@ const HtmlTooltip = withStyles((theme) => ({
     color: 'rgba(0, 0, 0, 0.87)',
     maxWidth: 220,
     fontSize: theme.typography.pxToRem(12),
-    border: '1px solid #dadde9',
+    border: '1px solid #dadde9'
   },
 }))(Tooltip);
 
@@ -265,6 +265,7 @@ const Coin = () => {
               </Typography>
               <Box style={{display: "flex", marginTop: 12, borderColor: 'white'}}>
                 <HtmlTooltip
+                  placement="top-start"
                   title={
                     <React.Fragment>
                       <Typography>
@@ -276,6 +277,7 @@ const Coin = () => {
                   <Box style={{backgroundColor: 'red', height: 10, width: coin?.sentiment_votes_down_percentage*2.5}}></Box>
                 </HtmlTooltip>
                 <HtmlTooltip
+                  placement="bottom-end"
                   title={
                     <React.Fragment>
                       <Typography color="inherit">
