@@ -263,21 +263,17 @@ const Coin = () => {
               <Typography variant="h6" className={classes.heading}>
                 Sentiment
               </Typography>
-              &nbsp; &nbsp;
-{/*              <Typography variant="h6">
-                {coin?.sentiment_votes_up_percentage} % {coin?.sentiment_votes_down_percentage} %
-              </Typography>*/}
-              <div style={{display: "flex"}}>
+              <Box style={{display: "flex", marginTop: 12, borderColor: 'white'}}>
                 <HtmlTooltip
                   title={
                     <React.Fragment>
-                      <Typography color="inherit">
+                      <Typography>
                         {coin?.sentiment_votes_down_percentage} %
                       </Typography>
                     </React.Fragment>
                   }
                 >
-                  <div style={{backgroundColor: 'red', height: 10, width: coin?.sentiment_votes_down_percentage*3}}></div>
+                  <Box style={{backgroundColor: 'red', height: 10, width: coin?.sentiment_votes_down_percentage*2.5}}></Box>
                 </HtmlTooltip>
                 <HtmlTooltip
                   title={
@@ -288,9 +284,9 @@ const Coin = () => {
                     </React.Fragment>
                   }
                 >
-                  <div style={{backgroundColor: 'green', height: 10, width: coin?.sentiment_votes_up_percentage*3}}></div>
+                  <Box style={{backgroundColor: 'green', height: 10, width: coin?.sentiment_votes_up_percentage*2.5}}></Box>
                 </HtmlTooltip>
-              </div>
+              </Box>
             </span>
           </div>
         </Box>
