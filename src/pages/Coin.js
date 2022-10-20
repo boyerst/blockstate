@@ -241,7 +241,7 @@ const Coin = () => {
               <Typography variant="h6">
                 {symbol}{" "}
                 {currency === "USD" && coin?.market_data.ath[currency.toLowerCase()] > 1 ?
-                  numberWithCommas(coin?.market_data.ath[currency.toLowerCase()]) 
+                  numberWithCommas(coin?.market_data.ath[currency.toLowerCase()].toFixed(2)) 
                   : coin?.market_data.ath[currency.toLowerCase()]
                 } on {formatDate(coin?.market_data.ath_date[currency.toLowerCase()])}
               </Typography>
@@ -254,7 +254,7 @@ const Coin = () => {
               <Typography variant="h6">
                 {symbol}{" "}
                 {currency === "USD" && coin?.market_data.atl[currency.toLowerCase()] > 1 ?
-                  numberWithCommas(coin?.market_data.atl[currency.toLowerCase()]) 
+                  numberWithCommas(coin?.market_data.atl[currency.toLowerCase()].toFixed(2)) 
                   : coin?.market_data.atl[currency.toLowerCase()]
                 } on {formatDate(coin?.market_data.atl_date[currency.toLowerCase()])}
               </Typography>
