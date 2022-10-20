@@ -251,11 +251,13 @@ const Coin = () => {
                 Sentiment
               </Typography>
               &nbsp; &nbsp;
-              <Typography variant="h6">
-                
+{/*              <Typography variant="h6">
                 {coin?.sentiment_votes_up_percentage} % {coin?.sentiment_votes_down_percentage} %
-                  
-              </Typography>
+              </Typography>*/}
+            <div style={{display: "flex"}}>
+              <div style={{backgroundColor: 'red', height: 10, width: coin?.sentiment_votes_down_percentage}}>{coin?.sentiment_votes_down_percentage} %</div>
+              <div style={{backgroundColor: 'green', height: 10, width: coin?.sentiment_votes_up_percentage}}>{coin?.sentiment_votes_up_percentage} %</div>
+            </div>
             </span>
           </div>
         </Box>
