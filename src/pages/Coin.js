@@ -1,5 +1,6 @@
 import "../App.css"
-import { makeStyles, Typography, Box } from "@material-ui/core"
+import React from 'react'
+import { withStyles, makeStyles, Typography, Box, Tooltip } from "@material-ui/core"
 import Skeleton from "@material-ui/lab/Skeleton"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from 'react'
@@ -67,6 +68,18 @@ const useStyles = makeStyles((theme) => ({
     },
   }
 }))
+
+
+const HtmlTooltip = withStyles((theme) => ({
+  tooltip: {
+    backgroundColor: '#f5f5f9',
+    color: 'rgba(0, 0, 0, 0.87)',
+    maxWidth: 220,
+    fontSize: theme.typography.pxToRem(12),
+    border: '1px solid #dadde9',
+  },
+}))(Tooltip);
+
 
 
 const Coin = () => {
@@ -254,10 +267,30 @@ const Coin = () => {
 {/*              <Typography variant="h6">
                 {coin?.sentiment_votes_up_percentage} % {coin?.sentiment_votes_down_percentage} %
               </Typography>*/}
-            <div style={{display: "flex"}}>
-              <div style={{backgroundColor: 'red', height: 10, width: coin?.sentiment_votes_down_percentage*3}}>{coin?.sentiment_votes_down_percentage} %</div>
-              <div style={{backgroundColor: 'green', height: 10, width: coin?.sentiment_votes_up_percentage*3}}>{coin?.sentiment_votes_up_percentage} %</div>
-            </div>
+              <div style={{display: "flex"}}>
+                <HtmlTooltip
+                  title={
+                    <React.Fragment>
+                      <Typography color="inherit">
+                        {coin?.sentiment_votes_down_percentage} %
+                      </Typography>
+                    </React.Fragment>
+                  }
+                >
+                  <div style={{backgroundColor: 'red', height: 10, width: coin?.sentiment_votes_down_percentage*3}}></div>
+                </HtmlTooltip>
+                <HtmlTooltip
+                  title={
+                    <React.Fragment>
+                      <Typography color="inherit">
+                        {coin?.sentiment_votes_down_percentage} %
+                      </Typography>
+                    </React.Fragment>
+                  }
+                >
+                  <div style={{backgroundColor: 'green', height: 10, width: coin?.sentiment_votes_up_percentage*3}}></div>
+                </HtmlTooltip>
+              </div>
             </span>
           </div>
         </Box>
