@@ -268,7 +268,7 @@ const Coin = () => {
                   title={
                     <React.Fragment>
                       <Typography>
-                        {coin?.sentiment_votes_down_percentage} %
+                        😒 {coin?.sentiment_votes_down_percentage} %
                       </Typography>
                     </React.Fragment>
                   }
@@ -279,7 +279,7 @@ const Coin = () => {
                   title={
                     <React.Fragment>
                       <Typography color="inherit">
-                        {coin?.sentiment_votes_down_percentage} %
+                        😁 {coin?.sentiment_votes_down_percentage} %
                       </Typography>
                     </React.Fragment>
                   }
