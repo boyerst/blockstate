@@ -263,7 +263,7 @@ const Coin = () => {
               <Typography variant="h6" className={classes.heading}>
                 Sentiment
               </Typography>
-              <Box style={{display: "flex", marginTop: 12, borderColor: 'white'}}>
+              <Box style={{display: "flex", marginTop: 12}}>
                 <HtmlTooltip
                   placement="top-start"
                   title={
@@ -274,7 +274,13 @@ const Coin = () => {
                     </React.Fragment>
                   }
                 >
-                  <Box style={{backgroundColor: 'red', height: 10, width: coin?.sentiment_votes_down_percentage*2.5}}></Box>
+                  <Box style={{
+                    borderTopLeftRadius: "9px", 
+                    borderBottomLeftRadius: "9px", 
+                    backgroundColor: 'red', 
+                    height: 10, 
+                    width: coin?.sentiment_votes_down_percentage*2.5}}>
+                  </Box>
                 </HtmlTooltip>
                 <HtmlTooltip
                   placement="bottom-end"
@@ -286,7 +292,13 @@ const Coin = () => {
                     </React.Fragment>
                   }
                 >
-                  <Box style={{backgroundColor: 'green', height: 10, width: coin?.sentiment_votes_up_percentage*2.5}}></Box>
+                  <Box style={{                    
+                    borderTopRightRadius: "9px", 
+                    borderBottomRightRadius: "9px", 
+                    backgroundColor: 'green', 
+                    height: 10, 
+                    width: coin?.sentiment_votes_up_percentage*2.5}}>    
+                  </Box>
                 </HtmlTooltip>
               </Box>
             </span>
