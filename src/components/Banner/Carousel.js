@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import { Link } from "react-router-dom"
+import AliceCarousel from "react-alice-carousel"
 import { makeStyles } from "@material-ui/core"
 import axios from "axios"
 import { CurrencyState } from "../../CurrencyContext"
 import { TrendingCoins } from "../../config/api"
-import AliceCarousel from "react-alice-carousel"
-import { Link } from "react-router-dom"
 import { numberWithCommas } from "../../utils/utils"
 
 
@@ -26,10 +26,10 @@ const useStyles = makeStyles(() => ({
 
 
 
-const Carousel = () => {
+function Carousel() {
 
   const [trending, setTrending] = useState([])
-  
+
   const classes = useStyles()
 
   const { currency, symbol } = CurrencyState()
@@ -40,7 +40,7 @@ const Carousel = () => {
   }
 
   useEffect(() => {
-    fetchTrendingCoins()    
+    fetchTrendingCoins()
   }, [currency])
 
 
@@ -53,24 +53,26 @@ const Carousel = () => {
         to={`/coins/${coin.id}`}
         className={classes.carouselItem}
       >
-        <img 
-          src={coin?.image} 
+        <img
+          src={coin?.image}
           alt={coin.name}
           height="80"
-          style={{marginBottom: 23}}
+          style={{ marginBottom: 23 }}
         />
-        <span style={{marginBottom: 10}}> 
+        <span style={{ marginBottom: 10 }}>
           {coin?.symbol}
           &nbsp;
           <span
             style={{
               color: profit > 0 ? "rgb(14, 203, 129)" : "red",
             }}
-          > 
-            {profit && "+"}{coin?.price_change_percentage_24h?.toFixed(2)}%
+          >
+            {profit && "+"}
+            {coin?.price_change_percentage_24h?.toFixed(2)}
+            %
           </span>
         </span>
-        <span style={{fontSize: 22, fontWeight: 500}}>
+        <span style={{ fontSize: 22, fontWeight: 500 }}>
           {
             currency === "USD" ? <>{symbol} {numberWithCommas(coin?.current_price.toFixed(2))}</>
             : coin.id === "bitcoin" && currency === "BTC" ? <>{symbol} {coin?.current_price.toFixed(2)}</>
@@ -85,17 +87,17 @@ const Carousel = () => {
 
   const responsive = {
     0: {
-      items: 2, 
+      items: 2,
     },
     512: {
-      items: 4, 
+      items: 4,
     }
   }
 
 
   return (
     <div className={classes.carousel}>
-      <AliceCarousel 
+      <AliceCarousel
         mouseTracking
         infinite
         autoPlay
@@ -108,7 +110,7 @@ const Carousel = () => {
       />
     </div>
 
-  )    
+  )
 }
 
 export default Carousel

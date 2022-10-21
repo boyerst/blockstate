@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react"
-import { CurrencyState } from "../CurrencyContext"
+import React, { useState, useEffect } from "react"
 import { makeStyles, CircularProgress } from "@material-ui/core"
 import { ToggleButton } from "@material-ui/lab"
-import { CoinHistoricData } from "../config/api"
 import axios from "axios"
-import { chartDays } from "../config/chartData"
 import { Line } from "react-chartjs-2"
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js'
+import {
+  Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend
+} from 'chart.js'
+import { CurrencyState } from "../CurrencyContext"
+import { chartDays } from "../config/chartData"
+import { CoinHistoricData } from "../config/api"
+
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
 
@@ -53,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const CoinChart = ( {coin} ) => {
+function CoinChart({ coin }) {
 
   const [historicalData, setHistoricalData] = useState()
   const [days, setDays] = useState(1)
@@ -63,12 +66,12 @@ const CoinChart = ( {coin} ) => {
 
   const fetchCoinHistoricData = async () => {
     const { data } = await axios.get(CoinHistoricData(coin.id, days, currency))
-    setHistoricalData(data.prices)    
+    setHistoricalData(data.prices)
   }
 
 
   useEffect(() => {
-    fetchCoinHistoricData()    
+    fetchCoinHistoricData()
   }, [currency, days])
 
 
@@ -91,11 +94,11 @@ const CoinChart = ( {coin} ) => {
           />
         ) : (
           <>
-            <Line 
+            <Line
               data={{
-                labels: historicalData.map((coin) => {  
-                  let date = new Date(coin[0])
-                  let time = date.getHours() > 12
+                labels: historicalData.map((coin) => {
+                  const date = new Date(coin[0])
+                  const time = date.getHours() > 12
                     ? `${date.getHours() - 12}:${date.getMinutes()} PM`
                     : `${date.getHours()}:${date.getMinutes()} AM`
                   return days === 1 ? time : date.toLocaleString()
@@ -123,7 +126,7 @@ const CoinChart = ( {coin} ) => {
                   x: {
                     grid: {
                       display: false
-                    }                    
+                    }
                   }
                 }
               }}
@@ -147,12 +150,13 @@ const CoinChart = ( {coin} ) => {
                   className={classes.selectButton}
                   classes={{ selected: classes.selected }}
                 >
-                  {day.label}  
-                </ToggleButton>    
+                  {day.label}
+                </ToggleButton>
               ))}
-            </div>  
+            </div>
           </>
-        )}
+        )
+      }
     </div>
   )
 }

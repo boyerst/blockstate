@@ -1,29 +1,30 @@
+import React from "react"
 import "../../App.css"
+import { makeStyles, Container } from "@material-ui/core"
 import Carousel from "./Carousel"
-import { makeStyles, Container, Typography } from "@material-ui/core"
 
 
 
 const useStyles = makeStyles(() => ({
   bannerContent: {
-    height: 400, 
+    height: 400,
     display: "flex",
     flexDirection: "column",
     paddingTop: 25,
-    paddingBottom: 140, 
+    paddingBottom: 140,
     justifyContent: "space-around"
   },
   titleType: {
     display: "flex",
     height: "40%",
     flexDirection: "column",
-    justifyContent: "center", 
+    justifyContent: "center",
     textAlign: "center"
   }
 }))
 
 
-const Banner = () => {
+function Banner() {
 
   const classes = useStyles()
 
@@ -52,7 +53,6 @@ const Banner = () => {
             The State of The Blockchain
           </Typography>*/}
           <Carousel />
-          
         </div>
       </Container>
     </div>
