@@ -142,7 +142,8 @@ function CoinChart({ coin }) {
               {chartDays.map((day) => (
                 <ToggleButton
                   key={day.value}
-                  onClick={() => {setDays(day.value);
+                  onClick={() => {
+                    setDays(day.value);
                     setSelected(!selected)
                   }}
                   selected={day.value === days}

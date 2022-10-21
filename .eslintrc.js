@@ -35,6 +35,8 @@ module.exports = {
     "react/destructuring-assignment": "off",
     "comma-dangle": "off",
     "operator-linebreak": "off",
-    "no-multiple-empty-lines": "off"
+    "no-multiple-empty-lines": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "no-nested-ternary": "off"
   },
 };
