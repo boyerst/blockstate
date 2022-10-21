@@ -257,7 +257,7 @@ function CoinsTable() {
                             {symbol}{" "}
                             {currency === "USD" ? numberWithCommas(row.current_price.toFixed(2))
                               : row.id === "bitcoin" ? row.current_price.toFixed(0)
-                              : row.current_price.toFixed(8)}
+                                : row.current_price.toFixed(8)}
                           </TableCell>
                           <TableCell
                             className={classes.data}
@@ -294,7 +294,7 @@ function CoinsTable() {
         }
       </TableContainer>
       <Pagination
-        count={(handleSearch()?.length / 30).toFixed(0)}
+        count={(handleSearch()?.length || 0 / 30).toFixed(0)}
         onChange={(_, value) => {
           setPage(value)
           window.scroll(0, 370)
