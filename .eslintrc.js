@@ -10,8 +10,7 @@ module.exports = {
   },
   extends: [
     "airbnb",
-    "airbnb/hooks",
-    "prettier"
+    "airbnb/hooks"
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -21,8 +20,7 @@ module.exports = {
     sourceType: "module",
   },
   plugins: [
-    "react",
-    "prettier"
+    "react"
   ],
   rules: {
     // ...a11yOff,
@@ -40,6 +38,5 @@ module.exports = {
     "no-multiple-empty-lines": "off",
     "react/jsx-one-expression-per-line": "off",
     "no-nested-ternary": "off",
-    "prettier/prettier": "error"
   },
 };
