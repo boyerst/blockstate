@@ -287,7 +287,7 @@ function Coin() {
                   placement="bottom-end"
                   title={
                     <Typography color="inherit">
-                      😁 {coin?.sentiment_votes_down_percentage} %
+                      😁 {coin?.sentiment_votes_up_percentage} %
                     </Typography>
                   }
                 >
