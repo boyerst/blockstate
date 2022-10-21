@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import "../App.css"
-import { withStyles, makeStyles, Typography, Box, Tooltip } from "@material-ui/core"
+import {
+  withStyles, makeStyles, Typography, Box, Tooltip
+} from "@material-ui/core"
 import Skeleton from "@material-ui/lab/Skeleton"
 import { useParams } from "react-router-dom"
-import { useState, useEffect } from 'react'
+import axios from "axios"
+import ReactHtmlParser from "react-html-parser"
 import { CurrencyState } from "../CurrencyContext"
 import { CoinMarketData } from "../config/api"
 import CoinChart from "../components/CoinChart"
-import axios from "axios"
-import ReactHtmlParser from "react-html-parser"
 import { numberWithCommas, formatDate } from "../utils/utils"
 
 
@@ -31,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    marginTop: 110, 
+    marginTop: 110,
     paddingRight: 15,
     paddingLeft: 15
   },
@@ -82,15 +83,15 @@ const HtmlTooltip = withStyles((theme) => ({
 
 
 
-const Coin = () => {
+function Coin() {
 
   const { id } = useParams()
   const [coin, setCoin] = useState()
   const { currency, symbol } = CurrencyState()
 
-  const fetchCoinMarketData =  async () => {
+  const fetchCoinMarketData = async () => {
     const { data } = await axios.get(CoinMarketData(id))
-    setCoin(data)    
+    setCoin(data)
   }
 
   console.log("CoinMarketData: ", coin)
@@ -105,7 +106,7 @@ const Coin = () => {
 
   if (!coin) return <Skeleton variant="circle" />
 
-  return(
+  return (
     <div className={classes.container}>
       <div className={classes.sidebar}>
         <img 
@@ -148,9 +149,9 @@ const Coin = () => {
               <Typography variant="h6" style={{ fontFamily: "Open Sans", justifyContent: "space-between" }}>
                 {symbol}{" "}
                 {currency === "USD" && coin?.market_data.current_price[currency.toLowerCase()] > 1 ?
-                  numberWithCommas(coin?.market_data.current_price[currency.toLowerCase()]) 
+                  numberWithCommas(coin?.market_data.current_price[currency.toLowerCase()])
                   : coin?.market_data.current_price[currency.toLowerCase()]
-                } 
+                }
               </Typography>
             </span>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
@@ -158,12 +159,12 @@ const Coin = () => {
                 24h Price Change
               </Typography>
               &nbsp; &nbsp;
-              <Typography 
-                variant="h6" 
-                style={{ 
-                  fontFamily: "Open Sans", 
-                  justifyContent: "space-between", 
-                  color: profit === true ? "rgb(14, 203, 129)"  : "red"
+              <Typography
+                variant="h6"
+                style={{
+                  fontFamily: "Open Sans",
+                  justifyContent: "space-between",
+                  color: profit === true ? "rgb(14, 203, 129)" : "red"
                 }}
               >
                 {coin?.market_data.price_change_percentage_24h_in_currency[currency.toLowerCase()].toFixed(2)} %
@@ -174,12 +175,12 @@ const Coin = () => {
                 7d Price Change
               </Typography>
               &nbsp; &nbsp;
-              <Typography 
-                variant="h6" 
-                style={{ 
-                  fontFamily: "Open Sans", 
-                  justifyContent: "space-between", 
-                  color: profit === true ? "rgb(14, 203, 129)"  : "red"
+              <Typography
+                variant="h6"
+                style={{
+                  fontFamily: "Open Sans",
+                  justifyContent: "space-between",
+                  color: profit === true ? "rgb(14, 203, 129)" : "red"
                 }}
               >
                 {coin?.market_data.price_change_percentage_7d_in_currency[currency.toLowerCase()].toFixed(2)} %
@@ -211,27 +212,27 @@ const Coin = () => {
               &nbsp; &nbsp;
               <Typography variant="h6">
                 {
-                  coin?.market_data.max_supply 
-                  ? numberWithCommas(coin?.market_data.max_supply.toFixed(0)) 
-                  : coin?.market_data.total_supply
-                  ? numberWithCommas(coin?.market_data.total_supply.toFixed(0)) 
-                  : "ꝏ "
+                  coin?.market_data.max_supply
+                    ? numberWithCommas(coin?.market_data.max_supply.toFixed(0))
+                    : coin?.market_data.total_supply
+                      ? numberWithCommas(coin?.market_data.total_supply.toFixed(0))
+                      : "ꝏ "
                 }
               </Typography>
             </span>
-            { 
-              Object.keys(coin.market_data.fully_diluted_valuation).length === 0 
-              ? " "
-              : <span style={{ display: "flex", justifyContent: "space-between" }}>
-                  <Typography variant="h6" className={classes.heading}>
-                    Fully Diluted Valuation
-                  </Typography>
-                  &nbsp; &nbsp;
-                  <Typography variant="h6">
-                    {symbol}{" "}
-                    {numberWithCommas(coin?.market_data.fully_diluted_valuation[currency.toLowerCase()])}
-                  </Typography>
-                </span>
+            {
+              Object.keys(coin.market_data.fully_diluted_valuation).length === 0
+                ? " "
+                : <span style={{ display: "flex", justifyContent: "space-between" }}>
+                    <Typography variant="h6" className={classes.heading}>
+                      Fully Diluted Valuation
+                    </Typography>
+                    &nbsp; &nbsp;
+                    <Typography variant="h6">
+                      {symbol}{" "}
+                      {numberWithCommas(coin?.market_data.fully_diluted_valuation[currency.toLowerCase()])}
+                    </Typography>
+                  </span>
             }
             <span style={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h6" className={classes.heading}>
@@ -241,12 +242,12 @@ const Coin = () => {
               <Typography variant="h6">
                 {symbol}{" "}
                 {currency === "USD" && coin?.market_data.ath[currency.toLowerCase()] > 1 ?
-                  numberWithCommas(coin?.market_data.ath[currency.toLowerCase()].toFixed(2)) 
-                  : coin?.market_data.ath[currency.toLowerCase()]
-                } on {formatDate(coin?.market_data.ath_date[currency.toLowerCase()])}
+                  numberWithCommas(coin?.market_data.ath[currency.toLowerCase()].toFixed(2))
+                  : coin?.market_data.ath[currency.toLowerCase()]} on
+                {formatDate(coin?.market_data.ath_date[currency.toLowerCase()])}
               </Typography>
             </span>
-            <span style={{ display: "flex", justifyContent: "space-between"}}>
+            <span style={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h6" className={classes.heading}>
                 ATL
               </Typography>
@@ -254,60 +255,60 @@ const Coin = () => {
               <Typography variant="h6">
                 {symbol}{" "}
                 {currency === "USD" && coin?.market_data.atl[currency.toLowerCase()] > 1 ?
-                  numberWithCommas(coin?.market_data.atl[currency.toLowerCase()].toFixed(2)) 
-                  : coin?.market_data.atl[currency.toLowerCase()]
-                } on {formatDate(coin?.market_data.atl_date[currency.toLowerCase()])}
+                  numberWithCommas(coin?.market_data.atl[currency.toLowerCase()].toFixed(2))
+                  : coin?.market_data.atl[currency.toLowerCase()]} on
+                {formatDate(coin?.market_data.atl_date[currency.toLowerCase()])}
               </Typography>
             </span>
-            <span style={{ display: "flex", justifyContent: "space-between"}}>
+            <span style={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h6" className={classes.heading}>
                 Sentiment
               </Typography>
-              <Box style={{display: "flex", marginTop: 12}}>
+              <Box style={{ display: "flex", marginTop: 12 }}>
                 <HtmlTooltip
                   placement="top-start"
                   title={
-                    <React.Fragment>
-                      <Typography>
-                        😒 {coin?.sentiment_votes_down_percentage} %
-                      </Typography>
-                    </React.Fragment>
+                    <Typography>
+                      😒 {coin?.sentiment_votes_down_percentage} %
+                    </Typography>
                   }
                 >
-                  <Box style={{
-                    borderTopLeftRadius: "9px", 
-                    borderBottomLeftRadius: "9px", 
-                    backgroundColor: 'red', 
-                    height: 10, 
-                    width: coin?.sentiment_votes_down_percentage*2.5}}>
-                  </Box>
+                  <Box
+                    style={{
+                      borderTopLeftRadius: "9px",
+                      borderBottomLeftRadius: "9px",
+                      backgroundColor: 'red',
+                      height: 10,
+                      width: coin?.sentiment_votes_down_percentage * 2.5
+                    }}
+                  />
                 </HtmlTooltip>
                 <HtmlTooltip
                   placement="bottom-end"
                   title={
-                    <React.Fragment>
-                      <Typography color="inherit">
-                        😁 {coin?.sentiment_votes_down_percentage} %
-                      </Typography>
-                    </React.Fragment>
+                    <Typography color="inherit">
+                      😁 {coin?.sentiment_votes_down_percentage} %
+                    </Typography>
                   }
                 >
-                  <Box style={{                    
-                    borderTopRightRadius: "9px", 
-                    borderBottomRightRadius: "9px", 
-                    backgroundColor: 'green', 
-                    height: 10, 
-                    width: coin?.sentiment_votes_up_percentage*2.5}}>    
-                  </Box>
+                  <Box
+                    style={{
+                      borderTopRightRadius: "9px",
+                      borderBottomRightRadius: "9px",
+                      backgroundColor: 'green',
+                      height: 10,
+                      width: coin?.sentiment_votes_up_percentage * 2.5
+                    }}
+                  />
                 </HtmlTooltip>
               </Box>
             </span>
           </div>
         </Box>
       </div>
-      <CoinChart coin={coin}/>
-    </div>       
-  ) 
+      <CoinChart coin={coin} />
+    </div>
+  )
 }
 
 
