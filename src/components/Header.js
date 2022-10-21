@@ -1,19 +1,21 @@
+import React, { useState, useEffect } from "react"
 import "../App.css"
-import { makeStyles, AppBar, Container, Toolbar, Typography, Select, MenuItem, Switch, Grid, ListItemIcon } from "@material-ui/core"
+import {
+  makeStyles, AppBar, Container, Toolbar, Typography, Select, MenuItem, Switch, Grid
+} from "@material-ui/core"
 import Skeleton from "@material-ui/lab/Skeleton"
-import { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom"
+import axios from "axios"
 import { CurrencyState } from "../CurrencyContext"
 import { GlobalMarketData } from "../config/api"
 import { numberWithCommas } from "../utils/utils"
-import axios from "axios"
 import Logo from '../logo.png'
 
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   title: {
-    flex: 1, 
+    flex: 1,
     color: "#0582CA",
     fontFamily: "Fredoka",
     fontWeight: 600,
@@ -21,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   select: {
     margin: 10,
-    paddingBottom: 15, 
+    paddingBottom: 15,
     paddingLeft: 5,
     maxHeight: 35,
     width: 100,
@@ -52,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const Header = (props, disabled) => {
+function Header(props) {
 
   const [globalMarket, setGlobalMarket] = useState([])
   const [globalLoading, setGlobalLoading] = useState(true)
@@ -66,7 +68,7 @@ const Header = (props, disabled) => {
 
   const fetchGlobalData = async () => {
     setGlobalLoading(true)
-    const { data: { data } } = await axios.get(GlobalMarketData())       
+    const { data: { data } } = await axios.get(GlobalMarketData())
     setGlobalMarket(data)
     setGlobalLoading(false)
   }
@@ -81,42 +83,43 @@ const Header = (props, disabled) => {
   console.log("GlobalMarket (Header): ", globalMarket)
 
 
-  return(
-    <AppBar color="transparent" position="static" elevation={20} >
+  return (
+    <AppBar color="transparent" position="static" elevation={20}>
       <Container maxWidth="xl" className={classes.globalBar}>
         <Toolbar variant="dense">
-         {
+          {
             globalLoading ? (
               <Skeleton variant="rect" width={400} height={20} />
-              ) : (
+            ) : (
               <Grid container justifyContent="flex-start" spacing={5}>
                 <Grid item>
                   <span className={classes.metric}>
                     Coins: &nbsp;
                   </span>
-                    {numberWithCommas(globalMarket.active_cryptocurrencies)}
+                  {numberWithCommas(globalMarket.active_cryptocurrencies)}
                 </Grid>
                 <Grid item>
                   <span className={classes.metric}>
                     Market Cap: &nbsp;
                   </span>
-                    ${numberWithCommas(globalMarket.total_market_cap.usd)}
-                  <span style={{paddingLeft: 10, color: marketCapProfit > 0 ? "rgb(14, 203, 129)"  : "red"}}>  
-                  {marketCapProfit ? "↑ " : "↓ "}
-                  {globalMarket.market_cap_change_percentage_24h_usd.toFixed(2)} %
+                  ${numberWithCommas(globalMarket.total_market_cap.usd)}
+                  <span style={{ paddingLeft: 10, color: marketCapProfit > 0 ? "rgb(14, 203, 129)" : "red" }}>
+                    {marketCapProfit ? "↑ " : "↓ "}
+                    {globalMarket.market_cap_change_percentage_24h_usd.toFixed(2)} %
                   </span>
                 </Grid>
                 <Grid item>
                   <span className={classes.metric}>
                     24h Vol: &nbsp;
                   </span>
-                    ${numberWithCommas(globalMarket.total_volume.usd)}</Grid>
+                  ${numberWithCommas(globalMarket.total_volume.usd)}
+                </Grid>
                 <Grid item>
                   <span className={classes.metric}>
                     Dominance: &nbsp;
                   </span>
-                    (BTC) {globalMarket.market_cap_percentage.btc.toFixed(2)} %
-                    (ETH) {globalMarket.market_cap_percentage.eth.toFixed(2)} %
+                  (BTC) {globalMarket.market_cap_percentage.btc.toFixed(2)} %
+                  (ETH) {globalMarket.market_cap_percentage.eth.toFixed(2)} %
                 </Grid>
               </Grid>
             )
@@ -125,8 +128,8 @@ const Header = (props, disabled) => {
       </Container>
       <Container maxWidth="xl">
         <Toolbar>
-          <img src={Logo} height="60" width="80" alt="" style={{marginRight: -19}}/>
-          <Typography 
+          <img src={Logo} height="60" width="80" alt="" style={{ marginRight: -19 }} />
+          <Typography
             className={classes.title}
             onClick={() => history.push("/")}
             variant="h4"
@@ -138,21 +141,21 @@ const Header = (props, disabled) => {
               The State of The Blockchain
             </Typography>*/}
           </Typography>
-          <Select 
+          <Select
             className={classes.select}
             variant="filled"
             borderRadius="80%"
             value={currency}
             onChange={(e) => setCurrency(e.target.value)}
-            >
-            <MenuItem value={"USD"}>USD</MenuItem>
-            <MenuItem value={"BTC"}>BTC</MenuItem>
+          >
+            <MenuItem value="USD">USD</MenuItem>
+            <MenuItem value="BTC">BTC</MenuItem>
           </Select>
-          <Switch 
+          <Switch
             classes={{
               switchBase: classes.switchBase,
             }}
-            checked={props.darkMode} 
+            checked={props.darkMode}
             onChange={() => props.handleDarkMode()}
           />
         </Toolbar>
@@ -163,6 +166,3 @@ const Header = (props, disabled) => {
 
 
 export default Header
-
-
- 
