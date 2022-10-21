@@ -279,7 +279,7 @@ function Coin() {
                       borderBottomLeftRadius: "9px",
                       backgroundColor: 'red',
                       height: 10,
-                      width: coin?.sentiment_votes_down_percentage * 2.5
+                      width: coin?.sentiment_votes_down_percentage || 0 * 2.5
                     }}
                   />
                 </HtmlTooltip>
@@ -297,7 +297,7 @@ function Coin() {
                       borderBottomRightRadius: "9px",
                       backgroundColor: 'green',
                       height: 10,
-                      width: coin?.sentiment_votes_up_percentage * 2.5
+                      width: coin?.sentiment_votes_up_percentage || 0 * 2.5
                     }}
                   />
                 </HtmlTooltip>
