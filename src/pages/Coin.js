@@ -121,7 +121,7 @@ function Coin() {
         <Typography variant="subtitle1" className={classes.description}>
           {ReactHtmlParser(coin?.description.en.split(". ")[0])}
         </Typography>
-        <Box className={classes.marketData} >
+        <Box className={classes.marketData}>
           <div>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h6" className={classes.heading}>

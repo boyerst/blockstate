@@ -9,18 +9,20 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'airbnb',
-    'airbnb/hooks'
+    "airbnb",
+    "airbnb/hooks",
+    "prettier"
   ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
   plugins: [
-    'react',
+    "react",
+    "prettier"
   ],
   rules: {
     // ...a11yOff,
@@ -37,6 +39,7 @@ module.exports = {
     "operator-linebreak": "off",
     "no-multiple-empty-lines": "off",
     "react/jsx-one-expression-per-line": "off",
-    "no-nested-ternary": "off"
+    "no-nested-ternary": "off",
+    "prettier/prettier": "error"
   },
 };
