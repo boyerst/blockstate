@@ -28,7 +28,7 @@ module.exports = {
     "react/jsx-wrap-multilines": "off",
     "react/prop-types": 0,
     "react/jsx-props-no-spreading": 0,
-    "quotes": [0, "double"],
+    "quotes": [1, "double"],
     "quote-props": "off",
     "semi": [0, "never"],
     "padded-blocks": ["error", { "classes": "always" }],
