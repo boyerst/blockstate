@@ -19,6 +19,7 @@ import { numberWithCommas, formatDate } from "../utils/utils"
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
+    paddingBottom: 80,
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",
       alignItems: "center"
