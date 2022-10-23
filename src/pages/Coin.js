@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react"
 import "../App.css"
 import {
   withStyles, makeStyles, Typography, Box, Tooltip
@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
   },
   marketData: {
     alignItems: "center",
-    border: '1px solid grey',
+    border: "1px solid grey",
     borderRadius: "3%",
     padding: 20,
     width: "90%",
@@ -74,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
 const HtmlTooltip = withStyles((theme) => ({
   tooltip: {
     backgroundColor: "#f5f5f9",
-    color: 'rgba(0, 0, 0, 0.87)',
+    color: "rgba(0, 0, 0, 0.87)",
     maxWidth: 220,
     fontSize: theme.typography.pxToRem(12),
     border: "1px solid #dadde9"
@@ -109,7 +109,7 @@ function Coin() {
   return (
     <div className={classes.container}>
       <div className={classes.sidebar}>
-        <img 
+        <img
           src={coin?.image.large}
           alt={coin?.name}
           height="200"
@@ -150,8 +150,7 @@ function Coin() {
                 {symbol}{" "}
                 {currency === "USD" && coin?.market_data.current_price[currency.toLowerCase()] > 1 ?
                   numberWithCommas(coin?.market_data.current_price[currency.toLowerCase()])
-                  : coin?.market_data.current_price[currency.toLowerCase()]
-                }
+                  : coin?.market_data.current_price[currency.toLowerCase()]}
               </Typography>
             </span>
             <span style={{ display: "flex", justifyContent: "space-between" }}>
@@ -277,9 +276,9 @@ function Coin() {
                     style={{
                       borderTopLeftRadius: "9px",
                       borderBottomLeftRadius: "9px",
-                      backgroundColor: 'red',
+                      backgroundColor: "red",
                       height: 10,
-                      width: coin?.sentiment_votes_down_percentage || 0 * 2.5
+                      width: coin?.sentiment_votes_down_percentage * 2.5
                     }}
                   />
                 </HtmlTooltip>
@@ -295,9 +294,9 @@ function Coin() {
                     style={{
                       borderTopRightRadius: "9px",
                       borderBottomRightRadius: "9px",
-                      backgroundColor: 'green',
+                      backgroundColor: "green",
                       height: 10,
-                      width: coin?.sentiment_votes_up_percentage || 0 * 2.5
+                      width: coin?.sentiment_votes_up_percentage * 2.5
                     }}
                   />
                 </HtmlTooltip>
