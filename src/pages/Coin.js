@@ -40,7 +40,8 @@ const useStyles = makeStyles((theme) => ({
   heading: {
     fontWeight: "bold",
     marginBottom: 20,
-    fontFamily: "Open Sans"
+    fontFamily: "Open Sans",
+    alignItems: "center"
   },
   description: {
     width: "100%",
@@ -116,7 +117,7 @@ function Coin() {
           height="200"
           style={{ marginBottom: 20 }}
         />
-        <Typography variant="h3" className={classes.heading}>
+        <Typography variant="h4" className={classes.heading} style={{ textAlign: "center" }}>
           {coin?.name}
         </Typography>
         <Typography variant="subtitle1" className={classes.description}>
