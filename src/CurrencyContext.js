@@ -1,9 +1,11 @@
-import { createContext, useContext, useState, useEffect } from 'react'
+import React, {
+  createContext, useContext, useState, useEffect
+} from "react"
 
 
 const Currency = createContext()
 
-const CurrencyContext = ({children}) => {
+function CurrencyContext({ children }) {
 
   const [currency, setCurrency] = useState("USD")
   const [symbol, setSymbol] = useState("$")
@@ -14,8 +16,8 @@ const CurrencyContext = ({children}) => {
   }, [currency])
 
 
-  return(
-    <Currency.Provider value={{currency, symbol, setCurrency}}>
+  return (
+    <Currency.Provider value={{ currency, symbol, setCurrency }}>
       {children}
     </Currency.Provider>
   )
@@ -25,5 +27,5 @@ const CurrencyContext = ({children}) => {
 export default CurrencyContext
 
 export const CurrencyState = () => {
-  return useContext(Currency)    
+  return useContext(Currency)
 }
