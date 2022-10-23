@@ -15,7 +15,7 @@ function App() {
 
   const theme = createTheme({
     palette: {
-      type: darkMode ? 'dark' : 'light',
+      type: darkMode ? "dark" : "light",
       background: {
         paper: (darkMode ? "#000000" : "#FBFCFC")
       }
@@ -33,7 +33,7 @@ function App() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
-        <Paper style={{ minHeight: '110vh' }}>
+        <Paper style={{ minHeight: "110vh" }}>
           <div>
             <Header handleDarkMode={handleDarkMode} />
             <Route path="/" component={Home} exact />

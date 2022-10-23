@@ -5,6 +5,6 @@ export function numberWithCommas(x) {
 }
 
 
-export const formatDate = (date) => {
-  return date.split('T')[0]
+export function formatDate(date) {
+  return date.split("T")[0]
 }
