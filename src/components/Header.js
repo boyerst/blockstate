@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import "../App.css"
 import {
-  makeStyles, AppBar, Container, Toolbar, Typography, Select, MenuItem, Switch, Grid
+  makeStyles, AppBar, Container, Toolbar, Typography, Select, MenuItem, Switch, Grid, TextField
 } from "@material-ui/core"
 import Skeleton from "@material-ui/lab/Skeleton"
 import { useHistory } from "react-router-dom"
@@ -146,6 +146,7 @@ function Header(props) {
             variant="filled"
             borderRadius="80%"
             value={currency}
+            style={{ height: 30, width: 85 }}
             onChange={(e) => setCurrency(e.target.value)}
           >
             <MenuItem value="USD">USD</MenuItem>
