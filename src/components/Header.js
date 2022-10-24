@@ -119,6 +119,7 @@ function Header(props) {
                     Dominance: &nbsp;
                   </span>
                   (BTC) {globalMarket.market_cap_percentage.btc.toFixed(2)} %
+                  &nbsp;
                   (ETH) {globalMarket.market_cap_percentage.eth.toFixed(2)} %
                 </Grid>
               </Grid>

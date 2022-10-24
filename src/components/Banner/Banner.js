@@ -1,6 +1,6 @@
-import React from "react"
+// import React from "react"
 import "../../App.css"
-import { makeStyles, Container } from "@material-ui/core"
+import { makeStyles, Container, Typography } from "@material-ui/core"
 import Carousel from "./Carousel"
 
 
@@ -42,16 +42,19 @@ function Banner() {
           >
             BlockState
           </Typography>*/}
-{/*          <Typography
+          <Typography
             variant="h5"
             style={{
               // color: "",
               marginBottom: 20,
-              fontFamily: "Open Sans"
+              marginLeft: 30,
+              fontWeight: 700,
+              fontFamily: "Open Sans",
+              textAlign: "left"
             }}
           >
-            The State of The Blockchain
-          </Typography>*/}
+            Top Coins
+          </Typography>
           <Carousel />
         </div>
       </Container>

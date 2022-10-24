@@ -4,7 +4,7 @@ import AliceCarousel from "react-alice-carousel"
 import { makeStyles } from "@material-ui/core"
 import axios from "axios"
 import { CurrencyState } from "../../CurrencyContext"
-import { TrendingCoins } from "../../config/api"
+import { TopCoins } from "../../config/api"
 import { numberWithCommas } from "../../utils/utils"
 
 
@@ -28,23 +28,23 @@ const useStyles = makeStyles(() => ({
 
 function Carousel() {
 
-  const [trending, setTrending] = useState([])
+  const [top, setTop] = useState([])
 
   const classes = useStyles()
 
   const { currency, symbol } = CurrencyState()
 
-  const fetchTrendingCoins = async () => {
-    const { data } = await axios.get(TrendingCoins(currency))
-    setTrending(data)
+  const fetchTopCoins = async () => {
+    const { data } = await axios.get(TopCoins(currency))
+    setTop(data)
   }
 
   useEffect(() => {
-    fetchTrendingCoins()
+    fetchTopCoins()
   }, [currency])
 
 
-  const items = trending.map((coin) => {
+  const items = top.map((coin) => {
 
     const profit = coin?.price_change_percentage_24h >= 0
 
