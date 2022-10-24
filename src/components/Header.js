@@ -149,7 +149,7 @@ function Header(props) {
             style={{ height: 30, width: 85 }}
             onChange={(e) => setCurrency(e.target.value)}
           >
-            <MenuItem value="USD">USD</MenuItem>
+            <MenuItem value="USD" style={{}}>USD</MenuItem>
             <MenuItem value="BTC">BTC</MenuItem>
           </Select>
           <Switch

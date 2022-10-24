@@ -13,8 +13,7 @@ a {
 }
 
 /*Disable react-error-overlay*/
-iframe
-{
+iframe {
   display: none;
 }
 
