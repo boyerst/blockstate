@@ -5,6 +5,7 @@ import Carousel from "./Carousel"
 
 
 
+
 const useStyles = makeStyles(() => ({
   bannerContent: {
     height: 400,
@@ -42,7 +43,7 @@ function Banner() {
           >
             BlockState
           </Typography>*/}
-          <Typography
+{/*          <Typography
             variant="h5"
             style={{
               // color: "",
@@ -54,7 +55,7 @@ function Banner() {
             }}
           >
             Top Coins
-          </Typography>
+          </Typography>*/}
           <Carousel />
         </div>
       </Container>

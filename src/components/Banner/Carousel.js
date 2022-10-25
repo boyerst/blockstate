@@ -43,6 +43,7 @@ function Carousel() {
     fetchTopCoins()
   }, [currency])
 
+  console.log("top: ", top)
 
   const items = top.map((coin) => {
 
