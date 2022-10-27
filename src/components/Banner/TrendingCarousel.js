@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { makeStyles } from "@material-ui/core"
+import { makeStyles, Box } from "@material-ui/core"
 import AliceCarousel from "react-alice-carousel"
 import axios from "axios"
 import { TrendingCoins } from "../../config/api"
@@ -16,6 +16,11 @@ const useStyles = makeStyles(() => ({
     padding: 40
   },
   carouselItem: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  carouselData: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -44,7 +49,7 @@ function TrendingCarousel() {
   }, [])
 
   console.log("🟢trending: ", trending)
-  // console.log("🟢trending[0]: ", trending[0].item.id)
+
 
   const items = trending.map((coin) => {
 
@@ -53,12 +58,22 @@ function TrendingCarousel() {
         to={`/coins/${coin.item.id}`}
         className={classes.carouselItem}
       >
-        <span style={{ fontSize: 18, fontWeight: 500 }}>
-          {coin.item.symbol}
-        </span>
-        <span>
-          ₿ {coin.item.price_btc.toFixed(8)}
-        </span>
+        <img
+          src={coin?.item.small}
+          alt={coin?.item.name}
+          height="50"
+          width="50"
+          style={{ marginRight: 15 }}
+        />
+        <Box className={classes.carouselData}>
+          
+          <span style={{ fontSize: 18, fontWeight: 500 }}>
+            {coin?.item.symbol}
+          </span>
+          <span>
+            ₿ {coin?.item.price_btc.toFixed(8)}
+          </span>
+        </Box>
       </Link>
     )
   })
@@ -83,6 +98,7 @@ function TrendingCarousel() {
         autoPlayInterval={4000}
         animationDuration={1500}
         autoPlayDirection="rtl"
+        // paddingLeft={190}
         disableDotsControls
         disableButtonsControls
         responsive={responsive}
