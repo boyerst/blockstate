@@ -44,19 +44,17 @@ function Banner() {
           >
             BlockState
           </Typography>*/}
-{/*          <Typography
-            variant="h5"
+          <Typography
+            variant="h6"
             style={{
-              // color: "",
-              marginBottom: 20,
-              marginLeft: 30,
+              marginLeft: 70,
               fontWeight: 700,
               fontFamily: "Open Sans",
               textAlign: "left"
             }}
           >
-            Top Coins
-          </Typography>*/}
+            Trending Coins
+          </Typography>
           <TrendingCarousel />
           <TopCarousel />
         </div>
