@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     flexDirection: "column",
     paddingTop: 25,
-    paddingBottom: 140,
+    paddingBottom: 60,
     justifyContent: "space-around"
   },
   titleType: {
@@ -47,7 +47,7 @@ function Banner() {
           <Typography
             variant="h6"
             style={{
-              marginLeft: 70,
+              marginLeft: 20,
               fontWeight: 700,
               fontFamily: "Open Sans",
               textAlign: "left"
@@ -56,6 +56,18 @@ function Banner() {
             Trending Coins
           </Typography>
           <TrendingCarousel />
+          <Typography
+            variant="h6"
+            style={{
+              marginLeft: 20,
+              fontWeight: 700,
+              fontFamily: "Open Sans",
+              textAlign: "left",
+              paddingTop: 70
+            }}
+          >
+            Top Coins
+          </Typography>
           <TopCarousel />
         </div>
       </Container>
