@@ -84,7 +84,7 @@ function TrendingCarousel() {
       items: 2,
     },
     512: {
-      items: 4,
+      items: 5,
     }
   }
 
@@ -98,7 +98,7 @@ function TrendingCarousel() {
         autoPlayInterval={4000}
         animationDuration={1500}
         autoPlayDirection="rtl"
-        // paddingLeft={190}
+        paddingLeft={195}
         disableDotsControls
         disableButtonsControls
         responsive={responsive}
