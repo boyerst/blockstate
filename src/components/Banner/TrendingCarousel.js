@@ -53,8 +53,11 @@ function TrendingCarousel() {
         to={`/coins/${coin.item.id}`}
         className={classes.carouselItem}
       >
-        <span>
+        <span style={{ fontSize: 18, fontWeight: 500 }}>
           {coin.item.symbol}
+        </span>
+        <span>
+          ₿ {coin.item.price_btc.toFixed(8)}
         </span>
       </Link>
     )
@@ -77,7 +80,7 @@ function TrendingCarousel() {
         mouseTracking
         infinite
         autoPlay
-        autoPlayInterval={1000}
+        autoPlayInterval={4000}
         animationDuration={1500}
         autoPlayDirection="rtl"
         disableDotsControls
