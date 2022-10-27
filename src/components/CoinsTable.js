@@ -158,7 +158,7 @@ function CoinsTable() {
           </Grid>
           <Grid
             item
-            xs={6}
+            xs={5}
             container
             justifyContent="flex-end"
             alignItems="center"
