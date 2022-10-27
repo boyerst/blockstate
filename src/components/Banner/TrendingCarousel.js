@@ -79,6 +79,7 @@ function TrendingCarousel() {
         autoPlay
         autoPlayInterval={1000}
         animationDuration={1500}
+        autoPlayDirection="rtl"
         disableDotsControls
         disableButtonsControls
         responsive={responsive}

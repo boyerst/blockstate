@@ -26,7 +26,7 @@ const useStyles = makeStyles(() => ({
 
 
 
-function Carousel() {
+function TopCarousel() {
 
   const [top, setTop] = useState([])
 
@@ -114,4 +114,4 @@ function Carousel() {
   )
 }
 
-export default Carousel
+export default TopCarousel

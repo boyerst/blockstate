@@ -1,7 +1,7 @@
 // import React from "react"
 import "../../App.css"
 import { makeStyles, Container, Typography } from "@material-ui/core"
-import Carousel from "./Carousel"
+import TopCarousel from "./TopCarousel"
 import TrendingCarousel from "./TrendingCarousel"
 
 
@@ -58,7 +58,7 @@ function Banner() {
             Top Coins
           </Typography>*/}
           <TrendingCarousel />
-          <Carousel />
+          <TopCarousel />
         </div>
       </Container>
     </div>
