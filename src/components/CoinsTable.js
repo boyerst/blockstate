@@ -185,7 +185,7 @@ function CoinsTable() {
             <Table>
               <TableHead>
                 <TableRow>
-                  {["Coin", "Price", "1h %", "24h %", "7d %", "24h Volume", "Market Cap"].map((head) => (
+                  {["Coin", "Price", "1h %", "24h %", "7d %", "30d %", "24h Volume", "Market Cap"].map((head) => (
                     <TableCell
                       style={{
                         fontWeight: 700,
@@ -208,6 +208,8 @@ function CoinsTable() {
                     .map((row) => {
                       const profit1 = row.price_change_percentage_1h_in_currency > 0
                       const profit24 = row.price_change_percentage_24h > 0
+                      const profit7 = row.price_change_percentage_7d_in_currency > 0
+                      const profit30 = row.price_change_percentage_30d_in_currency > 0
                       return (
                         <TableRow
                           key={row.name}
@@ -282,6 +284,28 @@ function CoinsTable() {
                           >
                             {profit24 && "+"}
                             {row.price_change_percentage_24h.toFixed(2)}%
+                          </TableCell>
+                          <TableCell
+                            className={classes.data}
+                            align="right"
+                            style={{
+                              color: profit7 > 0 ? "rgb(14, 203, 129)" : "red",
+                              fontWeight: 400,
+                            }}
+                          >
+                            {profit7 && "+"}
+                            {row.price_change_percentage_7d_in_currency.toFixed(2)}%
+                          </TableCell>
+                          <TableCell
+                            className={classes.data}
+                            align="right"
+                            style={{
+                              color: profit30 > 0 ? "rgb(14, 203, 129)" : "red",
+                              fontWeight: 400,
+                            }}
+                          >
+                            {profit30 && "+"}
+                            {row.price_change_percentage_30d_in_currency.toFixed(2)}%
                           </TableCell>
                           <TableCell
                             className={classes.data}
