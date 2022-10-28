@@ -185,7 +185,7 @@ function CoinsTable() {
             <Table>
               <TableHead>
                 <TableRow>
-                  {["Coin", "Price", "24h %", "24h Volume", "Market Cap"].map((head) => (
+                  {["Coin", "Price", "1h %", "24h %", "7d %", "24h Volume", "Market Cap"].map((head) => (
                     <TableCell
                       style={{
                         fontWeight: 700,
@@ -206,7 +206,8 @@ function CoinsTable() {
                   handleSearch()
                     .slice((page - 1) * 30, (page - 1) * 30 + 30)
                     .map((row) => {
-                      const profit = row.price_change_percentage_24h > 0
+                      const profit1 = row.price_change_percentage_1h_in_currency > 0
+                      const profit24 = row.price_change_percentage_24h > 0
                       return (
                         <TableRow
                           key={row.name}
@@ -264,11 +265,22 @@ function CoinsTable() {
                             className={classes.data}
                             align="right"
                             style={{
-                              color: profit > 0 ? "rgb(14, 203, 129)" : "red",
+                              color: profit1 > 0 ? "rgb(14, 203, 129)" : "red",
                               fontWeight: 400,
                             }}
                           >
-                            {profit && "+"}
+                            {profit1 && "+"}
+                            {row.price_change_percentage_1h_in_currency.toFixed(2)}%
+                          </TableCell>
+                          <TableCell
+                            className={classes.data}
+                            align="right"
+                            style={{
+                              color: profit24 > 0 ? "rgb(14, 203, 129)" : "red",
+                              fontWeight: 400,
+                            }}
+                          >
+                            {profit24 && "+"}
                             {row.price_change_percentage_24h.toFixed(2)}%
                           </TableCell>
                           <TableCell
