@@ -110,7 +110,7 @@ function CoinsTable() {
 
     <Container>
       <div style={{ width: "100%", margin: 30, marginBottom: 70 }}>
-        <Grid container alignItems="flex-end">
+        <Grid container>
           <Grid item>
             <Typography
               variant="h5"
@@ -162,8 +162,9 @@ function CoinsTable() {
             container
             justifyContent="flex-end"
             alignItems="center"
+            style={{ marginLeft: 40 }}
           >
-            <SearchIcon style={{ marginTop: 15, marginRight: 5 }} />
+            <SearchIcon style={{ marginTop: 15 }} />
             <TextField
               className={classes.search}
               id="input-with-icon-grid"
