@@ -15,6 +15,8 @@ import {
 import Pagination from "@material-ui/lab/Pagination"
 import Skeleton from "@material-ui/lab/Skeleton"
 import SearchIcon from '@material-ui/icons/Search'
+import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp'
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown'
 import axios from "axios"
 import { useHistory } from "react-router-dom"
 import { AllCoinsMarketData, GlobalMarketData } from "../config/api"
@@ -95,6 +97,7 @@ function CoinsTable() {
 
   console.log("AllCoinsMarketData: ", currency, coins)
   console.log("GlobalMarketData: ", globalMarket)
+
 
 
   const handleSearch = () => {
@@ -271,8 +274,10 @@ function CoinsTable() {
                               fontWeight: 400,
                             }}
                           >
-                            {profit1 && "+"}
-                            {row.price_change_percentage_1h_in_currency.toFixed(2)}%
+                            {
+                              profit1 ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }}/>{row.price_change_percentage_1h_in_currency.toFixed(2)}%</span>)
+                              : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }}/>{row.price_change_percentage_1h_in_currency.toFixed(2).substring(1)}%</span>)
+                            }
                           </TableCell>
                           <TableCell
                             className={classes.data}
