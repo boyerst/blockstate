@@ -137,7 +137,7 @@ function CoinsTable() {
                   <Skeleton variant="rect" width={400} height={30} />
                 ) : (
                   <span>
-                    Today's Global Market Cap Is {symbol}{" "}
+                    Today's Global Market Cap Is {symbol}
                     {numberWithCommas(globalMarket.total_market_cap.usd.toFixed(0))}
                     {globalMarket.total_market_cap > "999999999" ? " B" : " M"},
                     &nbsp;
@@ -145,10 +145,12 @@ function CoinsTable() {
                     <span
                       style={{
                         color: marketCapProfit > 0 ? "rgb(14, 203, 129)" : "red",
-                        padding: 8
+                        paddingRight: 7
                       }}
                     >
-                      {marketCapProfit ? "↑ " : "↓ "}
+                      {marketCapProfit 
+                        ? <ArrowDropUpIcon style={{ verticalAlign: "middle" }} /> 
+                        : <ArrowDropDownIcon style={{ verticalAlign: "middle" }} />}
                       {globalMarket.market_cap_change_percentage_24h_usd.toFixed(2)} %
                     </span>
                     {marketCapProfit > 0 ? "increase" : "decrease"}
