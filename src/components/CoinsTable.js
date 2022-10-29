@@ -209,10 +209,10 @@ function CoinsTable() {
                   handleSearch()
                     .slice((page - 1) * 30, (page - 1) * 30 + 30)
                     .map((row) => {
-                      const profit1 = row.price_change_percentage_1h_in_currency > 0
-                      const profit24 = row.price_change_percentage_24h > 0
-                      const profit7 = row.price_change_percentage_7d_in_currency > 0
-                      const profit30 = row.price_change_percentage_30d_in_currency > 0
+                      const profit1h = row.price_change_percentage_1h_in_currency > 0
+                      const profit24h = row.price_change_percentage_24h > 0
+                      const profit7d = row.price_change_percentage_7d_in_currency > 0
+                      const profit30d = row.price_change_percentage_30d_in_currency > 0
                       return (
                         <TableRow
                           key={row.name}
@@ -270,12 +270,12 @@ function CoinsTable() {
                             className={classes.data}
                             align="right"
                             style={{
-                              color: profit1 > 0 ? "rgb(14, 203, 129)" : "red",
+                              color: profit1h > 0 ? "rgb(14, 203, 129)" : "red",
                               fontWeight: 400,
                             }}
                           >
                             {
-                              profit1 
+                              profit1h 
                               ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_1h_in_currency.toFixed(2)}%</span>)
                               : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_1h_in_currency.toFixed(2).substring(1)}%</span>)
                             }
@@ -284,12 +284,12 @@ function CoinsTable() {
                             className={classes.data}
                             align="right"
                             style={{
-                              color: profit24 > 0 ? "rgb(14, 203, 129)" : "red",
+                              color: profit24h > 0 ? "rgb(14, 203, 129)" : "red",
                               fontWeight: 400,
                             }}
                           >
                             {
-                              profit24
+                              profit24h
                               ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_24h.toFixed(2)}%</span>)
                               : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_24h.toFixed(2).substring(1)}%</span>)
                             }
@@ -298,12 +298,12 @@ function CoinsTable() {
                             className={classes.data}
                             align="right"
                             style={{
-                              color: profit7 > 0 ? "rgb(14, 203, 129)" : "red",
+                              color: profit7d > 0 ? "rgb(14, 203, 129)" : "red",
                               fontWeight: 400,
                             }}
                           >
                             {
-                              profit7
+                              profit7d
                               ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_7d_in_currency.toFixed(2)}%</span>)
                               : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_7d_in_currency.toFixed(2).substring(1)}%</span>)
                             }
@@ -312,12 +312,12 @@ function CoinsTable() {
                             className={classes.data}
                             align="right"
                             style={{
-                              color: profit30 > 0 ? "rgb(14, 203, 129)" : "red",
+                              color: profit30d > 0 ? "rgb(14, 203, 129)" : "red",
                               fontWeight: 400,
                             }}
                           >
                             {
-                              profit30
+                              profit30d
                               ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_30d_in_currency.toFixed(2)}%</span>)
                               : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_30d_in_currency.toFixed(2).substring(1)}%</span>)
                             }
