@@ -275,8 +275,9 @@ function CoinsTable() {
                             }}
                           >
                             {
-                              profit1 ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }}/>{row.price_change_percentage_1h_in_currency.toFixed(2)}%</span>)
-                              : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }}/>{row.price_change_percentage_1h_in_currency.toFixed(2).substring(1)}%</span>)
+                              profit1 
+                              ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_1h_in_currency.toFixed(2)}%</span>)
+                              : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_1h_in_currency.toFixed(2).substring(1)}%</span>)
                             }
                           </TableCell>
                           <TableCell
@@ -287,8 +288,11 @@ function CoinsTable() {
                               fontWeight: 400,
                             }}
                           >
-                            {profit24 && "+"}
-                            {row.price_change_percentage_24h.toFixed(2)}%
+                            {
+                              profit24
+                              ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_24h.toFixed(2)}%</span>)
+                              : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_24h.toFixed(2).substring(1)}%</span>)
+                            }
                           </TableCell>
                           <TableCell
                             className={classes.data}
@@ -298,8 +302,11 @@ function CoinsTable() {
                               fontWeight: 400,
                             }}
                           >
-                            {profit7 && "+"}
-                            {row.price_change_percentage_7d_in_currency.toFixed(2)}%
+                            {
+                              profit7
+                              ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_7d_in_currency.toFixed(2)}%</span>)
+                              : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_7d_in_currency.toFixed(2).substring(1)}%</span>)
+                            }
                           </TableCell>
                           <TableCell
                             className={classes.data}
@@ -309,8 +316,11 @@ function CoinsTable() {
                               fontWeight: 400,
                             }}
                           >
-                            {profit30 && "+"}
-                            {row.price_change_percentage_30d_in_currency.toFixed(2)}%
+                            {
+                              profit30
+                              ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_30d_in_currency.toFixed(2)}%</span>)
+                              : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_30d_in_currency.toFixed(2).substring(1)}%</span>)
+                            }
                           </TableCell>
                           <TableCell
                             className={classes.data}
