@@ -51,6 +51,14 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: 15,
     textAlign: "justify"
   },
+  downBox: {
+    transitionDuration: "2s",
+    "&:hover": {
+      boxShadow: "0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)",
+      transform: "scale(1.3)",
+      transitionDuration: "1s"
+    }
+  },
   marketData: {
     alignItems: "center",
     border: "1px solid grey",
@@ -283,8 +291,9 @@ function Coin() {
                       borderBottomLeftRadius: "9px",
                       backgroundColor: "red",
                       height: 10,
-                      width: coin?.sentiment_votes_down_percentage * 2.5
+                      width: coin?.sentiment_votes_down_percentage * 2.5,
                     }}
+                    className={classes.downBox}
                   />
                 </HtmlTooltip>
                 <HtmlTooltip
