@@ -85,6 +85,8 @@ const HtmlTooltip = withStyles((theme) => ({
 
 
 
+
+
 function Coin() {
 
   const { id } = useParams()
@@ -268,6 +270,7 @@ function Coin() {
               <Box style={{ display: "flex", marginTop: 12 }}>
                 <HtmlTooltip
                   placement="top-start"
+                  leaveDelay={1000}
                   title={
                     <Typography>
                       😒 {coin?.sentiment_votes_down_percentage} %
@@ -286,6 +289,7 @@ function Coin() {
                 </HtmlTooltip>
                 <HtmlTooltip
                   placement="bottom-end"
+                  leaveDelay={1000}
                   title={
                     <Typography color="inherit">
                       😁 {coin?.sentiment_votes_up_percentage} %
