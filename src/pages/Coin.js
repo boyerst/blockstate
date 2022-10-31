@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     border: "1px solid grey",
     borderRadius: "3%",
-    padding: 20,
+    padding: 30,
     width: "90%",
     [theme.breakpoints.down("md")]: {
       display: "flex",
@@ -277,8 +277,8 @@ function Coin() {
               </Typography>
               <Box style={{ display: "flex", marginTop: 12 }}>
                 <HtmlTooltip
-                  placement="top-start"
-                  leaveDelay={1000}
+                  placement="bottom-start"
+                  leaveDelay={400}
                   title={
                     <Typography>
                       😒 {coin?.sentiment_votes_down_percentage} %
@@ -292,13 +292,13 @@ function Coin() {
                       borderBottomLeftRadius: "9px",
                       backgroundColor: "red",
                       height: 10,
-                      width: coin?.sentiment_votes_down_percentage * 2.5,
+                      width: coin?.sentiment_votes_down_percentage * 2.5
                     }}
                   />
                 </HtmlTooltip>
                 <HtmlTooltip
                   placement="bottom-end"
-                  leaveDelay={1000}
+                  leaveDelay={400}
                   title={
                     <Typography color="inherit">
                       😁 {coin?.sentiment_votes_up_percentage} %

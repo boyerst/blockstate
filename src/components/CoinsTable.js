@@ -14,9 +14,9 @@ import {
 } from "@material-ui/core"
 import Pagination from "@material-ui/lab/Pagination"
 import Skeleton from "@material-ui/lab/Skeleton"
-import SearchIcon from '@material-ui/icons/Search'
-import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp'
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown'
+import SearchIcon from "@material-ui/icons/Search"
+import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp"
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown"
 import axios from "axios"
 import { useHistory } from "react-router-dom"
 import { AllCoinsMarketData, GlobalMarketData } from "../config/api"
@@ -32,7 +32,10 @@ const useStyles = makeStyles(() => ({
     fontFamily: "Open Sans",
     cursor: "pointer",
     "&:hover": {
-      backgroundColor: "#0582CA2B"
+      backgroundColor: "#0582CA2B",
+      boxShadow: "0 3px 5px rgba(0,0,0,0.22)",
+      transform: "scale(1.01)",
+      transitionDuration: "1s"
     }
   },
   data: {
