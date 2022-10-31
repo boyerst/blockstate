@@ -34,6 +34,7 @@ const useStyles = makeStyles(() => ({
 function TrendingCarousel() {
 
   const [trending, setTrending] = useState([])
+  const [ids, setIds] = useState([])
 
   const classes = useStyles()
 
@@ -42,6 +43,8 @@ function TrendingCarousel() {
     const { data } = await axios.get(TrendingCoins())
     const { coins, exchanges } = data
     setTrending(coins)
+    const coinIds = coins.map((coin) => coin.item.id)
+    setIds(coinIds)
   }
 
 
@@ -50,6 +53,8 @@ function TrendingCarousel() {
   }, [])
 
   console.log("🟢trending: ", trending)
+  console.log("🟢trending ID: ", trending[0]?.item.id)
+  console.log("🇺🇸ids: ", ids)
 
 
   const items = trending.map((coin) => {
