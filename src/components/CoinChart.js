@@ -58,9 +58,11 @@ const useStyles = makeStyles((theme) => ({
 
 function CoinChart({ coin }) {
 
+  const classes = useStyles()
+  const { currency } = CurrencyState()
+
   const [historicalData, setHistoricalData] = useState()
   const [days, setDays] = useState(1)
-  const { currency } = CurrencyState()
   const [selected, setSelected] = useState(false)
 
 
@@ -77,10 +79,6 @@ function CoinChart({ coin }) {
 
   // console.log("CoinHistoricData: ", CoinHistoricData)
   // console.log("historicalData: ", historicalData)
-
-
-
-  const classes = useStyles()
 
 
   return (

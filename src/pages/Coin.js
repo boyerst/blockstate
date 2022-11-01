@@ -97,9 +97,12 @@ const HtmlTooltip = withStyles((theme) => ({
 
 function Coin() {
 
+  const classes = useStyles()
   const { id } = useParams()
-  const [coin, setCoin] = useState()
   const { currency, symbol } = CurrencyState()
+
+  
+  const [coin, setCoin] = useState()
 
   const fetchCoinMarketData = async () => {
     const { data } = await axios.get(CoinMarketData(id))
@@ -112,7 +115,6 @@ function Coin() {
     fetchCoinMarketData()
   }, [])
 
-  const classes = useStyles()
 
   const profit = coin?.market_data.price_change_percentage_24h_in_currency[currency.toLowerCase()] > 0
 

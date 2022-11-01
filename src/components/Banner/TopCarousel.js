@@ -36,12 +36,12 @@ const useStyles = makeStyles(() => ({
 
 function TopCarousel() {
 
+  const classes = useStyles()
+  const { currency, symbol } = CurrencyState()
+
   const [top, setTop] = useState([])
   const [topCoinsLoading, setTopCoinsLoading] = useState(false)
 
-  const classes = useStyles()
-
-  const { currency, symbol } = CurrencyState()
 
   const fetchTopCoins = async () => {
     setTopCoinsLoading(true)

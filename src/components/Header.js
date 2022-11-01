@@ -56,14 +56,13 @@ const useStyles = makeStyles(() => ({
 
 function Header(props) {
 
+  const classes = useStyles()
+  const history = useHistory()
+  const { currency, setCurrency } = CurrencyState()
+
   const [globalMarket, setGlobalMarket] = useState([])
   const [globalLoading, setGlobalLoading] = useState(true)
 
-  const classes = useStyles()
-
-  const history = useHistory()
-
-  const { currency, setCurrency } = CurrencyState()
 
 
   const fetchGlobalData = async () => {

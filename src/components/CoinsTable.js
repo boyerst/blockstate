@@ -65,6 +65,11 @@ const useStyles = makeStyles(() => ({
 
 function CoinsTable() {
 
+  const classes = useStyles()
+  const history = useHistory()
+  const { currency, symbol } = CurrencyState()
+  const skelements = Array(30).fill('h2')
+
   const [coins, setCoins] = useState([])
   const [globalMarket, setGlobalMarket] = useState([])
   const [loading, setLoading] = useState(false)
@@ -72,10 +77,6 @@ function CoinsTable() {
   const [search, setSearch] = useState("")
   const [page, setPage] = useState(1)
 
-  const { currency, symbol } = CurrencyState()
-  const history = useHistory()
-  const classes = useStyles()
-  const skelements = Array(30).fill('h2')
 
   const fetchAllCoinsMarketData = async () => {
     setLoading(true)
