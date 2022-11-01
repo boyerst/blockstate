@@ -26,7 +26,7 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    // textTransform: "uppercase"
+    textTransform: "uppercase"
   }
 }))
 
@@ -56,7 +56,7 @@ function TrendingCarousel() {
   const fetchTrendingCoinsData = async () => {
     const { data } = await axios.get(TrendingCoinsData(ids))
     setTrendingData(data)
-    console.log("🙋‍♂️🙋‍♂️🙋‍♂️🙋‍♂️TRENDING COINS DATAL ", data) 
+    console.log("🙋‍♂️🙋‍♂️🙋‍♂️🙋‍♂️TRENDING COINS DATA ", data) 
   }
 
 
@@ -75,10 +75,9 @@ function TrendingCarousel() {
   console.log("🇺🇸ids: ", ids)
   console.log("🇺🇸ids[]: ", ids[1])
   console.log("💰trendingData: ", trendingData)
-  console.log("💰trendingData Price: ", trendingData?.aptos?.usd)
-  // console.log("💰trendingData Price: ", trendingData[0].usd)
 
-  const items = trending.map((coin) => {
+
+  const items = trendingData.map((coin) => {
     
     return (
       <Box>
@@ -87,22 +86,25 @@ function TrendingCarousel() {
             <Skeleton variant="rect" width={400} height={50} />
           ) : (
             <Link
-              to={`/coins/${coin.item.id}`}
+              to={`/coins/${coin.id}`}
               className={classes.carouselItem}
             >
               <img
-                src={coin?.item.small}
-                alt={coin?.item.name}
+                src={coin?.image}
+                alt={coin?.name}
                 height="50"
                 width="50"
                 style={{ marginRight: 15 }}
               />
               <Box className={classes.carouselData}>
                 <span style={{ fontSize: 18, fontWeight: 500 }}>
-                  {coin?.item.symbol}
+                  {coin?.symbol}
                 </span>
                 <span>
-                  ₿ {coin?.item.price_btc.toFixed(8)}
+                 $ {coin?.current_price}
+                </span>
+                <span>
+                 {coin?.price_change_percentage_24h} %
                 </span>
               </Box>
             </Link>
@@ -111,7 +113,6 @@ function TrendingCarousel() {
       </Box>
     )
   })
-
 
   const responsive = {
     0: {
