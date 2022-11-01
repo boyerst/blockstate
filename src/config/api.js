@@ -24,6 +24,5 @@ export const TrendingCoins = () =>
 export const GlobalMarketData = () =>
   `https://api.coingecko.com/api/v3/global`;
 
-export const SimplePrices = (ids) =>
-  `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=true`
-
+export const TrendingCoinsData = (ids) =>
+  `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${ids}&sparkline=false`

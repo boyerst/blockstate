@@ -4,7 +4,7 @@ import { makeStyles, Box } from "@material-ui/core"
 import AliceCarousel from "react-alice-carousel"
 import axios from "axios"
 import Skeleton from "@material-ui/lab/Skeleton"
-import { TrendingCoins, SimplePrices } from "../../config/api"
+import { TrendingCoins, TrendingCoinsData } from "../../config/api"
 // import { } from "../../config/api"
 
 
@@ -53,11 +53,10 @@ function TrendingCarousel() {
   }
 
 
-  const fetchSimplePrices = async () => {
-    console.log("🌞🌞🌞🌞FETCH SIMPLE PRICES!")
-    const { data } = await axios.get(SimplePrices(ids))
+  const fetchTrendingCoinsData = async () => {
+    const { data } = await axios.get(TrendingCoinsData(ids))
     setTrendingData(data)
-    console.log("🔵🔵🔵 SimplePrices() call: ", data)
+    console.log("🙋‍♂️🙋‍♂️🙋‍♂️🙋‍♂️TRENDING COINS DATAL ", data) 
   }
 
 
@@ -65,8 +64,9 @@ function TrendingCarousel() {
     fetchTrendingCoins()
   }, [])
 
+
   useMemo(() => {
-    fetchSimplePrices()
+    fetchTrendingCoinsData()
   }, [ids])
 
 
