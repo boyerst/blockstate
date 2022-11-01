@@ -26,7 +26,7 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    textTransform: "uppercase"
+    // textTransform: "uppercase"
   }
 }))
 
@@ -56,7 +56,6 @@ function TrendingCarousel() {
     // setSimpleLoading(true)
     const { data } = await axios.get(SimplePrices(ids))
     setTrendingData(data)
-    // setSimpleLoading(false)
     console.log("🔵🔵🔵 SimplePrices() call: ", data)
   }
 
@@ -73,11 +72,13 @@ function TrendingCarousel() {
   console.log("🟢trending: ", trending)
   console.log("🟢trending ID: ", trending[0]?.item.id)
   console.log("🇺🇸ids: ", ids)
+  console.log("🇺🇸ids[]: ", ids[1])
   console.log("💰trendingData: ", trendingData)
+  console.log("💰trendingData Price: ", trendingData?.aptos?.usd)
+  // console.log("💰trendingData Price: ", trendingData[0].usd)
 
-
-  const items = trending.map((coin, index) => {
-
+  const items = trending.map((coin) => {
+    
     return (
       <Link
         to={`/coins/${coin.item.id}`}
@@ -91,7 +92,6 @@ function TrendingCarousel() {
           style={{ marginRight: 15 }}
         />
         <Box className={classes.carouselData}>
-          
           <span style={{ fontSize: 18, fontWeight: 500 }}>
             {coin?.item.symbol}
           </span>
