@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useMemo } from "react"
 import { Link } from "react-router-dom"
 import { makeStyles, Box } from "@material-ui/core"
 import AliceCarousel from "react-alice-carousel"
 import axios from "axios"
-import { TrendingCoins } from "../../config/api"
+import { TrendingCoins, SimplePrices  } from "../../config/api"
+// import { } from "../../config/api"
 
 
 
@@ -33,10 +34,12 @@ const useStyles = makeStyles(() => ({
 
 function TrendingCarousel() {
 
+  const classes = useStyles()
+
   const [trending, setTrending] = useState([])
   const [ids, setIds] = useState([])
-
-  const classes = useStyles()
+  const [prices, setPrices] = useState([])
+  // const [trendingLoading, setTrendingLoading] = useState(false)
 
 
   const fetchTrendingCoins = async () => {
@@ -48,13 +51,29 @@ function TrendingCarousel() {
   }
 
 
+  const fetchSimplePrices = async () => {
+    console.log("🌞🌞🌞🌞FETCH SIMPLE PRICES!")
+    // setSimpleLoading(true)
+    const { data } = await axios.get(SimplePrices(ids))
+    setPrices(data)
+    // setSimpleLoading(false)
+    console.log("🔵🔵🔵SIMPLEPRICESDATA: ", data)
+  }
+
+
   useEffect(() => {
     fetchTrendingCoins()
   }, [])
 
+  useMemo(() => {
+    fetchSimplePrices()
+  }, [ids])
+
+
   console.log("🟢trending: ", trending)
   console.log("🟢trending ID: ", trending[0]?.item.id)
   console.log("🇺🇸ids: ", ids)
+  console.log("💰prices: ", prices)
 
 
   const items = trending.map((coin) => {
