@@ -3,9 +3,9 @@ import { Link } from "react-router-dom"
 import { makeStyles, Box } from "@material-ui/core"
 import AliceCarousel from "react-alice-carousel"
 import axios from "axios"
-import { TrendingCoins, SimplePrices  } from "../../config/api"
+import Skeleton from "@material-ui/lab/Skeleton"
+import { TrendingCoins, SimplePrices } from "../../config/api"
 // import { } from "../../config/api"
-
 
 
 
@@ -39,21 +39,22 @@ function TrendingCarousel() {
   const [trending, setTrending] = useState([])
   const [ids, setIds] = useState([])
   const [trendingData, setTrendingData] = useState([])
-  // const [trendingLoading, setTrendingLoading] = useState(false)
+  const [trendingLoading, setTrendingLoading] = useState(false)
 
 
   const fetchTrendingCoins = async () => {
+    setTrendingLoading(true)
     const { data } = await axios.get(TrendingCoins())
     const { coins, exchanges } = data
     setTrending(coins)
     const coinIds = coins.map((coin) => coin.item.id)
     setIds(coinIds)
+    setTrendingLoading(false)
   }
 
 
   const fetchSimplePrices = async () => {
     console.log("🌞🌞🌞🌞FETCH SIMPLE PRICES!")
-    // setSimpleLoading(true)
     const { data } = await axios.get(SimplePrices(ids))
     setTrendingData(data)
     console.log("🔵🔵🔵 SimplePrices() call: ", data)
@@ -80,26 +81,34 @@ function TrendingCarousel() {
   const items = trending.map((coin) => {
     
     return (
-      <Link
-        to={`/coins/${coin.item.id}`}
-        className={classes.carouselItem}
-      >
-        <img
-          src={coin?.item.small}
-          alt={coin?.item.name}
-          height="50"
-          width="50"
-          style={{ marginRight: 15 }}
-        />
-        <Box className={classes.carouselData}>
-          <span style={{ fontSize: 18, fontWeight: 500 }}>
-            {coin?.item.symbol}
-          </span>
-          <span>
-            ₿ {coin?.item.price_btc.toFixed(8)}
-          </span>
-        </Box>
-      </Link>
+      <Box>
+        {
+          trendingLoading ? (
+            <Skeleton variant="rect" width={400} height={50} />
+          ) : (
+            <Link
+              to={`/coins/${coin.item.id}`}
+              className={classes.carouselItem}
+            >
+              <img
+                src={coin?.item.small}
+                alt={coin?.item.name}
+                height="50"
+                width="50"
+                style={{ marginRight: 15 }}
+              />
+              <Box className={classes.carouselData}>
+                <span style={{ fontSize: 18, fontWeight: 500 }}>
+                  {coin?.item.symbol}
+                </span>
+                <span>
+                  ₿ {coin?.item.price_btc.toFixed(8)}
+                </span>
+              </Box>
+            </Link>
+          )
+        }
+      </Box>
     )
   })
 

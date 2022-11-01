@@ -3,10 +3,10 @@ import { Link } from "react-router-dom"
 import AliceCarousel from "react-alice-carousel"
 import { makeStyles, Box } from "@material-ui/core"
 import axios from "axios"
+import Skeleton from "@material-ui/lab/Skeleton"
 import { CurrencyState } from "../../CurrencyContext"
 import { TopCoins } from "../../config/api"
 import { numberWithCommas } from "../../utils/utils"
-import Skeleton from "@material-ui/lab/Skeleton"
 
 
 
