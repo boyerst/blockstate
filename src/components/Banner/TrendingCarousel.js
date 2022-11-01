@@ -38,7 +38,7 @@ function TrendingCarousel() {
 
   const [trending, setTrending] = useState([])
   const [ids, setIds] = useState([])
-  const [prices, setPrices] = useState([])
+  const [trendingData, setTrendingData] = useState([])
   // const [trendingLoading, setTrendingLoading] = useState(false)
 
 
@@ -55,9 +55,9 @@ function TrendingCarousel() {
     console.log("🌞🌞🌞🌞FETCH SIMPLE PRICES!")
     // setSimpleLoading(true)
     const { data } = await axios.get(SimplePrices(ids))
-    setPrices(data)
+    setTrendingData(data)
     // setSimpleLoading(false)
-    console.log("🔵🔵🔵SIMPLEPRICESDATA: ", data)
+    console.log("🔵🔵🔵 SimplePrices() call: ", data)
   }
 
 
@@ -73,10 +73,10 @@ function TrendingCarousel() {
   console.log("🟢trending: ", trending)
   console.log("🟢trending ID: ", trending[0]?.item.id)
   console.log("🇺🇸ids: ", ids)
-  console.log("💰prices: ", prices)
+  console.log("💰trendingData: ", trendingData)
 
 
-  const items = trending.map((coin) => {
+  const items = trending.map((coin, index) => {
 
     return (
       <Link
