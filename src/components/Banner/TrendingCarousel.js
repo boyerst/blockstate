@@ -78,6 +78,8 @@ function TrendingCarousel() {
 
 
   const items = trendingData.map((coin) => {
+
+    const profit = coin?.price_change_percentage_24h >= 0
     
     return (
       <Box>
@@ -103,8 +105,13 @@ function TrendingCarousel() {
                 <span>
                  $ {coin?.current_price}
                 </span>
-                <span>
-                 {coin?.price_change_percentage_24h} %
+                <span
+                  style={{
+                      color: profit > 0 ? "rgb(14, 203, 129)" : "red"
+                  }}
+                >
+                  {profit && "+"}
+                  {coin?.price_change_percentage_24h.toFixed(2)} %
                 </span>
               </Box>
             </Link>
