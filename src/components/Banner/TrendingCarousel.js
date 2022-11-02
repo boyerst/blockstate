@@ -99,19 +99,20 @@ function TrendingCarousel() {
                 style={{ marginRight: 15 }}
               />
               <Box className={classes.carouselData}>
-                <span style={{ fontSize: 18, fontWeight: 500 }}>
+                <span style={{ marginBottom: 10 }}>
                   {coin?.symbol}
+                &nbsp;
+                  <span
+                    style={{
+                      color: profit > 0 ? "rgb(14, 203, 129)" : "red"
+                    }}
+                  >
+                    {profit && "+"}
+                    {coin?.price_change_percentage_24h.toFixed(2)} %
+                  </span>
                 </span>
                 <span>
-                 $ {coin?.current_price}
-                </span>
-                <span
-                  style={{
-                      color: profit > 0 ? "rgb(14, 203, 129)" : "red"
-                  }}
-                >
-                  {profit && "+"}
-                  {coin?.price_change_percentage_24h.toFixed(2)} %
+                  $ {coin?.current_price}
                 </span>
               </Box>
             </Link>
