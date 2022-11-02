@@ -104,14 +104,20 @@ function TrendingCarousel() {
                 &nbsp;
                   <span
                     style={{
-                      color: profit > 0 ? "rgb(14, 203, 129)" : "red"
+                      color: profit > 0 ? "rgb(14, 203, 129)" : "red",
+                      paddingLeft: 7
                     }}
                   >
                     {profit && "+"}
                     {coin?.price_change_percentage_24h.toFixed(2)} %
                   </span>
                 </span>
-                <span>
+                <span
+                  style={{
+                    fontSize: 22,
+                    fontWeight: 500
+                  }}
+                >
                   $ {coin?.current_price}
                 </span>
               </Box>

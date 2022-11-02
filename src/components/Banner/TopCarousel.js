@@ -61,7 +61,6 @@ function TopCarousel() {
     const profit = coin?.price_change_percentage_24h >= 0
 
     return (
-
       <Box>
         {
           topCoinsLoading ? (
@@ -84,7 +83,8 @@ function TopCarousel() {
                   &nbsp;
                   <span
                     style={{
-                      color: profit > 0 ? "rgb(14, 203, 129)" : "red"
+                      color: profit > 0 ? "rgb(14, 203, 129)" : "red",
+                      paddingLeft: 7
                     }}
                   >
                     {profit && "+"}
@@ -92,7 +92,12 @@ function TopCarousel() {
                     %
                   </span>
                 </span>
-                <span style={{ fontSize: 22, fontWeight: 500 }}>
+                <span 
+                  style={{
+                    fontSize: 22,
+                    fontWeight: 500
+                  }}
+                >
                   {
                     currency === "USD" ? <>{symbol} {numberWithCommas(coin?.current_price.toFixed(2))}</>
                     : coin.id === "bitcoin" && currency === "BTC" ? <>{symbol} {coin?.current_price.toFixed(2)}</>
