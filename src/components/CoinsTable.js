@@ -173,7 +173,7 @@ function CoinsTable() {
             alignItems="center"
             style={{ marginLeft: 40 }}
           >
-            <SearchIcon style={{ marginTop: 15 }} />
+            <SearchIcon style={{ marginTop: 24, marginRight: 4 }} />
             <TextField
               className={classes.search}
               id="input-with-icon-grid"
