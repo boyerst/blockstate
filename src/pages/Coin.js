@@ -287,8 +287,8 @@ function Coin() {
                   <Box
                     className={classes.sentimentBox}
                     style={{
-                      borderTopLeftRadius: "9px",
-                      borderBottomLeftRadius: "9px",
+                      borderTopLeftRadius: 9,
+                      borderBottomLeftRadius: 9,
                       backgroundColor: "red",
                       height: 10,
                       width: coin?.sentiment_votes_down_percentage * 2.5
@@ -308,8 +308,8 @@ function Coin() {
                   <Box
                     className={classes.sentimentBox}
                     style={{
-                      borderTopRightRadius: "9px",
-                      borderBottomRightRadius: "9px",
+                      borderTopRightRadius: 9,
+                      borderBottomRightRadius: 9,
                       backgroundColor: "green",
                       height: 10,
                       width: coin?.sentiment_votes_up_percentage * 2.5

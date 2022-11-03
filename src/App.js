@@ -18,7 +18,7 @@ function App() {
       type: darkMode ? "dark" : "light",
       background: {
         paper: (darkMode ? "#000000" : "#FBFCFC")
-      }
+      },
     },
   });
 
