@@ -106,6 +106,7 @@ function CoinChart({ coin }) {
                     data: historicalData.map((coin) => coin[1]),
                     label: `Price ( Past ${days} Days ) in ${currency}`,
                     borderColor: "#0582CA",
+                    pointHitRadius: 1,
                   }
                 ]
               }}
@@ -113,10 +114,21 @@ function CoinChart({ coin }) {
                 elements: {
                   point: {
                     radius: 2,
-                    hitRadius: 3,
                     hoverBackgroundColor: "#60CDF5",
-                    hoverBorderWidth: 2
+                    pointHoverRadius: 6
                   }
+                },
+                plugins: {
+                  tooltip: {
+                    position: 'nearest',
+                    yAlign: 'bottom',
+                    xAlign: 'right'
+                  }
+                },
+                interaction: {
+                  intersect: false,
+                  mode: 'index',
+                  axis: 'xy'
                 },
                 scales: {
                   y: {
