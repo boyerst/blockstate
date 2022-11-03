@@ -31,8 +31,9 @@ const useStyles = makeStyles(() => ({
   row: {
     fontFamily: "Open Sans",
     cursor: "pointer",
+    transitionDuration: "2s",
     "&:hover": {
-      backgroundColor: "#0582CA2B",
+      backgroundColor: "#0582CA1A",
       boxShadow: "0 3px 5px rgba(0,0,0,0.22)",
       transform: "scale(1.01)",
       transitionDuration: "1s"

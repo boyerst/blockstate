@@ -83,11 +83,7 @@ const useStyles = makeStyles((theme) => ({
 
 const HtmlTooltip = withStyles((theme) => ({
   tooltip: {
-    backgroundColor: "#f5f5f9",
-    color: "rgba(0, 0, 0, 0.87)",
-    maxWidth: 220,
     fontSize: theme.typography.pxToRem(12),
-    border: "1px solid #dadde9"
   },
 }))(Tooltip);
 
@@ -277,10 +273,11 @@ function Coin() {
               <Typography variant="h6" className={classes.heading}>
                 Sentiment
               </Typography>
-              <Box style={{ display: "flex", marginTop: 12 }}>
+              <Box style={{ display: "flex", paddingTop: 14 }}>
                 <HtmlTooltip
-                  placement="bottom-start"
+                  // PopperProps={{ style: { marginTop: -20 } }}
                   leaveDelay={400}
+                  arrow
                   title={
                     <Typography>
                       😒 {coin?.sentiment_votes_down_percentage} %
@@ -301,6 +298,7 @@ function Coin() {
                 <HtmlTooltip
                   placement="bottom-end"
                   leaveDelay={400}
+                  arrow
                   title={
                     <Typography color="inherit">
                       😁 {coin?.sentiment_votes_up_percentage} %
