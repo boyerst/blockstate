@@ -84,7 +84,8 @@ function TopCarousel() {
                   <span
                     style={{
                       color: profit > 0 ? "rgb(14, 203, 129)" : "red",
-                      paddingLeft: 7
+                      paddingLeft: 7,
+                      fontWeight: 500
                     }}
                   >
                     {profit && "+"}

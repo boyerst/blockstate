@@ -112,7 +112,10 @@ function CoinChart({ coin }) {
               options={{
                 elements: {
                   point: {
-                    radius: 1
+                    radius: 2,
+                    hitRadius: 3,
+                    hoverBackgroundColor: "#60CDF5",
+                    hoverBorderWidth: 2
                   }
                 },
                 scales: {
