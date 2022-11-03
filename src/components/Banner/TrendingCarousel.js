@@ -6,6 +6,7 @@ import axios from "axios"
 import Skeleton from "@material-ui/lab/Skeleton"
 import { CurrencyState } from "../../CurrencyContext"
 import { TrendingCoins, TrendingCoinsData } from "../../config/api"
+import { numberWithCommas } from "../../utils/utils"
 
 
 
@@ -120,7 +121,11 @@ function TrendingCarousel() {
                     fontWeight: 500
                   }}
                 >
-                  $ {coin?.current_price}
+                  {
+                    currency === "USD" ? <>{symbol} {numberWithCommas(coin?.current_price.toFixed(2))}</>
+                    : coin.id === "bitcoin" && currency === "BTC" ? <>{symbol} {coin?.current_price.toFixed(2)}</>
+                    : <>{symbol} {coin?.current_price.toFixed(8)}</>
+                  }
                 </span>
               </Box>
             </Link>

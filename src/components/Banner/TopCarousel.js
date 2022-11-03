@@ -101,7 +101,7 @@ function TopCarousel() {
                   {
                     currency === "USD" ? <>{symbol} {numberWithCommas(coin?.current_price.toFixed(2))}</>
                     : coin.id === "bitcoin" && currency === "BTC" ? <>{symbol} {coin?.current_price.toFixed(2)}</>
-                    : <>{symbol} {coin?.current_price.toFixed(9)}</>
+                    : <>{symbol} {coin?.current_price.toFixed(8)}</>
                   }
                 </span>
               </Box>
