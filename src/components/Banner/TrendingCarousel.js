@@ -4,8 +4,9 @@ import { makeStyles, Box } from "@material-ui/core"
 import AliceCarousel from "react-alice-carousel"
 import axios from "axios"
 import Skeleton from "@material-ui/lab/Skeleton"
+import { CurrencyState } from "../../CurrencyContext"
 import { TrendingCoins, TrendingCoinsData } from "../../config/api"
-// import { } from "../../config/api"
+
 
 
 
@@ -35,6 +36,7 @@ const useStyles = makeStyles(() => ({
 function TrendingCarousel() {
 
   const classes = useStyles()
+  const { currency, symbol } = CurrencyState()
 
   const [trending, setTrending] = useState([])
   const [ids, setIds] = useState([])
@@ -54,7 +56,7 @@ function TrendingCarousel() {
 
 
   const fetchTrendingCoinsData = async () => {
-    const { data } = await axios.get(TrendingCoinsData(ids))
+    const { data } = await axios.get(TrendingCoinsData(ids, currency))
     setTrendingData(data)
     console.log("🙋‍♂️🙋‍♂️🙋‍♂️🙋‍♂️TRENDING COINS DATA ", data) 
   }
@@ -67,7 +69,7 @@ function TrendingCarousel() {
 
   useMemo(() => {
     fetchTrendingCoinsData()
-  }, [ids])
+  }, [ids, currency])
 
 
   console.log("🟢trending: ", trending)

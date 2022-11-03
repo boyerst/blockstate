@@ -24,5 +24,5 @@ export const TrendingCoins = () =>
 export const GlobalMarketData = () =>
   `https://api.coingecko.com/api/v3/global`;
 
-export const TrendingCoinsData = (ids) =>
-  `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${ids}&sparkline=false`
+export const TrendingCoinsData = (ids, currency) =>
+  `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&ids=${ids}&sparkline=false`

@@ -153,7 +153,7 @@ function CoinsTable() {
                       }}
                     >
                       {marketCapProfit 
-                        ? <ArrowDropUpIcon style={{ verticalAlign: "middle" }} /> 
+                        ? <ArrowDropUpIcon style={{ verticalAlign: "middle" }} />
                         : <ArrowDropDownIcon style={{ verticalAlign: "middle" }} />}
                       {globalMarket.market_cap_change_percentage_24h_usd.toFixed(2)} %
                     </span>
