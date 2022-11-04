@@ -35,7 +35,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Paper style={{ minHeight: "120vh" }}>
           <div>
-            <Header handleDarkMode={handleDarkMode} />
+            <Header handleDarkMode={handleDarkMode}/>
             <Route path="/" component={Home} exact />
             <Route path="/coins/:id" component={Coin} />
           </div>

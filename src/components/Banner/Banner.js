@@ -33,9 +33,11 @@ const useStyles = makeStyles(() => ({
 
 
 
-function Banner() {
+function Banner(props) {
 
   const classes = useStyles()
+  
+  console.log("🔥PROPS: ", props)
 
   return (
     <div>
@@ -52,7 +54,7 @@ function Banner() {
           </Typography>
         </Box>
         <TrendingCarousel />
-        <Box>
+        <Box className={classes.carouselHeader}>
           <Typography
             variant="h6"
             style={{
