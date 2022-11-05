@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import "../App.css"
 import {
-  makeStyles, AppBar, Container, Toolbar, Typography, Select, MenuItem, Switch, Grid, TextField, Icon
+  makeStyles, AppBar, Container, Toolbar, Typography, Select, MenuItem, Switch, Grid, Icon
 } from "@material-ui/core"
 import Skeleton from "@material-ui/lab/Skeleton"
 import { useHistory } from "react-router-dom"
@@ -9,10 +9,9 @@ import axios from "axios"
 import { CurrencyState } from "../CurrencyContext"
 import { GlobalMarketData } from "../config/api"
 import { numberWithCommas } from "../utils/utils"
-import Logo from '../assets/logo.png'
-// import Bitcoin from '../assets/icon-bitcoin.svg'
-import Bitcoin from '../assets/bitcoin-icon.png'
-import Usd from '../assets/usd-icon.png'
+import Logo from "../assets/logo.png"
+import Bitcoin from "../assets/bitcoin-icon.png"
+import Usd from "../assets/usd-icon.png"
 
 
 
@@ -29,7 +28,7 @@ const useStyles = makeStyles(() => ({
     paddingBottom: 15,
     paddingLeft: 5,
     maxHeight: 35,
-    width: 70,
+    width: 57,
     borderRadius: "10%",
     "&:hover": {
       backgroundColor: "#87888A"
@@ -51,24 +50,15 @@ const useStyles = makeStyles(() => ({
   metric: {
     fontWeight: 700
   },
-  menuItem: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center"
-  },
   icon: {
     display: "flex",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    marginLeft: -12
   },
-
   image: {
-    height: 63,
-    width: 63,
-    padding: 18,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center"
+    height: 30,
+    width: 30
   }
 }))
 
@@ -156,26 +146,21 @@ function Header(props) {
             variant="h4"
           >
             BlockState
-{/*            <Typography
-              variant="subtitle2"
-            >
-              The State of The Blockchain
-            </Typography>*/}
           </Typography>
           <Select
             className={classes.select}
-            disableUnderline={true}
+            disableUnderline
             variant="filled"
             borderRadius="80%"
             value={currency}
             onChange={(e) => setCurrency(e.target.value)}
           >
-            <MenuItem className={classes.menuItem} value="USD">
+            <MenuItem value="USD">
               <Icon className={classes.icon}>
                 <img className={classes.image} src={Usd} alt="" />
               </Icon>
             </MenuItem>
-            <MenuItem className={classes.menuItem} value="BTC">
+            <MenuItem value="BTC">
               <Icon className={classes.icon}>
                 <img className={classes.image} src={Bitcoin} alt="" />
               </Icon>
