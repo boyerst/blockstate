@@ -29,11 +29,10 @@ const useStyles = makeStyles(() => ({
     paddingBottom: 15,
     paddingLeft: 5,
     maxHeight: 35,
-    width: 100,
+    width: 70,
     borderRadius: "10%",
-    borderBottom: "1px solid #0582CA",
     "&:hover": {
-      borderBottom: "2px solid #0582CA"
+      backgroundColor: "#87888A"
     }
   },
   switchBase: {
@@ -42,7 +41,7 @@ const useStyles = makeStyles(() => ({
       color: "#0582CA"
     },
     "&.Mui-checked + .MuiSwitch-track": {
-      backgroundColor: "#87888A",
+      backgroundColor: "#87888A"
     }
   },
   globalBar: {
@@ -55,20 +54,21 @@ const useStyles = makeStyles(() => ({
   menuItem: {
     display: "flex",
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
   },
   icon: {
     display: "flex",
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
   },
+
   image: {
     height: 63,
     width: 63,
     padding: 18,
     display: "flex",
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
   }
 }))
 
@@ -164,10 +164,10 @@ function Header(props) {
           </Typography>
           <Select
             className={classes.select}
+            disableUnderline={true}
             variant="filled"
             borderRadius="80%"
             value={currency}
-            style={{ height: 50, width: 85 }}
             onChange={(e) => setCurrency(e.target.value)}
           >
             <MenuItem className={classes.menuItem} value="USD">
