@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import "../App.css"
 import {
-  makeStyles, AppBar, Container, Toolbar, Typography, Select, MenuItem, Switch, Grid, TextField
+  makeStyles, AppBar, Container, Toolbar, Typography, Select, MenuItem, Switch, Grid, TextField, Icon
 } from "@material-ui/core"
 import Skeleton from "@material-ui/lab/Skeleton"
 import { useHistory } from "react-router-dom"
@@ -9,7 +9,8 @@ import axios from "axios"
 import { CurrencyState } from "../CurrencyContext"
 import { GlobalMarketData } from "../config/api"
 import { numberWithCommas } from "../utils/utils"
-import Logo from '../logo.png'
+import Logo from '../assets/logo.png'
+import Bitcoin from '../assets/icon-bitcoin.svg'
 
 
 
@@ -48,6 +49,24 @@ const useStyles = makeStyles(() => ({
   },
   metric: {
     fontWeight: 700
+  },
+  menuItem: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  icon: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  image: {
+    height: 63,
+    width: 63,
+    padding: 18,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   }
 }))
 
@@ -146,11 +165,16 @@ function Header(props) {
             variant="filled"
             borderRadius="80%"
             value={currency}
-            style={{ height: 30, width: 85 }}
+            style={{ height: 50, width: 85 }}
             onChange={(e) => setCurrency(e.target.value)}
           >
             <MenuItem value="USD" style={{}}>USD</MenuItem>
-            <MenuItem value="BTC">BTC</MenuItem>
+            <MenuItem className={classes.menuItem} value="BTC">
+              <Icon className={classes.icon}>
+                <img className={classes.image} src={Bitcoin} alt="" />
+              </Icon>
+           {/*   BTC*/}
+            </MenuItem>
           </Select>
           <Switch
             classes={{
