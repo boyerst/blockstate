@@ -20,9 +20,11 @@ const useStyles = makeStyles(() => ({
     paddingBottom: 60
   },
   carouselHeader: {
-    backgroundColor: "#2A2A2A0D",
-    width: 190,
-    height: 41,
+    // backgroundColor: "#2A2A2A0D",
+    backgroundColor: "#0582CA5E",
+    width: 160,
+    height: 36,
+    borderColor: "text.primary",
     borderRadius: 5,
     display: "flex",
     alignItems: "center",
@@ -33,18 +35,17 @@ const useStyles = makeStyles(() => ({
 
 
 
-function Banner(props) {
+function Banner() {
+
 
   const classes = useStyles()
-  
-  console.log("🔥PROPS: ", props)
 
   return (
     <div>
       <Container className={classes.container}>
         <Box className={classes.carouselHeader}>
           <Typography
-            variant="h6"
+            variant="subtitle1"
             style={{
               fontWeight: 700,
               fontFamily: "Open Sans",
@@ -56,7 +57,7 @@ function Banner(props) {
         <TrendingCarousel />
         <Box className={classes.carouselHeader}>
           <Typography
-            variant="h6"
+            variant="subtitle1"
             style={{
               fontWeight: 700,
               fontFamily: "Open Sans",
