@@ -10,8 +10,9 @@ import { CurrencyState } from "../CurrencyContext"
 import { GlobalMarketData } from "../config/api"
 import { numberWithCommas } from "../utils/utils"
 import Logo from '../assets/logo.png'
-import Bitcoin from '../assets/icon-bitcoin.svg'
-import Usd from '../assets/icon-usd.png'
+// import Bitcoin from '../assets/icon-bitcoin.svg'
+import Bitcoin from '../assets/bitcoin-icon.png'
+import Usd from '../assets/usd-icon.png'
 
 
 
