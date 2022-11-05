@@ -11,6 +11,7 @@ import { GlobalMarketData } from "../config/api"
 import { numberWithCommas } from "../utils/utils"
 import Logo from '../assets/logo.png'
 import Bitcoin from '../assets/icon-bitcoin.svg'
+import Usd from '../assets/icon-usd.png'
 
 
 
@@ -168,12 +169,15 @@ function Header(props) {
             style={{ height: 50, width: 85 }}
             onChange={(e) => setCurrency(e.target.value)}
           >
-            <MenuItem value="USD" style={{}}>USD</MenuItem>
+            <MenuItem className={classes.menuItem} value="USD">
+              <Icon className={classes.icon}>
+                <img className={classes.image} src={Usd} alt="" />
+              </Icon>
+            </MenuItem>
             <MenuItem className={classes.menuItem} value="BTC">
               <Icon className={classes.icon}>
                 <img className={classes.image} src={Bitcoin} alt="" />
               </Icon>
-           {/*   BTC*/}
             </MenuItem>
           </Select>
           <Switch
