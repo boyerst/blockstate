@@ -3,6 +3,7 @@ import "../../App.css"
 import {
   makeStyles, Container, Typography, Box
 } from "@material-ui/core"
+import InfoIcon from '@material-ui/icons/Info'
 import TopCarousel from "./TopCarousel"
 import TrendingCarousel from "./TrendingCarousel"
 
@@ -53,6 +54,7 @@ function Banner() {
           >
             Trending Coins
           </Typography>
+          <InfoIcon style={{fontSize: "small"}}/>
         </Box>
         <TrendingCarousel />
         <Box className={classes.carouselHeader}>
