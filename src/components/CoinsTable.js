@@ -114,6 +114,7 @@ function CoinsTable() {
 
   const marketCapProfit = globalMarket.market_cap_change_percentage_24h_usd > 0
 
+
   return (
 
     <Container>
@@ -264,13 +265,6 @@ function CoinsTable() {
                               </div>
                             </div>
                           </TableCell>
-
-
-
-
-
-
-
                           <TableCell
                             className={classes.data}
                             align="right"
@@ -290,8 +284,8 @@ function CoinsTable() {
                           >
                             {
                               profit1h
-                                ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_1h_in_currency.toFixed(2)}%</span>)
-                                : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_1h_in_currency.toFixed(2).substring(1)}%</span>)
+                                ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_1h_in_currency?.toFixed(2)}%</span>)
+                                : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_1h_in_currency?.toFixed(2).substring(1)}%</span>)
                             }
                           </TableCell>
                           <TableCell
@@ -304,8 +298,8 @@ function CoinsTable() {
                           >
                             {
                               profit24h
-                                ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_24h.toFixed(2)}%</span>)
-                                : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_24h.toFixed(2).substring(1)}%</span>)
+                                ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_24h?.toFixed(2)}%</span>)
+                                : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_24h?.toFixed(2).substring(1)}%</span>)
                             }
                           </TableCell>
                           <TableCell
@@ -318,8 +312,8 @@ function CoinsTable() {
                           >
                             {
                               profit7d
-                                ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_7d_in_currency.toFixed(2)}%</span>)
-                                : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_7d_in_currency.toFixed(2).substring(1)}%</span>)
+                                ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_7d_in_currency?.toFixed(2)}%</span>)
+                                : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_7d_in_currency?.toFixed(2).substring(1)}%</span>)
                             }
                           </TableCell>
                           <TableCell
@@ -332,8 +326,8 @@ function CoinsTable() {
                           >
                             {
                               profit30d
-                                ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_30d_in_currency.toFixed(2)}%</span>)
-                                : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_30d_in_currency.toFixed(2).substring(1)}%</span>)
+                                ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_30d_in_currency?.toFixed(2)}%</span>)
+                                : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }} />{row.price_change_percentage_30d_in_currency?.toFixed(2).substring(1)}%</span>)
                             }
                           </TableCell>
                           <TableCell
@@ -350,14 +344,6 @@ function CoinsTable() {
                             {symbol}{" "}
                             {numberWithCommas(row.market_cap.toString())}
                           </TableCell>
-
-
-
-
-
-
-
-
                         </TableRow>
                       )
                     })
