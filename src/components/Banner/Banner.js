@@ -54,7 +54,7 @@ function Banner() {
     setPopover(e.currentTarget)
   }
   const handlePopoverClose = () => {
-    setPopover(null)    
+    setPopover(null)
   }
   const open = Boolean(popover)
 
@@ -65,8 +65,8 @@ function Banner() {
           <Box className={classes.carouselHeader}>
             <Typography
               variant="subtitle1"
-              aria-owns={open ? 'mouse-over-popover' : undefined}
-              aria-haspopup="true"
+              // aria-owns={open ? 'mouse-over-popover' : undefined}
+              // aria-haspopup="true"
               onMouseEnter={handlePopoverOpen}
               onMouseLeave={handlePopoverClose}
               style={{
@@ -88,7 +88,7 @@ function Banner() {
             onClose={handlePopoverClose}
             // disableRestoreFocus
             anchorReference="anchorPosition"
-            anchorPosition={{ top: 600, right: 600 }}
+            anchorPosition={{ top: 160, left: 600 }}
             anchorOrigin={{
               vertical: 'bottom',
               horizontal: 'left',
@@ -98,7 +98,9 @@ function Banner() {
               horizontal: 'left',
             }}
           >
-            <Typography>HELLO</Typography>
+            <Typography>
+              List of trending cryptocurrencies is based on coins that people have been searching for on CoinGecko for the past 3 hours.
+            </Typography>
           </Popover>
         </Box>
         <TrendingCarousel />
