@@ -31,6 +31,10 @@ const useStyles = makeStyles(() => ({
     alignItems: "center",
     justifyContent: "center",
     boxShadow: 5
+  },
+  trending: {
+    display: "flex",
+    flexDirection: "row"
   }
 }))
 
@@ -44,17 +48,19 @@ function Banner() {
   return (
     <div>
       <Container className={classes.container}>
-        <Box className={classes.carouselHeader}>
-          <Typography
-            variant="subtitle1"
-            style={{
-              fontWeight: 700,
-              fontFamily: "Open Sans",
-            }}
-          >
-            Trending Coins
-          </Typography>
-          <InfoIcon style={{fontSize: "small"}}/>
+        <Box className={classes.trending}>
+          <Box className={classes.carouselHeader}>
+            <Typography
+              variant="subtitle1"
+              style={{
+                fontWeight: 700,
+                fontFamily: "Open Sans",
+              }}
+            >
+              Trending Coins
+            </Typography>
+          </Box>
+          <InfoIcon style={{fontSize: "medium", marginTop: 4, marginLeft: 3}}/>
         </Box>
         <TrendingCarousel />
         <Box className={classes.carouselHeader}>
