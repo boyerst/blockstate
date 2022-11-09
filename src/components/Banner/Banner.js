@@ -98,7 +98,7 @@ function Banner() {
               horizontal: 'left',
             }}
           >
-            <Typography>
+            <Typography style={{ padding: 5 }}>
               List of trending cryptocurrencies is based on coins that people have been searching for on CoinGecko for the past 3 hours.
             </Typography>
           </Popover>
