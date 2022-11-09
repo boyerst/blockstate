@@ -4,6 +4,8 @@ import AliceCarousel from "react-alice-carousel"
 import { makeStyles, Box } from "@material-ui/core"
 import axios from "axios"
 import Skeleton from "@material-ui/lab/Skeleton"
+import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp"
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown"
 import { CurrencyState } from "../../CurrencyContext"
 import { TopCoins } from "../../config/api"
 import { numberWithCommas } from "../../utils/utils"
@@ -88,12 +90,14 @@ function TopCarousel() {
                       fontWeight: 500
                     }}
                   >
-                    {profit && "+"}
-                    {coin?.price_change_percentage_24h?.toFixed(2)}
-                    %
+                    {
+                      profit
+                        ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{coin?.price_change_percentage_24h.toFixed(2)}%</span>)
+                        : (<span><ArrowDropDownIcon style={{ verticalAlign: "middle" }} />{coin?.price_change_percentage_24h.toFixed(2).substring(1)}%</span>)
+                    }
                   </span>
                 </span>
-                <span 
+                <span
                   style={{
                     fontSize: 22,
                     fontWeight: 500

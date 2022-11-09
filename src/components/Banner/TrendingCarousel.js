@@ -4,11 +4,11 @@ import { makeStyles, Box } from "@material-ui/core"
 import AliceCarousel from "react-alice-carousel"
 import axios from "axios"
 import Skeleton from "@material-ui/lab/Skeleton"
+import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp"
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown"
 import { CurrencyState } from "../../CurrencyContext"
 import { TrendingCoins, TrendingCoinsData } from "../../config/api"
 import { numberWithCommas } from "../../utils/utils"
-import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp"
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown"
 
 
 
@@ -114,8 +114,6 @@ function TrendingCarousel() {
                       fontWeight: 500
                     }}
                   >
-         {/*           {profit && "+"}
-                    {coin?.price_change_percentage_24h.toFixed(2)} %*/}
                     {
                       profit
                         ? (<span><ArrowDropUpIcon style={{ verticalAlign: "middle" }} />{coin?.price_change_percentage_24h.toFixed(2)}%</span>)
