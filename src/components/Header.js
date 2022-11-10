@@ -44,7 +44,7 @@ const useStyles = makeStyles(() => ({
     }
   },
   globalBar: {
-    borderBottom: "1px solid grey",
+    borderBottom: "1px solid #87888A3D",
     fontSize: 14
   },
   metric: {
