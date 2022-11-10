@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import "../../App.css"
 import {
   makeStyles, Container, Typography, Box, Popover
@@ -80,6 +80,7 @@ function Banner() {
 {/*          <InfoIcon 
             style={{fontSize: "medium", marginTop: 4, marginLeft: 3}}
           />*/}
+          
           <Popover
             // id="mouse-over-popover"
             className={classes.popover}
@@ -88,7 +89,7 @@ function Banner() {
             onClose={handlePopoverClose}
             // disableRestoreFocus
             anchorReference="anchorPosition"
-            anchorPosition={{ top: 160, left: 600 }}
+            anchorPosition={{ top: 160, left: 650 }}
             anchorOrigin={{
               vertical: 'bottom',
               horizontal: 'left',

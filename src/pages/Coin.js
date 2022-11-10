@@ -289,7 +289,7 @@ function Coin() {
                     style={{
                       borderTopLeftRadius: 9,
                       borderBottomLeftRadius: 9,
-                      backgroundColor: "red",
+                      backgroundColor: "#FF0000B3",
                       height: 10,
                       width: coin?.sentiment_votes_down_percentage * 2.5
                     }}
@@ -310,7 +310,7 @@ function Coin() {
                     style={{
                       borderTopRightRadius: 9,
                       borderBottomRightRadius: 9,
-                      backgroundColor: "green",
+                      backgroundColor: "#4CA64CB3",
                       height: 10,
                       width: coin?.sentiment_votes_up_percentage * 2.5
                     }}
