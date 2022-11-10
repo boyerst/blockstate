@@ -277,7 +277,6 @@ function Coin() {
                 <HtmlTooltip
                   // PopperProps={{ style: { marginTop: -20 } }}
                   leaveDelay={400}
-                  arrow
                   title={
                     <Typography>
                       😒 {coin?.sentiment_votes_down_percentage} %
@@ -298,7 +297,6 @@ function Coin() {
                 <HtmlTooltip
                   placement="bottom-end"
                   leaveDelay={400}
-                  arrow
                   title={
                     <Typography color="inherit">
                       😁 {coin?.sentiment_votes_up_percentage} %
