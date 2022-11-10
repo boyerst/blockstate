@@ -1,9 +1,8 @@
-import React, { useState } from "react"
+import React from "react"
 import "../../App.css"
 import {
-  makeStyles, Container, Typography, Box, Popover
+  makeStyles, Container, Typography, Box
 } from "@material-ui/core"
-import InfoIcon from "@material-ui/icons/Info"
 import TopCarousel from "./TopCarousel"
 import TrendingCarousel from "./TrendingCarousel"
 import TrendingPopover from "./TrendingPopover"
