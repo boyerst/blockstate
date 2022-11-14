@@ -357,7 +357,7 @@ function CoinsTable() {
         count={(handleSearch()?.length / 30).toFixed(0)}
         onChange={(_, value) => {
           setPage(value)
-          window.scroll(0, 370)
+          window.scroll(0, 450)
         }}
         style={{
           paddingTop: 40,
