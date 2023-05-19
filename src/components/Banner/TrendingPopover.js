@@ -76,7 +76,7 @@ function TrendingPopover() {
         popover={popover}
         onClose={handlePopoverClose}
         anchorReference="anchorPosition"
-        anchorPosition={{ top: 160, left: 650 }}
+        anchorPosition={{ top: 160, left: 570 }}
         anchorOrigin={{
           vertical: "bottom",
           horizontal: "left",
