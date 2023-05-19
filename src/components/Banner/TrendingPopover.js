@@ -73,7 +73,7 @@ function TrendingPopover() {
       <Popover
         className={classes.popover}
         open={open}
-        popover={popover}
+        data-popover={popover}
         onClose={handlePopoverClose}
         anchorReference="anchorPosition"
         anchorPosition={{ top: 160, left: 570 }}
